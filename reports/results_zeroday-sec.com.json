@@ -18,8 +18,8 @@
                 {
                     "portid": "80",
                     "protocol": "tcp",
-                    "state": "closed",
-                    "service": "http"
+                    "state": "open",
+                    "service": "tcpwrapped"
                 },
                 {
                     "portid": "110",
@@ -60,7 +60,7 @@
             ]
         }
     ],
-    "whatweb": "https://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\nhttps://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\nhttps://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\nhttps://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\n",
+    "whatweb": "https://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\nhttps://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\nhttps://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\nhttps://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\nhttps://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\nhttps://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\n",
     "dnsenum": [
         "103.191.76.181",
         "103.191.76.181",
@@ -74,6 +74,20 @@
         "103.191.76.181",
         "103.191.76.181"
     ],
+    "theharvester": {
+        "emails": [
+            "cmartorella@edge-security.com"
+        ],
+        "hosts": [
+            "api-keys.yaml",
+            "proxies.yaml",
+            "crt.sh",
+            "edge-security.com",
+            "certs.zeroday-sec.com",
+            "zeroday-sec.com",
+            "25.zeroday-sec.com"
+        ]
+    },
     "sublist3r": [
         "www.zeroday-sec.com",
         "academy.zeroday-sec.com",

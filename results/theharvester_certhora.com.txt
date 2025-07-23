@@ -13,25 +13,24 @@ Read proxies.yaml from /etc/theHarvester/proxies.yaml
 *                                                                 *
 *******************************************************************
 
-[*] Target: zeroday-sec.com 
+[*] Target: certhora.com 
 
 Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
 [94m[*] Searching Duckduckgo. 
 	Searching 0 results.
 [94m[*] Searching Bing. 
-An exception has occurred: 404, message='Attempt to decode JSON with unexpected mimetype: text/html; charset=iso-8859-1', url='https://crt.sh/?q=%25.zeroday-sec.com&exclude=expired&deduplicate=Y&output=json'
-[94m[*] Searching CRTsh. 
 [94m[*] Searching Otx. 
+An exception has occurred: 
+[94m[*] Searching CRTsh. 
 
-[*] IPs found: 2
+[*] IPs found: 1
 -------------------
-103.191.76.131
-110.4.45.109
+109.123.238.148
 
 [*] No emails found.
 
 [*] No people found.
 
-[*] Hosts found: 1
----------------------
-certs.zeroday-sec.com
+[*] No hosts found.
+
+

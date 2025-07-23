@@ -876,3 +876,510 @@ Dnsenum scan for zeroday-sec.com completed.
 All scans completed.
 
 --- Scan finished at 2025-07-24 01:37:17.703840 ---
+
+--- Scan started at 2025-07-24 02:23:55.325151 ---
+Scanning domain: zeroday-sec.com
+Running nmap scan on zeroday-sec.com...
+Running whatweb scan on zeroday-sec.com...
+Running dnsenum scan on zeroday-sec.com...
+Running theHarvester scan on zeroday-sec.com...
+Running httpx scan on zeroday-sec.com...
+Running sublist3r scan on zeroday-sec.com...
+sublist3r is not installed or not in PATH. Please ensure 'sublist3r' is in your system's PATH.
+Running DNSDumpster scan on zeroday-sec.com...
+DNSDumpster scan for zeroday-sec.com completed.
+Httpx scan failed for zeroday-sec.com: 
+theHarvester scan for zeroday-sec.com completed. Results saved to results/theharvester_zeroday-sec.com.txt
+WhatWeb scan for zeroday-sec.com completed.
+Nmap scan for zeroday-sec.com completed.
+Dnsenum scan for zeroday-sec.com completed.
+All scans completed.
+
+--- Aggregated Results ---
+{
+    "nmap": [
+        {
+            "ip": "103.191.76.181",
+            "ports": [
+                {
+                    "portid": "21",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "ftp"
+                },
+                {
+                    "portid": "53",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "domain"
+                },
+                {
+                    "portid": "80",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "tcpwrapped"
+                },
+                {
+                    "portid": "110",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "pop3"
+                },
+                {
+                    "portid": "143",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "imap"
+                },
+                {
+                    "portid": "443",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "tcpwrapped"
+                },
+                {
+                    "portid": "587",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "smtp"
+                },
+                {
+                    "portid": "993",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "imaps"
+                },
+                {
+                    "portid": "995",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "pop3s"
+                }
+            ]
+        }
+    ],
+    "whatweb": "https://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\nhttps://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\nhttps://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\nhttps://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\nhttps://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\nhttps://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\n",
+    "dnsenum": [
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181"
+    ],
+    "theharvester": {
+        "emails": [
+            "cmartorella@edge-security.com"
+        ],
+        "hosts": [
+            "api-keys.yaml",
+            "proxies.yaml",
+            "crt.sh",
+            "edge-security.com",
+            "certs.zeroday-sec.com",
+            "zeroday-sec.com",
+            "25.zeroday-sec.com"
+        ]
+    },
+    "sublist3r": [
+        "www.zeroday-sec.com",
+        "academy.zeroday-sec.com",
+        "certs.zeroday-sec.com",
+        "www.certs.zeroday-sec.com",
+        "webmail.zeroday-sec.com"
+    ],
+    "dnsdumpster": {
+        "a": [
+            {
+                "host": "certs.zeroday-sec.com",
+                "ips": [
+                    {
+                        "asn": "136727",
+                        "asn_name": "JTS-AS-AP Jimat Technology Solution, MY",
+                        "asn_range": "103.191.76.0/24",
+                        "country": "Malaysia",
+                        "country_code": "MY",
+                        "ip": "103.191.76.181",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "www.certs.zeroday-sec.com",
+                "ips": [
+                    {
+                        "asn": "136727",
+                        "asn_name": "JTS-AS-AP Jimat Technology Solution, MY",
+                        "asn_range": "103.191.76.0/24",
+                        "country": "Malaysia",
+                        "country_code": "MY",
+                        "ip": "103.191.76.181",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "webmail.zeroday-sec.com",
+                "ips": [
+                    {
+                        "asn": "136727",
+                        "asn_name": "JTS-AS-AP Jimat Technology Solution, MY",
+                        "asn_range": "103.191.76.0/24",
+                        "country": "Malaysia",
+                        "country_code": "MY",
+                        "ip": "103.191.76.181",
+                        "ptr": ""
+                    }
+                ]
+            }
+        ],
+        "cname": [],
+        "mx": [
+            {
+                "host": "0 zeroday-sec.com",
+                "ips": [
+                    {
+                        "asn": "136727",
+                        "asn_name": "JTS-AS-AP Jimat Technology Solution, MY",
+                        "asn_range": "103.191.76.0/24",
+                        "country": "Malaysia",
+                        "country_code": "MY",
+                        "ip": "103.191.76.181",
+                        "ptr": ""
+                    }
+                ]
+            }
+        ],
+        "ns": [
+            {
+                "host": "zen-01.jimatdns.com",
+                "ips": [
+                    {
+                        "asn": "136727",
+                        "asn_name": "JTS-AS-AP Jimat Technology Solution, MY",
+                        "asn_range": "103.191.76.0/24",
+                        "country": "Malaysia",
+                        "country_code": "MY",
+                        "ip": "103.191.76.181",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "zen-02.jimatdns.com",
+                "ips": [
+                    {
+                        "asn": "136727",
+                        "asn_name": "JTS-AS-AP Jimat Technology Solution, MY",
+                        "asn_range": "103.191.76.0/24",
+                        "country": "Malaysia",
+                        "country_code": "MY",
+                        "ip": "103.191.76.181",
+                        "ptr": ""
+                    }
+                ]
+            }
+        ],
+        "total_a_recs": 3,
+        "txt": [
+            "\"v=spf1 a mx include:relay.mailbaby.net ~all\""
+        ]
+    }
+}
+Aggregated results saved to reports/results_zeroday-sec.com.json
+Report generated: reports/report_zeroday-sec.com.pdf
+
+--- Scan finished at 2025-07-24 02:25:06.470655 ---
+
+--- Scan started at 2025-07-24 02:25:16.501576 ---
+Scanning domain: certhora.com
+Running nmap scan on certhora.com...
+Running whatweb scan on certhora.com...
+Running dnsenum scan on certhora.com...
+Running theHarvester scan on certhora.com...
+Running httpx scan on certhora.com...
+Running sublist3r scan on certhora.com...
+sublist3r is not installed or not in PATH. Please ensure 'sublist3r' is in your system's PATH.
+Running DNSDumpster scan on certhora.com...
+Httpx scan failed for certhora.com: 
+DNSDumpster scan for certhora.com completed.
+WhatWeb scan for certhora.com completed.
+Nmap scan for certhora.com completed.
+theHarvester scan for certhora.com completed. Results saved to results/theharvester_certhora.com.txt
+Dnsenum scan for certhora.com completed.
+All scans completed.
+
+--- Aggregated Results ---
+{
+    "nmap": [
+        {
+            "ip": "109.123.238.148",
+            "ports": [
+                {
+                    "portid": "21",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "tcpwrapped"
+                },
+                {
+                    "portid": "22",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "tcpwrapped"
+                },
+                {
+                    "portid": "53",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "tcpwrapped"
+                },
+                {
+                    "portid": "80",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "tcpwrapped"
+                },
+                {
+                    "portid": "110",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "tcpwrapped"
+                },
+                {
+                    "portid": "111",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "tcpwrapped"
+                },
+                {
+                    "portid": "143",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "tcpwrapped"
+                },
+                {
+                    "portid": "443",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "tcpwrapped"
+                },
+                {
+                    "portid": "465",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "tcpwrapped"
+                },
+                {
+                    "portid": "587",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "tcpwrapped"
+                },
+                {
+                    "portid": "993",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "tcpwrapped"
+                },
+                {
+                    "portid": "995",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "tcpwrapped"
+                },
+                {
+                    "portid": "3306",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "tcpwrapped"
+                }
+            ]
+        }
+    ],
+    "whatweb": "https://certhora.com [200 OK] Country[CZECH REPUBLIC][CZ], HTML5, IP[109.123.238.148], PHP[8.4.1], Script, Title[Certhora - Professional Digital Certificates Platform], UncommonHeaders[alt-svc], X-Powered-By[PHP/8.4.1], X-XSS-Protection[1; mode=block]\n",
+    "dnsenum": [
+        "109.123.238.148",
+        "109.123.238.148",
+        "109.123.238.148",
+        "109.123.238.148",
+        "109.123.238.148",
+        "109.123.238.148",
+        "109.123.238.148",
+        "109.123.238.148",
+        "109.123.238.148",
+        "109.123.238.148"
+    ],
+    "theharvester": {
+        "emails": [
+            "cmartorella@edge-security.com"
+        ],
+        "hosts": [
+            "api-keys.yaml",
+            "edge-security.com",
+            "proxies.yaml",
+            "certhora.com"
+        ]
+    },
+    "dnsdumpster": {
+        "a": [
+            {
+                "host": "cpanel.certhora.com",
+                "ips": [
+                    {
+                        "asn": "141995",
+                        "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+                        "asn_range": "109.123.232.0/21",
+                        "country": "Singapore",
+                        "country_code": "SG",
+                        "ip": "109.123.238.148",
+                        "ptr": "gold.mudahhosting.com"
+                    }
+                ]
+            },
+            {
+                "host": "cpcalendars.certhora.com",
+                "ips": [
+                    {
+                        "asn": "141995",
+                        "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+                        "asn_range": "109.123.232.0/21",
+                        "country": "Singapore",
+                        "country_code": "SG",
+                        "ip": "109.123.238.148",
+                        "ptr": "gold.mudahhosting.com"
+                    }
+                ]
+            },
+            {
+                "host": "cpcontacts.certhora.com",
+                "ips": [
+                    {
+                        "asn": "141995",
+                        "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+                        "asn_range": "109.123.232.0/21",
+                        "country": "Singapore",
+                        "country_code": "SG",
+                        "ip": "109.123.238.148",
+                        "ptr": "gold.mudahhosting.com"
+                    }
+                ]
+            },
+            {
+                "host": "wazkybol.certhora.com",
+                "ips": [
+                    {
+                        "asn": "141995",
+                        "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+                        "asn_range": "109.123.232.0/21",
+                        "country": "Singapore",
+                        "country_code": "SG",
+                        "ip": "109.123.238.148",
+                        "ptr": "gold.mudahhosting.com"
+                    }
+                ]
+            },
+            {
+                "host": "www.wazkybol.certhora.com",
+                "ips": [
+                    {
+                        "asn": "141995",
+                        "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+                        "asn_range": "109.123.232.0/21",
+                        "country": "Singapore",
+                        "country_code": "SG",
+                        "ip": "109.123.238.148",
+                        "ptr": "gold.mudahhosting.com"
+                    }
+                ]
+            },
+            {
+                "host": "webdisk.certhora.com",
+                "ips": [
+                    {
+                        "asn": "141995",
+                        "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+                        "asn_range": "109.123.232.0/21",
+                        "country": "Singapore",
+                        "country_code": "SG",
+                        "ip": "109.123.238.148",
+                        "ptr": "gold.mudahhosting.com"
+                    }
+                ]
+            },
+            {
+                "host": "webmail.certhora.com",
+                "ips": [
+                    {
+                        "asn": "141995",
+                        "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+                        "asn_range": "109.123.232.0/21",
+                        "country": "Singapore",
+                        "country_code": "SG",
+                        "ip": "109.123.238.148",
+                        "ptr": "gold.mudahhosting.com"
+                    }
+                ]
+            }
+        ],
+        "cname": [],
+        "mx": [
+            {
+                "host": "0 certhora.com",
+                "ips": [
+                    {
+                        "asn": "141995",
+                        "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+                        "asn_range": "109.123.232.0/21",
+                        "country": "Singapore",
+                        "country_code": "SG",
+                        "ip": "109.123.238.148",
+                        "ptr": "gold.mudahhosting.com"
+                    }
+                ]
+            }
+        ],
+        "ns": [
+            {
+                "host": "ns2.mudahhosting.com",
+                "ips": [
+                    {
+                        "asn": "141995",
+                        "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+                        "asn_range": "109.123.232.0/21",
+                        "country": "Singapore",
+                        "country_code": "SG",
+                        "ip": "109.123.238.148",
+                        "ptr": "gold.mudahhosting.com"
+                    }
+                ]
+            },
+            {
+                "host": "ns1.mudahhosting.com",
+                "ips": [
+                    {
+                        "asn": "141995",
+                        "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+                        "asn_range": "109.123.232.0/21",
+                        "country": "Singapore",
+                        "country_code": "SG",
+                        "ip": "109.123.238.148",
+                        "ptr": "gold.mudahhosting.com"
+                    }
+                ]
+            }
+        ],
+        "total_a_recs": 7,
+        "txt": [
+            "\"v=spf1 +a +mx +ip4:109.123.238.148 ~all\""
+        ]
+    }
+}
+Aggregated results saved to reports/results_certhora.com.json
+Report generated: reports/report_certhora.com.pdf
+
+--- Scan finished at 2025-07-24 02:27:00.849077 ---
