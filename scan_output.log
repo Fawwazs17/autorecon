@@ -875,3 +875,23 @@ Aggregated results saved to reports/results_zeroday-sec.com.json
 Report generated: reports/report_zeroday-sec.com.pdf
 
 --- Scan finished at 2025-07-24 00:01:16.495623 ---
+
+--- Scan started at 2025-07-24 00:23:43.634154 ---
+Scanning domain: zeroday-sec.com
+Running nmap scan on zeroday-sec.com...
+Running whatweb scan on zeroday-sec.com...
+Running dnsenum scan on zeroday-sec.com...
+Running theHarvester scan on zeroday-sec.com...
+Running httpx scan on zeroday-sec.com...
+Running sublist3r scan on zeroday-sec.com...
+Running DNSDumpster scan on zeroday-sec.com...
+sublist3r is not installed or not in PATH. Please ensure 'sublist3r' is in your system's PATH.
+DNSDumpster scan failed for zeroday-sec.com: Command '['curl', '-H', 'X-API-Key: eb35c0dd2f46ef0d0788a26c12439d0f86ca1f28bc97d5fa748a5cb81203ed96', 'https://api.dnsdumpster.com/domain/zeroday-sec.com', '-o', 'results/dnsdumpster_zeroday-sec.com.json']' returned non-zero exit status 6.
+Nmap scan for zeroday-sec.com completed.
+Httpx scan failed for zeroday-sec.com: Usage: httpx [OPTIONS] URL
+
+Error: No such option: -o
+
+theHarvester scan for zeroday-sec.com completed.
+
+--- Scan finished at 2025-07-24 00:25:04.624571 ---
