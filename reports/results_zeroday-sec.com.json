@@ -7,60 +7,60 @@
                     "portid": "21",
                     "protocol": "tcp",
                     "state": "open",
-                    "service": "ftp"
+                    "service": "tcpwrapped"
                 },
                 {
                     "portid": "53",
                     "protocol": "tcp",
                     "state": "open",
-                    "service": "domain"
+                    "service": "tcpwrapped"
                 },
                 {
                     "portid": "80",
                     "protocol": "tcp",
                     "state": "open",
-                    "service": "http"
+                    "service": "tcpwrapped"
                 },
                 {
                     "portid": "110",
                     "protocol": "tcp",
                     "state": "open",
-                    "service": "pop3"
+                    "service": "tcpwrapped"
                 },
                 {
                     "portid": "143",
                     "protocol": "tcp",
                     "state": "open",
-                    "service": "imap"
+                    "service": "tcpwrapped"
                 },
                 {
                     "portid": "443",
                     "protocol": "tcp",
                     "state": "open",
-                    "service": "https"
+                    "service": "tcpwrapped"
                 },
                 {
                     "portid": "587",
                     "protocol": "tcp",
                     "state": "open",
-                    "service": "smtp"
+                    "service": "tcpwrapped"
                 },
                 {
                     "portid": "993",
                     "protocol": "tcp",
                     "state": "open",
-                    "service": "imaps"
+                    "service": "tcpwrapped"
                 },
                 {
                     "portid": "995",
                     "protocol": "tcp",
                     "state": "open",
-                    "service": "pop3s"
+                    "service": "tcpwrapped"
                 }
             ]
         }
     ],
-    "whatweb": "https://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\n",
+    "whatweb": "https://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\nhttps://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\nhttps://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\n",
     "dnsenum": [
         "103.191.76.181",
         "103.191.76.181",
@@ -145,7 +145,7 @@
         ],
         "ns": [
             {
-                "host": "zen-02.jimatdns.com",
+                "host": "zen-01.jimatdns.com",
                 "ips": [
                     {
                         "asn": "136727",
@@ -159,7 +159,7 @@
                 ]
             },
             {
-                "host": "zen-01.jimatdns.com",
+                "host": "zen-02.jimatdns.com",
                 "ips": [
                     {
                         "asn": "136727",

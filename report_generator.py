@@ -127,14 +127,19 @@ def generate_report(domain, results):
     # --- Severity Overview ---
     severity_counts = {'High': 0, 'Medium': 0, 'Low': 0, 'Informational': 0}
     all_findings = []
+    added_tools = set() # Keep track of tools already added to the summary table
 
     for category_name, category_content in categorized_data.items():
         for tool_name, tool_results in category_content.items():
-            severity = determine_severity(tool_name.replace('_theharvester', ''), tool_results) # Adjust tool_name for severity
-            severity_counts[severity] += 1
-            # Summarize details for the table to prevent layout issues
-            summary_details = str(tool_results)[:200] + '...' if len(str(tool_results)) > 200 else str(tool_results)
-            all_findings.append([tool_name.replace('_', ' ').title(), severity, Paragraph(summary_details, styles['Normal'])])
+            # Normalize tool_name for severity determination and unique tracking
+            normalized_tool_name = tool_name.replace('_theharvester', '')
+
+            if normalized_tool_name not in added_tools:
+                severity = determine_severity(normalized_tool_name, tool_results)
+                severity_counts[severity] += 1
+                summary_details = str(tool_results)[:200] + '...' if len(str(tool_results)) > 200 else str(tool_results)
+                all_findings.append([normalized_tool_name.replace('_', ' ').title(), severity, Paragraph(summary_details, styles['Normal'])])
+                added_tools.add(normalized_tool_name)
 
     story.append(Paragraph("Severity Overview", styles['h2']))
     for severity_level, count in severity_counts.items():
