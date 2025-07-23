@@ -60,7 +60,7 @@
             ]
         }
     ],
-    "whatweb": "https://zeroday-sec.com/ [400 Bad Request] HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Title[400 Bad Request][Title element contains newline(s)!]\nhttps://zeroday-sec.com/ [400 Bad Request] HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Title[400 Bad Request][Title element contains newline(s)!]\nhttps://zeroday-sec.com/ [400 Bad Request] HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Title[400 Bad Request][Title element contains newline(s)!]\nhttps://zeroday-sec.com/ [400 Bad Request] HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Title[400 Bad Request][Title element contains newline(s)!]\n",
+    "whatweb": "https://zeroday-sec.com/ [400 Bad Request] HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Title[400 Bad Request][Title element contains newline(s)!]\nhttps://zeroday-sec.com/ [400 Bad Request] HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Title[400 Bad Request][Title element contains newline(s)!]\nhttps://zeroday-sec.com/ [400 Bad Request] HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Title[400 Bad Request][Title element contains newline(s)!]\nhttps://zeroday-sec.com/ [400 Bad Request] HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Title[400 Bad Request][Title element contains newline(s)!]\nhttps://zeroday-sec.com/ [400 Bad Request] HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Title[400 Bad Request][Title element contains newline(s)!]\n",
     "dnsenum": [
         "103.191.76.181",
         "103.191.76.181",
@@ -86,8 +86,7 @@
                         "country": "Malaysia",
                         "country_code": "MY",
                         "ip": "103.191.76.181",
-                        "ptr": "",
-                        "revip_count": 2797
+                        "ptr": ""
                     }
                 ]
             },
@@ -101,8 +100,7 @@
                         "country": "Malaysia",
                         "country_code": "MY",
                         "ip": "103.191.76.181",
-                        "ptr": "",
-                        "revip_count": 2797
+                        "ptr": ""
                     }
                 ]
             },
@@ -116,14 +114,12 @@
                         "country": "Malaysia",
                         "country_code": "MY",
                         "ip": "103.191.76.181",
-                        "ptr": "",
-                        "revip_count": 2797
+                        "ptr": ""
                     }
                 ]
             }
         ],
         "cname": [],
-        "file_id": "b97a2e32-d668-4649-a278-d8bc5ab44e58",
         "mx": [
             {
                 "host": "0 zeroday-sec.com",
@@ -142,7 +138,7 @@
         ],
         "ns": [
             {
-                "host": "zen-01.jimatdns.com",
+                "host": "zen-02.jimatdns.com",
                 "ips": [
                     {
                         "asn": "136727",
@@ -156,7 +152,7 @@
                 ]
             },
             {
-                "host": "zen-02.jimatdns.com",
+                "host": "zen-01.jimatdns.com",
                 "ips": [
                     {
                         "asn": "136727",

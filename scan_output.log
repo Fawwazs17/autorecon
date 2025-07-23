@@ -1,4 +1,5 @@
---- Scan started at 2025-07-23 22:49:35.313504 ---
+
+--- Scan started at 2025-07-23 22:59:26.112064 ---
 Scanning domain: zeroday-sec.com
 Running nmap scan on zeroday-sec.com...
 Running whatweb scan on zeroday-sec.com...
@@ -7,16 +8,80 @@ Running theHarvester scan on zeroday-sec.com...
 Running httpx scan on zeroday-sec.com...
 Running sublist3r scan on zeroday-sec.com...
 Running DNSDumpster scan on zeroday-sec.com...
+DNSDumpster scan for zeroday-sec.com completed.
 Httpx scan failed for zeroday-sec.com: Usage: httpx [OPTIONS] URL
 
-Error: No such option: -H
+Error: No such option: -o
 
-DNSDumpster scan for zeroday-sec.com completed.
-theHarvester scan for zeroday-sec.com completed.
-Nmap scan for zeroday-sec.com completed.
 WhatWeb scan for zeroday-sec.com completed.
+Nmap scan for zeroday-sec.com completed.
 sublist3r scan for zeroday-sec.com completed.
+sublist3r stdout: [91m
+                 ____        _     _ _     _   _____
+                / ___| _   _| |__ | (_)___| |_|___ / _ __
+                \___ \| | | | '_ \| | / __| __| |_ \| '__|
+                 ___) | |_| | |_) | | \__ \ |_ ___) | |
+                |____/ \__,_|_.__/|_|_|___/\__|____/|_|[0m[93m
+
+                # Coded By Ahmed Aboul-Ela - @aboul3la
+    
+[94m[-] Enumerating subdomains now for zeroday-sec.com[0m
+[92m[-] Searching now in Baidu..[0m
+[92m[-] Searching now in Yahoo..[0m
+[92m[-] Searching now in Google..[0m
+[92m[-] Searching now in Bing..[0m
+[92m[-] Searching now in Ask..[0m
+[92m[-] Searching now in Netcraft..[0m
+[92m[-] Searching now in DNSdumpster..[0m
+[92m[-] Searching now in Virustotal..[0m
+[92m[-] Searching now in ThreatCrowd..[0m
+[92m[-] Searching now in SSL Certificates..[0m
+[92m[-] Searching now in PassiveDNS..[0m
+HTTPSConnectionPool(host='www.virustotal.com', port=443): Max retries exceeded with url: /ui/domains/zeroday-sec.com/subdomains (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f24363fe900>, 'Connection to www.virustotal.com timed out. (connect timeout=25)'))
+
+sublist3r stderr: Process GoogleEnum-4:
+Process Virustotal-9:
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/usr/lib/python3.13/multiprocessing/process.py", line 313, in _bootstrap
+    self.run()
+    ~~~~~~~~^^
+  File "/usr/lib/python3/dist-packages/sublist3r.py", line 269, in run
+    domain_list = self.enumerate()
+  File "/usr/lib/python3/dist-packages/sublist3r.py", line 703, in enumerate
+    resp = json.loads(resp)
+  File "/usr/lib/python3.13/json/__init__.py", line 339, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+                    f'not {s.__class__.__name__}')
+TypeError: the JSON object must be str, bytes or bytearray, not int
+  File "/usr/lib/python3.13/multiprocessing/process.py", line 313, in _bootstrap
+    self.run()
+    ~~~~~~~~^^
+  File "/usr/lib/python3/dist-packages/sublist3r.py", line 269, in run
+    domain_list = self.enumerate()
+  File "/usr/lib/python3/dist-packages/sublist3r.py", line 240, in enumerate
+    if not self.check_response_errors(resp):
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3/dist-packages/sublist3r.py", line 304, in check_response_errors
+    if (type(resp) is str or type(resp) is unicode) and 'Our systems have detected unusual traffic' in resp:
+                                           ^^^^^^^
+NameError: name 'unicode' is not defined
+Process DNSdumpster-8:
+Traceback (most recent call last):
+  File "/usr/lib/python3.13/multiprocessing/process.py", line 313, in _bootstrap
+    self.run()
+    ~~~~~~~~^^
+  File "/usr/lib/python3/dist-packages/sublist3r.py", line 269, in run
+    domain_list = self.enumerate()
+  File "/usr/lib/python3/dist-packages/sublist3r.py", line 649, in enumerate
+    token = self.get_csrftoken(resp)
+  File "/usr/lib/python3/dist-packages/sublist3r.py", line 644, in get_csrftoken
+    token = csrf_regex.findall(resp)[0]
+            ~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+
 Dnsenum scan for zeroday-sec.com completed.
+theHarvester scan for zeroday-sec.com completed.
 All scans completed.
 
 --- Aggregated Results ---
@@ -82,7 +147,7 @@ All scans completed.
             ]
         }
     ],
-    "whatweb": "https://zeroday-sec.com/ [400 Bad Request] HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Title[400 Bad Request][Title element contains newline(s)!]\nhttps://zeroday-sec.com/ [400 Bad Request] HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Title[400 Bad Request][Title element contains newline(s)!]\nhttps://zeroday-sec.com/ [400 Bad Request] HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Title[400 Bad Request][Title element contains newline(s)!]\nhttps://zeroday-sec.com/ [400 Bad Request] HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Title[400 Bad Request][Title element contains newline(s)!]\n",
+    "whatweb": "https://zeroday-sec.com/ [400 Bad Request] HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Title[400 Bad Request][Title element contains newline(s)!]\nhttps://zeroday-sec.com/ [400 Bad Request] HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Title[400 Bad Request][Title element contains newline(s)!]\nhttps://zeroday-sec.com/ [400 Bad Request] HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Title[400 Bad Request][Title element contains newline(s)!]\nhttps://zeroday-sec.com/ [400 Bad Request] HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Title[400 Bad Request][Title element contains newline(s)!]\nhttps://zeroday-sec.com/ [400 Bad Request] HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Title[400 Bad Request][Title element contains newline(s)!]\n",
     "dnsenum": [
         "103.191.76.181",
         "103.191.76.181",
@@ -108,8 +173,7 @@ All scans completed.
                         "country": "Malaysia",
                         "country_code": "MY",
                         "ip": "103.191.76.181",
-                        "ptr": "",
-                        "revip_count": 2797
+                        "ptr": ""
                     }
                 ]
             },
@@ -123,8 +187,7 @@ All scans completed.
                         "country": "Malaysia",
                         "country_code": "MY",
                         "ip": "103.191.76.181",
-                        "ptr": "",
-                        "revip_count": 2797
+                        "ptr": ""
                     }
                 ]
             },
@@ -138,14 +201,12 @@ All scans completed.
                         "country": "Malaysia",
                         "country_code": "MY",
                         "ip": "103.191.76.181",
-                        "ptr": "",
-                        "revip_count": 2797
+                        "ptr": ""
                     }
                 ]
             }
         ],
         "cname": [],
-        "file_id": "b97a2e32-d668-4649-a278-d8bc5ab44e58",
         "mx": [
             {
                 "host": "0 zeroday-sec.com",
@@ -164,7 +225,7 @@ All scans completed.
         ],
         "ns": [
             {
-                "host": "zen-01.jimatdns.com",
+                "host": "zen-02.jimatdns.com",
                 "ips": [
                     {
                         "asn": "136727",
@@ -178,7 +239,7 @@ All scans completed.
                 ]
             },
             {
-                "host": "zen-02.jimatdns.com",
+                "host": "zen-01.jimatdns.com",
                 "ips": [
                     {
                         "asn": "136727",
@@ -201,4 +262,4 @@ All scans completed.
 Aggregated results saved to reports/results_zeroday-sec.com.json
 Report generated: reports/report_zeroday-sec.com.pdf
 
---- Scan finished at 2025-07-23 22:50:40.830402 ---
+--- Scan finished at 2025-07-23 23:00:41.794145 ---
