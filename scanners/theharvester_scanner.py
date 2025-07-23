@@ -9,7 +9,7 @@ def theharvester_scan(domain):
         "theHarvester",
         "-d", domain,
         "-b", "crtsh,bing,duckduckgo,otx",
-        "-oJ", output_file # Use -oJ for JSON output
+        "-f", f"results/theharvester_{domain}" # Revert to -f for XML/HTML output
     ]
     try:
         result = subprocess.run(command, check=True, capture_output=True, text=True)
