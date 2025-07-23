@@ -7,55 +7,55 @@
                     "portid": "21",
                     "protocol": "tcp",
                     "state": "open",
-                    "service": "ftp"
+                    "service": "tcpwrapped"
                 },
                 {
                     "portid": "53",
                     "protocol": "tcp",
                     "state": "open",
-                    "service": "domain"
+                    "service": "tcpwrapped"
                 },
                 {
                     "portid": "80",
                     "protocol": "tcp",
                     "state": "open",
-                    "service": "http"
+                    "service": "tcpwrapped"
                 },
                 {
                     "portid": "110",
                     "protocol": "tcp",
                     "state": "open",
-                    "service": "pop3"
+                    "service": "tcpwrapped"
                 },
                 {
                     "portid": "143",
                     "protocol": "tcp",
                     "state": "open",
-                    "service": "imap"
+                    "service": "tcpwrapped"
                 },
                 {
                     "portid": "443",
                     "protocol": "tcp",
                     "state": "open",
-                    "service": "https"
+                    "service": "tcpwrapped"
                 },
                 {
                     "portid": "587",
                     "protocol": "tcp",
                     "state": "open",
-                    "service": "smtp"
+                    "service": "tcpwrapped"
                 },
                 {
                     "portid": "993",
                     "protocol": "tcp",
                     "state": "open",
-                    "service": "imaps"
+                    "service": "tcpwrapped"
                 },
                 {
                     "portid": "995",
                     "protocol": "tcp",
                     "state": "open",
-                    "service": "pop3s"
+                    "service": "tcpwrapped"
                 }
             ]
         }

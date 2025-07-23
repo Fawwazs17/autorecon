@@ -1,22 +1,42 @@
---- Scan started at 2025-07-23 22:35:17.675971 ---
+
+--- Scan started at 2025-07-23 22:41:26.992490 ---
 Scanning domain: zeroday-sec.com
 Running nmap scan on zeroday-sec.com...
 Running whatweb scan on zeroday-sec.com...
 Running dnsenum scan on zeroday-sec.com...
 Running theHarvester scan on zeroday-sec.com...
 Running httpx scan on zeroday-sec.com...
+Exception in thread Thread-5 (httpx_scan):
 Running sublist3r scan on zeroday-sec.com...
 Running DNSDumpster scan on zeroday-sec.com...
-Httpx scan failed for zeroday-sec.com: Usage: httpx [OPTIONS] URL
-
-Error: No such option: -l
-
+Traceback (most recent call last):
+  File "/home/linuxbrew/.linuxbrew/opt/python@3.13/lib/python3.13/threading.py", line 1043, in _bootstrap_inner
+    self.run()
+    ~~~~~~~~^^
+  File "/home/linuxbrew/.linuxbrew/opt/python@3.13/lib/python3.13/threading.py", line 994, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/abuluqmanng/Desktop/python-security-scanner/scanners/httpx_scanner.py", line 9, in httpx_scan
+    process = subprocess.run(command, input=domain.encode(), check=True, capture_output=True, text=True)
+  File "/home/linuxbrew/.linuxbrew/opt/python@3.13/lib/python3.13/subprocess.py", line 556, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/linuxbrew/.linuxbrew/opt/python@3.13/lib/python3.13/subprocess.py", line 1222, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/linuxbrew/.linuxbrew/opt/python@3.13/lib/python3.13/subprocess.py", line 2105, in _communicate
+    self._save_input(input)
+    ~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/linuxbrew/.linuxbrew/opt/python@3.13/lib/python3.13/subprocess.py", line 2188, in _save_input
+    self._input = self._input.encode(self.stdin.encoding,
+                  ^^^^^^^^^^^^^^^^^^
+AttributeError: 'bytes' object has no attribute 'encode'. Did you mean: 'decode'?
 DNSDumpster scan for zeroday-sec.com completed.
+Nmap scan for zeroday-sec.com completed.
 WhatWeb scan for zeroday-sec.com completed.
 sublist3r scan for zeroday-sec.com completed.
 Dnsenum scan for zeroday-sec.com completed.
 theHarvester scan for zeroday-sec.com completed.
-Nmap scan for zeroday-sec.com completed.
 All scans completed.
 
 --- Aggregated Results ---
@@ -29,55 +49,55 @@ All scans completed.
                     "portid": "21",
                     "protocol": "tcp",
                     "state": "open",
-                    "service": "ftp"
+                    "service": "tcpwrapped"
                 },
                 {
                     "portid": "53",
                     "protocol": "tcp",
                     "state": "open",
-                    "service": "domain"
+                    "service": "tcpwrapped"
                 },
                 {
                     "portid": "80",
                     "protocol": "tcp",
                     "state": "open",
-                    "service": "http"
+                    "service": "tcpwrapped"
                 },
                 {
                     "portid": "110",
                     "protocol": "tcp",
                     "state": "open",
-                    "service": "pop3"
+                    "service": "tcpwrapped"
                 },
                 {
                     "portid": "143",
                     "protocol": "tcp",
                     "state": "open",
-                    "service": "imap"
+                    "service": "tcpwrapped"
                 },
                 {
                     "portid": "443",
                     "protocol": "tcp",
                     "state": "open",
-                    "service": "https"
+                    "service": "tcpwrapped"
                 },
                 {
                     "portid": "587",
                     "protocol": "tcp",
                     "state": "open",
-                    "service": "smtp"
+                    "service": "tcpwrapped"
                 },
                 {
                     "portid": "993",
                     "protocol": "tcp",
                     "state": "open",
-                    "service": "imaps"
+                    "service": "tcpwrapped"
                 },
                 {
                     "portid": "995",
                     "protocol": "tcp",
                     "state": "open",
-                    "service": "pop3s"
+                    "service": "tcpwrapped"
                 }
             ]
         }
@@ -197,4 +217,4 @@ All scans completed.
 Aggregated results saved to reports/results_zeroday-sec.com.json
 Report generated: reports/report_zeroday-sec.com.pdf
 
---- Scan finished at 2025-07-23 22:36:34.804986 ---
+--- Scan finished at 2025-07-23 22:42:38.194304 ---
