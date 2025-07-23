@@ -8,18 +8,17 @@ def parse_theharvester(json_file):
             data = json.load(f)
 
         # Extract emails
-        if 'emails' in data:
-            for email_entry in data['emails']:
-                if 'email' in email_entry:
-                    emails.add(email_entry['email'])
+    if 'emails' in data:
+        for email_entry in data['emails']:
+            emails.add(email_entry)
 
-        # Extract hosts (subdomains and IPs)
-        if 'hosts' in data:
-            for host_entry in data['hosts']:
-                if 'hostname' in host_entry:
-                    hosts.add(host_entry['hostname'])
-                if 'ip' in host_entry:
-                    hosts.add(host_entry['ip'])
+    # Extract hosts (subdomains and IPs)
+    if 'hosts' in data:
+        for host_entry in data['hosts']:
+            hosts.add(host_entry)
+    if 'ips' in data: # Add IPs from the 'ips' key
+        for ip_entry in data['ips']:
+            hosts.add(ip_entry)
 
     except FileNotFoundError:
         return {'emails': [], 'hosts': []}
