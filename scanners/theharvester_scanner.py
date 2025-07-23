@@ -12,9 +12,9 @@ def theharvester_scan(domain):
         "-oJ", output_file # Use -oJ for JSON output
     ]
     try:
-        subprocess.run(command, check=True)
+        result = subprocess.run(command, check=True, capture_output=True, text=True)
         print(f"theHarvester scan for {domain} completed.")
     except subprocess.CalledProcessError as e:
-        print(f"theHarvester scan failed for {domain}: {e}")
+        print(f"theHarvester scan failed for {domain}: {e.stderr}")
     except FileNotFoundError:
         print("theHarvester is not installed or not in PATH. Please ensure 'theHarvester' is in your system's PATH.")

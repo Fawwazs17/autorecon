@@ -8,7 +8,7 @@ def httpx_scan(domain):
     with open(f"results/httpx_{domain}.txt", "w") as outfile:
         subprocess.run(["echo", domain], stdout=outfile)
 
-    command = [os.path.expanduser("~/go/bin/httpx"), "-list", f"results/httpx_{domain}.txt", "-H", "-o", f"results/httpx_headers_{domain}.txt"]
+    command = ["httpx", "-list", f"results/httpx_{domain}.txt", "-H", "-o", f"results/httpx_headers_{domain}.txt"]
     try:
         subprocess.run(command, check=True)
         print(f"Httpx scan for {domain} completed.")
