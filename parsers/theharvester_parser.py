@@ -1,29 +1,33 @@
-import json
+import re
 
-def parse_theharvester(json_file):
+def parse_theharvester(text_file):
     emails = set()
     hosts = set()
     try:
-        with open(json_file, 'r') as f:
-            data = json.load(f)
+        with open(text_file, 'r') as f:
+            content = f.read()
 
-        # Extract emails
-    if 'emails' in data:
-        for email_entry in data['emails']:
-            emails.add(email_entry)
+        # Regex to find emails
+        email_pattern = re.compile(r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}')
+        found_emails = email_pattern.findall(content)
+        for email in found_emails:
+            emails.add(email)
 
-    # Extract hosts (subdomains and IPs)
-    if 'hosts' in data:
-        for host_entry in data['hosts']:
-            hosts.add(host_entry)
-    if 'ips' in data: # Add IPs from the 'ips' key
-        for ip_entry in data['ips']:
-            hosts.add(ip_entry)
+        # Regex to find hosts/subdomains (simplified, may need refinement)
+        # This pattern looks for lines that might contain hostnames
+        host_pattern = re.compile(r'\b([a-zA-Z0-9.-]+\.[a-zA-Z]{2,})\b')
+        found_hosts = host_pattern.findall(content)
+        for host in found_hosts:
+            # Filter out common non-host strings that might match the pattern
+            if not any(ext in host for ext in ['.css', '.js', '.png', '.jpg', '.gif', '.svg', '.pdf']):
+                hosts.add(host)
 
     except FileNotFoundError:
         return {'emails': [], 'hosts': []}
-    except json.JSONDecodeError:
-        print(f"Error decoding JSON from {json_file}")
+    except Exception as e:
+        print(f"Error parsing theHarvester text file {text_file}: {e}")
         return {'emails': [], 'hosts': []}
+
+    return {'emails': list(emails), 'hosts': list(hosts)}
 
     return {'emails': list(emails), 'hosts': list(hosts)}

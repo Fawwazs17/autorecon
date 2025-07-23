@@ -93,8 +93,8 @@ def aggregate_results(domain):
         results['whatweb'] = parse_whatweb(f"results/whatweb_{domain}.txt")
     if os.path.exists(f"results/dnsenum_{domain}.xml"):
         results['dnsenum'] = parse_dnsenum(f"results/dnsenum_{domain}.xml")
-    if os.path.exists(f"results/theharvester_{domain}.xml"):
-        results['theharvester'] = parse_theharvester(f"results/theharvester_{domain}.xml")
+    if os.path.exists(f"results/theharvester_{domain}.txt"):
+        results['theharvester'] = parse_theharvester(f"results/theharvester_{domain}.txt")
     if os.path.exists(f"results/httpx_headers_{domain}.txt"):
         results['httpx'] = parse_httpx(f"results/httpx_headers_{domain}.txt")
     if os.path.exists(f"results/sublist3r_{domain}.txt"):

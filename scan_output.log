@@ -206,3 +206,673 @@ Aggregated results saved to reports/results_zeroday-sec.com.json
 Report generated: reports/report_zeroday-sec.com.pdf
 
 --- Scan finished at 2025-07-24 00:58:13.405144 ---
+
+--- Scan started at 2025-07-24 01:10:51.688466 ---
+Scanning domain: zeroday-sec.com
+Running nmap scan on zeroday-sec.com...
+Running whatweb scan on zeroday-sec.com...
+Running dnsenum scan on zeroday-sec.com...
+Running theHarvester scan on zeroday-sec.com...
+Running httpx scan on zeroday-sec.com...
+Running sublist3r scan on zeroday-sec.com...
+sublist3r is not installed or not in PATH. Please ensure 'sublist3r' is in your system's PATH.
+Running DNSDumpster scan on zeroday-sec.com...
+DNSDumpster scan for zeroday-sec.com completed.
+Httpx scan failed for zeroday-sec.com: Usage: httpx [OPTIONS] URL
+
+Error: No such option: -o
+
+WhatWeb scan for zeroday-sec.com completed.
+Dnsenum scan for zeroday-sec.com completed.
+theHarvester scan for zeroday-sec.com completed.
+Nmap scan for zeroday-sec.com completed.
+All scans completed.
+
+--- Aggregated Results ---
+{
+    "nmap": [
+        {
+            "ip": "103.191.76.181",
+            "ports": [
+                {
+                    "portid": "21",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "ftp"
+                },
+                {
+                    "portid": "53",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "domain"
+                },
+                {
+                    "portid": "80",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "http"
+                },
+                {
+                    "portid": "110",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "pop3"
+                },
+                {
+                    "portid": "143",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "imap"
+                },
+                {
+                    "portid": "443",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "https"
+                },
+                {
+                    "portid": "465",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "smtp"
+                },
+                {
+                    "portid": "587",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "smtp"
+                },
+                {
+                    "portid": "993",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "imaps"
+                },
+                {
+                    "portid": "995",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "pop3s"
+                }
+            ]
+        }
+    ],
+    "whatweb": "https://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\nhttps://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\nhttps://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\nhttps://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\n",
+    "dnsenum": [
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181"
+    ],
+    "sublist3r": [
+        "www.zeroday-sec.com",
+        "academy.zeroday-sec.com",
+        "certs.zeroday-sec.com",
+        "www.certs.zeroday-sec.com",
+        "webmail.zeroday-sec.com"
+    ],
+    "dnsdumpster": {
+        "a": [
+            {
+                "host": "certs.zeroday-sec.com",
+                "ips": [
+                    {
+                        "asn": "136727",
+                        "asn_name": "JTS-AS-AP Jimat Technology Solution, MY",
+                        "asn_range": "103.191.76.0/24",
+                        "country": "Malaysia",
+                        "country_code": "MY",
+                        "ip": "103.191.76.181",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "www.certs.zeroday-sec.com",
+                "ips": [
+                    {
+                        "asn": "136727",
+                        "asn_name": "JTS-AS-AP Jimat Technology Solution, MY",
+                        "asn_range": "103.191.76.0/24",
+                        "country": "Malaysia",
+                        "country_code": "MY",
+                        "ip": "103.191.76.181",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "webmail.zeroday-sec.com",
+                "ips": [
+                    {
+                        "asn": "136727",
+                        "asn_name": "JTS-AS-AP Jimat Technology Solution, MY",
+                        "asn_range": "103.191.76.0/24",
+                        "country": "Malaysia",
+                        "country_code": "MY",
+                        "ip": "103.191.76.181",
+                        "ptr": ""
+                    }
+                ]
+            }
+        ],
+        "cname": [],
+        "mx": [
+            {
+                "host": "0 zeroday-sec.com",
+                "ips": [
+                    {
+                        "asn": "136727",
+                        "asn_name": "JTS-AS-AP Jimat Technology Solution, MY",
+                        "asn_range": "103.191.76.0/24",
+                        "country": "Malaysia",
+                        "country_code": "MY",
+                        "ip": "103.191.76.181",
+                        "ptr": ""
+                    }
+                ]
+            }
+        ],
+        "ns": [
+            {
+                "host": "zen-02.jimatdns.com",
+                "ips": [
+                    {
+                        "asn": "136727",
+                        "asn_name": "JTS-AS-AP Jimat Technology Solution, MY",
+                        "asn_range": "103.191.76.0/24",
+                        "country": "Malaysia",
+                        "country_code": "MY",
+                        "ip": "103.191.76.181",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "zen-01.jimatdns.com",
+                "ips": [
+                    {
+                        "asn": "136727",
+                        "asn_name": "JTS-AS-AP Jimat Technology Solution, MY",
+                        "asn_range": "103.191.76.0/24",
+                        "country": "Malaysia",
+                        "country_code": "MY",
+                        "ip": "103.191.76.181",
+                        "ptr": ""
+                    }
+                ]
+            }
+        ],
+        "total_a_recs": 3,
+        "txt": [
+            "\"v=spf1 a mx include:relay.mailbaby.net ~all\""
+        ]
+    }
+}
+Aggregated results saved to reports/results_zeroday-sec.com.json
+Report generated: reports/report_zeroday-sec.com.pdf
+
+--- Scan finished at 2025-07-24 01:12:08.052735 ---
+
+--- Scan started at 2025-07-24 01:16:30.509184 ---
+Scanning domain: zeroday-sec.com
+Running nmap scan on zeroday-sec.com...
+Running whatweb scan on zeroday-sec.com...
+Running dnsenum scan on zeroday-sec.com...
+Running theHarvester scan on zeroday-sec.com...
+Running httpx scan on zeroday-sec.com...
+Running sublist3r scan on zeroday-sec.com...
+sublist3r is not installed or not in PATH. Please ensure 'sublist3r' is in your system's PATH.
+Running DNSDumpster scan on zeroday-sec.com...
+Httpx scan failed for zeroday-sec.com: Usage: httpx [OPTIONS] URL
+
+Error: No such option: -o
+
+DNSDumpster scan for zeroday-sec.com completed.
+theHarvester scan for zeroday-sec.com completed.
+WhatWeb scan for zeroday-sec.com completed.
+Nmap scan for zeroday-sec.com completed.
+Dnsenum scan for zeroday-sec.com completed.
+All scans completed.
+
+--- Scan finished at 2025-07-24 01:17:25.862703 ---
+
+--- Scan started at 2025-07-24 01:19:25.212431 ---
+Scanning domain: zeroday-sec.com
+Running nmap scan on zeroday-sec.com...
+Running whatweb scan on zeroday-sec.com...
+Running dnsenum scan on zeroday-sec.com...
+Running theHarvester scan on zeroday-sec.com...
+Running httpx scan on zeroday-sec.com...
+Running sublist3r scan on zeroday-sec.com...
+sublist3r is not installed or not in PATH. Please ensure 'sublist3r' is in your system's PATH.
+Running DNSDumpster scan on zeroday-sec.com...
+Httpx scan failed for zeroday-sec.com: Usage: httpx [OPTIONS] URL
+
+Error: No such option: -o
+
+DNSDumpster scan for zeroday-sec.com completed.
+Nmap scan for zeroday-sec.com completed.
+WhatWeb scan for zeroday-sec.com completed.
+Dnsenum scan for zeroday-sec.com completed.
+theHarvester scan for zeroday-sec.com completed.
+All scans completed.
+
+--- Aggregated Results ---
+{
+    "nmap": [
+        {
+            "ip": "103.191.76.181",
+            "ports": [
+                {
+                    "portid": "21",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "tcpwrapped"
+                },
+                {
+                    "portid": "53",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "tcpwrapped"
+                },
+                {
+                    "portid": "80",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "tcpwrapped"
+                },
+                {
+                    "portid": "110",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "tcpwrapped"
+                },
+                {
+                    "portid": "143",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "tcpwrapped"
+                },
+                {
+                    "portid": "443",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "tcpwrapped"
+                },
+                {
+                    "portid": "587",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "tcpwrapped"
+                },
+                {
+                    "portid": "993",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "tcpwrapped"
+                },
+                {
+                    "portid": "995",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "tcpwrapped"
+                }
+            ]
+        }
+    ],
+    "whatweb": "https://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\nhttps://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\nhttps://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\nhttps://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\n",
+    "dnsenum": [
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181"
+    ],
+    "sublist3r": [
+        "www.zeroday-sec.com",
+        "academy.zeroday-sec.com",
+        "certs.zeroday-sec.com",
+        "www.certs.zeroday-sec.com",
+        "webmail.zeroday-sec.com"
+    ],
+    "dnsdumpster": {
+        "a": [
+            {
+                "host": "certs.zeroday-sec.com",
+                "ips": [
+                    {
+                        "asn": "136727",
+                        "asn_name": "JTS-AS-AP Jimat Technology Solution, MY",
+                        "asn_range": "103.191.76.0/24",
+                        "country": "Malaysia",
+                        "country_code": "MY",
+                        "ip": "103.191.76.181",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "www.certs.zeroday-sec.com",
+                "ips": [
+                    {
+                        "asn": "136727",
+                        "asn_name": "JTS-AS-AP Jimat Technology Solution, MY",
+                        "asn_range": "103.191.76.0/24",
+                        "country": "Malaysia",
+                        "country_code": "MY",
+                        "ip": "103.191.76.181",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "webmail.zeroday-sec.com",
+                "ips": [
+                    {
+                        "asn": "136727",
+                        "asn_name": "JTS-AS-AP Jimat Technology Solution, MY",
+                        "asn_range": "103.191.76.0/24",
+                        "country": "Malaysia",
+                        "country_code": "MY",
+                        "ip": "103.191.76.181",
+                        "ptr": ""
+                    }
+                ]
+            }
+        ],
+        "cname": [],
+        "mx": [
+            {
+                "host": "0 zeroday-sec.com",
+                "ips": [
+                    {
+                        "asn": "136727",
+                        "asn_name": "JTS-AS-AP Jimat Technology Solution, MY",
+                        "asn_range": "103.191.76.0/24",
+                        "country": "Malaysia",
+                        "country_code": "MY",
+                        "ip": "103.191.76.181",
+                        "ptr": ""
+                    }
+                ]
+            }
+        ],
+        "ns": [
+            {
+                "host": "zen-02.jimatdns.com",
+                "ips": [
+                    {
+                        "asn": "136727",
+                        "asn_name": "JTS-AS-AP Jimat Technology Solution, MY",
+                        "asn_range": "103.191.76.0/24",
+                        "country": "Malaysia",
+                        "country_code": "MY",
+                        "ip": "103.191.76.181",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "zen-01.jimatdns.com",
+                "ips": [
+                    {
+                        "asn": "136727",
+                        "asn_name": "JTS-AS-AP Jimat Technology Solution, MY",
+                        "asn_range": "103.191.76.0/24",
+                        "country": "Malaysia",
+                        "country_code": "MY",
+                        "ip": "103.191.76.181",
+                        "ptr": ""
+                    }
+                ]
+            }
+        ],
+        "total_a_recs": 3,
+        "txt": [
+            "\"v=spf1 a mx include:relay.mailbaby.net ~all\""
+        ]
+    }
+}
+Aggregated results saved to reports/results_zeroday-sec.com.json
+Report generated: reports/report_zeroday-sec.com.pdf
+
+--- Scan finished at 2025-07-24 01:20:45.637000 ---
+
+--- Scan started at 2025-07-24 01:26:25.749279 ---
+Scanning domain: zeroday-sec.com
+Running nmap scan on zeroday-sec.com...
+Running whatweb scan on zeroday-sec.com...
+Running dnsenum scan on zeroday-sec.com...
+Running theHarvester scan on zeroday-sec.com...
+Running httpx scan on zeroday-sec.com...
+Running sublist3r scan on zeroday-sec.com...
+Running DNSDumpster scan on zeroday-sec.com...
+sublist3r is not installed or not in PATH. Please ensure 'sublist3r' is in your system's PATH.
+DNSDumpster scan for zeroday-sec.com completed.
+Httpx scan failed for zeroday-sec.com: 
+WhatWeb scan for zeroday-sec.com completed.
+Nmap scan for zeroday-sec.com completed.
+theHarvester scan for zeroday-sec.com completed.
+Dnsenum scan for zeroday-sec.com completed.
+All scans completed.
+
+--- Aggregated Results ---
+{
+    "nmap": [
+        {
+            "ip": "103.191.76.181",
+            "ports": [
+                {
+                    "portid": "21",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "ftp"
+                },
+                {
+                    "portid": "53",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "domain"
+                },
+                {
+                    "portid": "80",
+                    "protocol": "tcp",
+                    "state": "closed",
+                    "service": "http"
+                },
+                {
+                    "portid": "110",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "pop3"
+                },
+                {
+                    "portid": "143",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "imap"
+                },
+                {
+                    "portid": "443",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "tcpwrapped"
+                },
+                {
+                    "portid": "587",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "smtp"
+                },
+                {
+                    "portid": "993",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "imaps"
+                },
+                {
+                    "portid": "995",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "pop3s"
+                }
+            ]
+        }
+    ],
+    "whatweb": "https://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\nhttps://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\nhttps://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\nhttps://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\n",
+    "dnsenum": [
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181"
+    ],
+    "sublist3r": [
+        "www.zeroday-sec.com",
+        "academy.zeroday-sec.com",
+        "certs.zeroday-sec.com",
+        "www.certs.zeroday-sec.com",
+        "webmail.zeroday-sec.com"
+    ],
+    "dnsdumpster": {
+        "a": [
+            {
+                "host": "certs.zeroday-sec.com",
+                "ips": [
+                    {
+                        "asn": "136727",
+                        "asn_name": "JTS-AS-AP Jimat Technology Solution, MY",
+                        "asn_range": "103.191.76.0/24",
+                        "country": "Malaysia",
+                        "country_code": "MY",
+                        "ip": "103.191.76.181",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "www.certs.zeroday-sec.com",
+                "ips": [
+                    {
+                        "asn": "136727",
+                        "asn_name": "JTS-AS-AP Jimat Technology Solution, MY",
+                        "asn_range": "103.191.76.0/24",
+                        "country": "Malaysia",
+                        "country_code": "MY",
+                        "ip": "103.191.76.181",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "webmail.zeroday-sec.com",
+                "ips": [
+                    {
+                        "asn": "136727",
+                        "asn_name": "JTS-AS-AP Jimat Technology Solution, MY",
+                        "asn_range": "103.191.76.0/24",
+                        "country": "Malaysia",
+                        "country_code": "MY",
+                        "ip": "103.191.76.181",
+                        "ptr": ""
+                    }
+                ]
+            }
+        ],
+        "cname": [],
+        "mx": [
+            {
+                "host": "0 zeroday-sec.com",
+                "ips": [
+                    {
+                        "asn": "136727",
+                        "asn_name": "JTS-AS-AP Jimat Technology Solution, MY",
+                        "asn_range": "103.191.76.0/24",
+                        "country": "Malaysia",
+                        "country_code": "MY",
+                        "ip": "103.191.76.181",
+                        "ptr": ""
+                    }
+                ]
+            }
+        ],
+        "ns": [
+            {
+                "host": "zen-01.jimatdns.com",
+                "ips": [
+                    {
+                        "asn": "136727",
+                        "asn_name": "JTS-AS-AP Jimat Technology Solution, MY",
+                        "asn_range": "103.191.76.0/24",
+                        "country": "Malaysia",
+                        "country_code": "MY",
+                        "ip": "103.191.76.181",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "zen-02.jimatdns.com",
+                "ips": [
+                    {
+                        "asn": "136727",
+                        "asn_name": "JTS-AS-AP Jimat Technology Solution, MY",
+                        "asn_range": "103.191.76.0/24",
+                        "country": "Malaysia",
+                        "country_code": "MY",
+                        "ip": "103.191.76.181",
+                        "ptr": ""
+                    }
+                ]
+            }
+        ],
+        "total_a_recs": 3,
+        "txt": [
+            "\"v=spf1 a mx include:relay.mailbaby.net ~all\""
+        ]
+    }
+}
+Aggregated results saved to reports/results_zeroday-sec.com.json
+Report generated: reports/report_zeroday-sec.com.pdf
+
+--- Scan finished at 2025-07-24 01:28:00.118659 ---
+
+--- Scan started at 2025-07-24 01:35:44.633779 ---
+Scanning domain: zeroday-sec.com
+Running nmap scan on zeroday-sec.com...
+Running whatweb scan on zeroday-sec.com...
+Running dnsenum scan on zeroday-sec.com...
+Running theHarvester scan on zeroday-sec.com...
+Running httpx scan on zeroday-sec.com...
+Running sublist3r scan on zeroday-sec.com...
+sublist3r is not installed or not in PATH. Please ensure 'sublist3r' is in your system's PATH.
+Running DNSDumpster scan on zeroday-sec.com...
+DNSDumpster scan for zeroday-sec.com completed.
+Httpx scan failed for zeroday-sec.com: 
+WhatWeb scan for zeroday-sec.com completed.
+Nmap scan for zeroday-sec.com completed.
+theHarvester scan for zeroday-sec.com completed. Results saved to results/theharvester_zeroday-sec.com.json
+Dnsenum scan for zeroday-sec.com completed.
+All scans completed.
+
+--- Scan finished at 2025-07-24 01:37:17.703840 ---

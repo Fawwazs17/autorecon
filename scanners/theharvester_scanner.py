@@ -4,16 +4,17 @@ import os
 
 def theharvester_scan(domain):
     print(f"Running theHarvester scan on {domain}...")
-    output_file = f"results/theharvester_{domain}.json"
+    output_file = f"results/theharvester_{domain}.txt"
     command = [
         "/usr/bin/theHarvester",
         "-d", domain,
-        "-b", "crtsh,bing,duckduckgo,otx",
-        "-f", f"results/theharvester_{domain}" # Revert to -f for XML/HTML output
+        "-b", "crtsh,bing,duckduckgo,otx"
     ]
     try:
         result = subprocess.run(command, check=True, capture_output=True, text=True)
-        print(f"theHarvester scan for {domain} completed.")
+        with open(output_file, 'w') as f:
+            f.write(result.stdout)
+        print(f"theHarvester scan for {domain} completed. Results saved to {output_file}")
     except subprocess.CalledProcessError as e:
         print(f"theHarvester scan failed for {domain}: {e.stderr}")
     except FileNotFoundError:

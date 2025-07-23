@@ -7,31 +7,31 @@
                     "portid": "21",
                     "protocol": "tcp",
                     "state": "open",
-                    "service": "tcpwrapped"
+                    "service": "ftp"
                 },
                 {
                     "portid": "53",
                     "protocol": "tcp",
                     "state": "open",
-                    "service": "tcpwrapped"
+                    "service": "domain"
                 },
                 {
                     "portid": "80",
                     "protocol": "tcp",
-                    "state": "open",
-                    "service": "tcpwrapped"
+                    "state": "closed",
+                    "service": "http"
                 },
                 {
                     "portid": "110",
                     "protocol": "tcp",
                     "state": "open",
-                    "service": "tcpwrapped"
+                    "service": "pop3"
                 },
                 {
                     "portid": "143",
                     "protocol": "tcp",
                     "state": "open",
-                    "service": "tcpwrapped"
+                    "service": "imap"
                 },
                 {
                     "portid": "443",
@@ -43,24 +43,24 @@
                     "portid": "587",
                     "protocol": "tcp",
                     "state": "open",
-                    "service": "tcpwrapped"
+                    "service": "smtp"
                 },
                 {
                     "portid": "993",
                     "protocol": "tcp",
                     "state": "open",
-                    "service": "tcpwrapped"
+                    "service": "imaps"
                 },
                 {
                     "portid": "995",
                     "protocol": "tcp",
                     "state": "open",
-                    "service": "tcpwrapped"
+                    "service": "pop3s"
                 }
             ]
         }
     ],
-    "whatweb": "https://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\nhttps://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\nhttps://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\n",
+    "whatweb": "https://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\nhttps://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\nhttps://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\nhttps://zeroday-sec.com/ [200 OK] Email[team@zeroday-sec.com], HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Strict-Transport-Security[max-age=31536000], Title[Site Maintenance], UncommonHeaders[x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[1;  mode=block]\n",
     "dnsenum": [
         "103.191.76.181",
         "103.191.76.181",
@@ -145,7 +145,7 @@
         ],
         "ns": [
             {
-                "host": "zen-02.jimatdns.com",
+                "host": "zen-01.jimatdns.com",
                 "ips": [
                     {
                         "asn": "136727",
@@ -159,7 +159,7 @@
                 ]
             },
             {
-                "host": "zen-01.jimatdns.com",
+                "host": "zen-02.jimatdns.com",
                 "ips": [
                     {
                         "asn": "136727",
