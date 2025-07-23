@@ -62,7 +62,7 @@
   ],
   "ns": [
     {
-      "host": "zen-02.jimatdns.com",
+      "host": "zen-01.jimatdns.com",
       "ips": [
         {
           "asn": "136727",
@@ -76,7 +76,7 @@
       ]
     },
     {
-      "host": "zen-01.jimatdns.com",
+      "host": "zen-02.jimatdns.com",
       "ips": [
         {
           "asn": "136727",

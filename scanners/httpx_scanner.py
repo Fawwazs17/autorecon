@@ -4,9 +4,9 @@ import os
 
 def httpx_scan(domain):
     print(f"Running httpx scan on {domain}...")
-    command = ["httpx", "-o", f"results/httpx_headers_{domain}.txt"]
+    command = ["httpx", domain, "-o", f"results/httpx_headers_{domain}.txt"]
     try:
-        process = subprocess.run(command, input=domain, check=True, capture_output=True, text=True)
+        process = subprocess.run(command, check=True, capture_output=True, text=True)
         print(f"Httpx scan for {domain} completed.")
     except subprocess.CalledProcessError as e:
         print(f"Httpx scan failed for {domain}: {e.stderr}")

@@ -1,0 +1,22 @@
+# Manual Scan Commands for zeroday-sec.com
+
+# DNSDumpster
+curl -H "X-API-Key: eb35c0dd2f46ef0d0788a26c12439d0f86ca1f28bc97d5fa748a5cb81203ed96" https://api.dnsdumpster.com/domain/zeroday-sec.com -o results/dnsdumpster_zeroday-sec.com.json
+
+# Dnsenum
+/usr/bin/perl /usr/bin/dnsenum zeroday-sec.com --output results/dnsenum_zeroday-sec.com.xml
+
+# Httpx
+httpx zeroday-sec.com -o results/httpx_headers_zeroday-sec.com.txt
+
+# Nmap
+/usr/bin/nmap zeroday-sec.com -T4 -sV -oX results/nmap_zeroday-sec.com.xml
+
+# Sublist3r
+sublist3r -d zeroday-sec.com -o results/sublist3r_zeroday-sec.com.txt
+
+# TheHarvester
+theHarvester -d zeroday-sec.com -b crtsh,bing,duckduckgo,otx -f results/theharvester_zeroday-sec.com
+
+# WhatWeb
+whatweb https://zeroday-sec.com '--user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64)"' '--header="Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"' '--header="Accept-Language: en-US,en;q=0.5"' --log-brief=results/whatweb_zeroday-sec.com.txt
