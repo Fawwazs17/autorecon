@@ -1,2 +1,3 @@
 https://zeroday-sec.com/ [400 Bad Request] HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Title[400 Bad Request][Title element contains newline(s)!]
 https://zeroday-sec.com/ [400 Bad Request] HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Title[400 Bad Request][Title element contains newline(s)!]
+https://zeroday-sec.com/ [400 Bad Request] HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Title[400 Bad Request][Title element contains newline(s)!]

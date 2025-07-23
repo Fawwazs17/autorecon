@@ -40,12 +40,6 @@
                     "service": "https"
                 },
                 {
-                    "portid": "465",
-                    "protocol": "tcp",
-                    "state": "open",
-                    "service": "smtp"
-                },
-                {
                     "portid": "587",
                     "protocol": "tcp",
                     "state": "open",
@@ -66,7 +60,7 @@
             ]
         }
     ],
-    "whatweb": "https://zeroday-sec.com/ [400 Bad Request] HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Title[400 Bad Request][Title element contains newline(s)!]\nhttps://zeroday-sec.com/ [400 Bad Request] HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Title[400 Bad Request][Title element contains newline(s)!]\n",
+    "whatweb": "https://zeroday-sec.com/ [400 Bad Request] HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Title[400 Bad Request][Title element contains newline(s)!]\nhttps://zeroday-sec.com/ [400 Bad Request] HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Title[400 Bad Request][Title element contains newline(s)!]\nhttps://zeroday-sec.com/ [400 Bad Request] HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, Title[400 Bad Request][Title element contains newline(s)!]\n",
     "dnsenum": [
         "103.191.76.181",
         "103.191.76.181",
@@ -144,7 +138,7 @@
         ],
         "ns": [
             {
-                "host": "zen-01.jimatdns.com",
+                "host": "zen-02.jimatdns.com",
                 "ips": [
                     {
                         "asn": "136727",
@@ -158,7 +152,7 @@
                 ]
             },
             {
-                "host": "zen-02.jimatdns.com",
+                "host": "zen-01.jimatdns.com",
                 "ips": [
                     {
                         "asn": "136727",
