@@ -74,6 +74,13 @@
         "103.191.76.181",
         "103.191.76.181"
     ],
+    "sublist3r": [
+        "www.zeroday-sec.com",
+        "academy.zeroday-sec.com",
+        "certs.zeroday-sec.com",
+        "www.certs.zeroday-sec.com",
+        "webmail.zeroday-sec.com"
+    ],
     "dnsdumpster": {
         "a": [
             {

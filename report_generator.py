@@ -135,7 +135,7 @@ def generate_report(domain, results):
     for finding in all_findings:
         table_data.append(finding)
 
-    table = Table(table_data, colWidths=[1.5*inch, 1*inch, 4*inch])
+    table = Table(table_data, colWidths=[1.5*inch, 1*inch, 4.5*inch])
     table.setStyle(TableStyle([
         ('BACKGROUND', (0, 0), (-1, 0), colors.grey),
         ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
