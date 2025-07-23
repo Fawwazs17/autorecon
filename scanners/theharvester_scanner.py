@@ -6,7 +6,7 @@ def theharvester_scan(domain):
     print(f"Running theHarvester scan on {domain}...")
     output_file = f"results/theharvester_{domain}.json"
     command = [
-        "theHarvester",
+        "/usr/bin/theHarvester",
         "-d", domain,
         "-b", "crtsh,bing,duckduckgo,otx",
         "-f", f"results/theharvester_{domain}" # Revert to -f for XML/HTML output
