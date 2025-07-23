@@ -37,6 +37,14 @@ def main():
 
     # Add a call to the data aggregation function here
     results = aggregate_results(domain)
+
+    # Save results to JSON file
+    json_output_path = os.path.join("reports", f"results_{domain}.json")
+    with open(json_output_path, 'w') as f:
+        import json
+        json.dump(results, f, indent=4)
+    print(f"Aggregated results saved to {json_output_path}")
+
     from report_generator import generate_report
     generate_report(domain, results)
 
