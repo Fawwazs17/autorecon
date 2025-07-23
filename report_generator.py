@@ -1,7 +1,11 @@
 
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Preformatted
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Preformatted, Table, TableStyle, Image
 from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.lib import colors
+from reportlab.lib.units import inch
 import json
+import matplotlib.pyplot as plt
+import io
 
 def categorize_results(results):
     categorized_data = {
@@ -45,11 +49,21 @@ def categorize_results(results):
 
     return categorized_data
 
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Preformatted, Table, TableStyle
-from reportlab.lib.styles import getSampleStyleSheet
-from reportlab.lib import colors
-from reportlab.lib.units import inch
-import json
+def create_donut_chart(data, title):
+    labels = list(data.keys())
+    sizes = list(data.values())
+    colors = ['red', 'orange', 'yellow', 'lightgreen'] # Corresponding to High, Medium, Low, Informational
+
+    fig1, ax1 = plt.subplots()
+    ax1.pie(sizes, colors=colors, labels=labels, autopct='%1.1f%%', startangle=90, wedgeprops=dict(width=0.3))
+    ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+    plt.title(title)
+
+    buf = io.BytesIO()
+    plt.savefig(buf, format='png', bbox_inches='tight')
+    plt.close(fig1)
+    buf.seek(0)
+    return Image(buf)
 
 def determine_severity(tool_name, finding):
     # This is a simplified heuristic for demonstration purposes.
@@ -120,16 +134,20 @@ def generate_report(domain, results):
             severity_counts[severity] += 1
             # Summarize details for the table to prevent layout issues
             summary_details = str(tool_results)[:200] + '...' if len(str(tool_results)) > 200 else str(tool_results)
-            all_findings.append([tool_name.replace('_', ' ').title(), severity, summary_details])
+            all_findings.append([tool_name.replace('_', ' ').title(), severity, Paragraph(summary_details, styles['Normal'])])
 
     story.append(Paragraph("Severity Overview", styles['h2']))
     for severity_level, count in severity_counts.items():
         story.append(Paragraph(f"{severity_level}: {count}", styles['Normal']))
     story.append(Spacer(1, 12))
 
-    # Note about Donut Chart
-    story.append(Paragraph("Note: A visual donut chart for severity distribution would typically be generated here using a library like Matplotlib and embedded as an image.", styles['Normal']))
-    story.append(Spacer(1, 12))
+    # Donut Chart
+    if any(severity_counts.values()): # Only create chart if there are findings
+        donut_chart = create_donut_chart(severity_counts, "Severity Distribution")
+        story.append(donut_chart)
+        story.append(Spacer(1, 12))
+
+    # --- Color-Coded Summary Table ---
     story.append(Paragraph("Summary of Findings", styles['h2']))
     table_data = [['Tool', 'Severity', 'Details']]
     for finding in all_findings:
