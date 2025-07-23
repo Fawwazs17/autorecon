@@ -1,3 +1,23 @@
+
+--- Scan started at 2025-07-23 22:18:35.846765 ---
+Scanning domain: zeroday-sec.com
+Running nmap scan on zeroday-sec.com...
+Running whatweb scan on zeroday-sec.com...
+Running dnsenum scan on zeroday-sec.com...
+Running theHarvester scan on zeroday-sec.com...
+Running httpx scan on zeroday-sec.com...
+Running sublist3r scan on zeroday-sec.com...
+Running DNSDumpster scan on zeroday-sec.com...
+sublist3r is not installed or not in PATH. Please ensure 'sublist3r' is in your system's PATH.
+Httpx is not installed or not in PATH.
+DNSDumpster scan for zeroday-sec.com completed.
+WhatWeb scan for zeroday-sec.com completed.
+theHarvester scan for zeroday-sec.com completed.
+Dnsenum scan for zeroday-sec.com completed.
+Nmap scan for zeroday-sec.com completed.
+All scans completed.
+
+--- Aggregated Results ---
 {
     "nmap": [
         {
@@ -178,3 +198,7 @@
         ]
     }
 }
+Aggregated results saved to reports/results_zeroday-sec.com.json
+Report generated: reports/report_zeroday-sec.com.pdf
+
+--- Scan finished at 2025-07-23 22:20:03.440589 ---
