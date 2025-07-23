@@ -68,12 +68,23 @@ def aggregate_results(domain):
         results['theharvester'] = parse_theharvester(f"results/theharvester_{domain}.xml")
     if os.path.exists(f"results/httpx_headers_{domain}.txt"):
         results['httpx'] = parse_httpx(f"results/httpx_headers_{domain}.txt")
+    if os.path.exists(f"results/sublist3r_{domain}.txt"):
+        results['sublist3r'] = parse_sublist3r(f"results/sublist3r_{domain}.txt")
+    if os.path.exists(f"results/dnsdumpster_{domain}.json"):
+        results['dnsdumpster'] = parse_dnsdumpster(f"results/dnsdumpster_{domain}.json")
 
     print("\n--- Aggregated Results ---")
     import json
     print(json.dumps(results, indent=4))
 
     return results
+
+    finally:
+        if log_file_handle:
+            print(f"\n--- Scan finished at {datetime.datetime.now()} ---")
+            log_file_handle.close()
+            sys.stdout = original_stdout
+            sys.stderr = original_stderr
 
 if __name__ == '__main__':
     main()

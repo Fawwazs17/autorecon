@@ -1,1 +1,0 @@
-https://zeroday-sec.com/ [403 Forbidden] HTML5, HTTPServer[LiteSpeed], IP[103.191.76.181], LiteSpeed, PoweredBy[LiteSpeed], Title[403 Forbidden][Title element contains newline(s)!], UncommonHeaders[x-content-type-options,alt-svc]
