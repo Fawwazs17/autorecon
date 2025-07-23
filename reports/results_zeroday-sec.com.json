@@ -86,7 +86,8 @@
                         "country": "Malaysia",
                         "country_code": "MY",
                         "ip": "103.191.76.181",
-                        "ptr": ""
+                        "ptr": "",
+                        "revip_count": 2797
                     }
                 ]
             },
@@ -100,7 +101,8 @@
                         "country": "Malaysia",
                         "country_code": "MY",
                         "ip": "103.191.76.181",
-                        "ptr": ""
+                        "ptr": "",
+                        "revip_count": 2797
                     }
                 ]
             },
@@ -114,12 +116,14 @@
                         "country": "Malaysia",
                         "country_code": "MY",
                         "ip": "103.191.76.181",
-                        "ptr": ""
+                        "ptr": "",
+                        "revip_count": 2797
                     }
                 ]
             }
         ],
         "cname": [],
+        "file_id": "b97a2e32-d668-4649-a278-d8bc5ab44e58",
         "mx": [
             {
                 "host": "0 zeroday-sec.com",

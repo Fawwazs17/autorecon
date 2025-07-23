@@ -1,42 +1,22 @@
-
---- Scan started at 2025-07-23 22:41:26.992490 ---
+--- Scan started at 2025-07-23 22:49:35.313504 ---
 Scanning domain: zeroday-sec.com
 Running nmap scan on zeroday-sec.com...
 Running whatweb scan on zeroday-sec.com...
 Running dnsenum scan on zeroday-sec.com...
 Running theHarvester scan on zeroday-sec.com...
 Running httpx scan on zeroday-sec.com...
-Exception in thread Thread-5 (httpx_scan):
 Running sublist3r scan on zeroday-sec.com...
 Running DNSDumpster scan on zeroday-sec.com...
-Traceback (most recent call last):
-  File "/home/linuxbrew/.linuxbrew/opt/python@3.13/lib/python3.13/threading.py", line 1043, in _bootstrap_inner
-    self.run()
-    ~~~~~~~~^^
-  File "/home/linuxbrew/.linuxbrew/opt/python@3.13/lib/python3.13/threading.py", line 994, in run
-    self._target(*self._args, **self._kwargs)
-    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/abuluqmanng/Desktop/python-security-scanner/scanners/httpx_scanner.py", line 9, in httpx_scan
-    process = subprocess.run(command, input=domain.encode(), check=True, capture_output=True, text=True)
-  File "/home/linuxbrew/.linuxbrew/opt/python@3.13/lib/python3.13/subprocess.py", line 556, in run
-    stdout, stderr = process.communicate(input, timeout=timeout)
-                     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/linuxbrew/.linuxbrew/opt/python@3.13/lib/python3.13/subprocess.py", line 1222, in communicate
-    stdout, stderr = self._communicate(input, endtime, timeout)
-                     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/linuxbrew/.linuxbrew/opt/python@3.13/lib/python3.13/subprocess.py", line 2105, in _communicate
-    self._save_input(input)
-    ~~~~~~~~~~~~~~~~^^^^^^^
-  File "/home/linuxbrew/.linuxbrew/opt/python@3.13/lib/python3.13/subprocess.py", line 2188, in _save_input
-    self._input = self._input.encode(self.stdin.encoding,
-                  ^^^^^^^^^^^^^^^^^^
-AttributeError: 'bytes' object has no attribute 'encode'. Did you mean: 'decode'?
+Httpx scan failed for zeroday-sec.com: Usage: httpx [OPTIONS] URL
+
+Error: No such option: -H
+
 DNSDumpster scan for zeroday-sec.com completed.
+theHarvester scan for zeroday-sec.com completed.
 Nmap scan for zeroday-sec.com completed.
 WhatWeb scan for zeroday-sec.com completed.
 sublist3r scan for zeroday-sec.com completed.
 Dnsenum scan for zeroday-sec.com completed.
-theHarvester scan for zeroday-sec.com completed.
 All scans completed.
 
 --- Aggregated Results ---
@@ -128,7 +108,8 @@ All scans completed.
                         "country": "Malaysia",
                         "country_code": "MY",
                         "ip": "103.191.76.181",
-                        "ptr": ""
+                        "ptr": "",
+                        "revip_count": 2797
                     }
                 ]
             },
@@ -142,7 +123,8 @@ All scans completed.
                         "country": "Malaysia",
                         "country_code": "MY",
                         "ip": "103.191.76.181",
-                        "ptr": ""
+                        "ptr": "",
+                        "revip_count": 2797
                     }
                 ]
             },
@@ -156,12 +138,14 @@ All scans completed.
                         "country": "Malaysia",
                         "country_code": "MY",
                         "ip": "103.191.76.181",
-                        "ptr": ""
+                        "ptr": "",
+                        "revip_count": 2797
                     }
                 ]
             }
         ],
         "cname": [],
+        "file_id": "b97a2e32-d668-4649-a278-d8bc5ab44e58",
         "mx": [
             {
                 "host": "0 zeroday-sec.com",
@@ -217,4 +201,4 @@ All scans completed.
 Aggregated results saved to reports/results_zeroday-sec.com.json
 Report generated: reports/report_zeroday-sec.com.pdf
 
---- Scan finished at 2025-07-23 22:42:38.194304 ---
+--- Scan finished at 2025-07-23 22:50:40.830402 ---
