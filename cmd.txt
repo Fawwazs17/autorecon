@@ -1,0 +1,35 @@
+WHATWEB:
+whatweb https://zeroday-sec.com --log-brief=whatweb.txt (cant run)
+
+alt:
+whatweb https://zeroday-sec.com \
+  --user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64)" \
+  --header="Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8" \
+  --header="Accept-Language: en-US,en;q=0.5" \
+  --log-brief=whatweb.txt
+
+DNSENUM:
+dnsenum zeroday-sec.com --output=dnsenum.xml
+
+NMAP:
+nmap zeroday-sec.com -T4 -sV -oX nmap.xml
+
+SUBLISTER: (cant run)
+sublist3r -d zeroday-sec.com -o sublist3r.txt
+
+THEHARVESTER:
+theHarvester -d zeroday-sec.com -b all -f theharvester && rm theharvester.html
+
+alt:
+theHarvester -d zeroday-sec.com -b crtsh,bing,duckduckgo,otx -f output
+
+
+DNSDUMPSTER:
+curl -H "X-API-Key: eb35c0dd2f46ef0d0788a26c12439d0f86ca1f28bc97d5fa748a5cb81203ed96" \
+  https://api.dnsdumpster.com/domain/zeroday-sec.com -o dnsdumpster.json
+
+HTTPROBE
+echo "zeroday-sec.com" | httprobe > live.txt
+
+
+kwjnjq
