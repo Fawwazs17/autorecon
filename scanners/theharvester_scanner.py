@@ -4,12 +4,12 @@ import os
 
 def theharvester_scan(domain):
     print(f"Running theHarvester scan on {domain}...")
-    # Using the alternative command from cmd.txt
+    output_file = f"results/theharvester_{domain}.json"
     command = [
         "theHarvester",
         "-d", domain,
         "-b", "crtsh,bing,duckduckgo,otx",
-        "-f", f"results/theharvester_{domain}"
+        "-oJ", output_file # Use -oJ for JSON output
     ]
     try:
         subprocess.run(command, check=True)

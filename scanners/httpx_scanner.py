@@ -14,5 +14,3 @@ def httpx_scan(domain):
         print(f"Httpx scan for {domain} completed.")
     except subprocess.CalledProcessError as e:
         print(f"Httpx scan failed for {domain}: {e}")
-    except FileNotFoundError:
-        print("Httpx is not installed or not in PATH.")
