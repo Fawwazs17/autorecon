@@ -1,0 +1,185 @@
+{
+    "categories": {
+        "1_network_dns_info": {
+            "data": {
+                "asn_info": [
+                    "AS141995 - CAPL-AS-AP Contabo Asia Private Limited, SG (Singapore)",
+                    "AS136727 - JTS-AS-AP Jimat Technology Solution, MY (Malaysia)"
+                ],
+                "dns_records": [],
+                "ip_addresses": [
+                    "103.191.76.181",
+                    "109.123.238.148"
+                ],
+                "mx_records": [
+                    "0 zeroday-sec.com",
+                    "0 certhora.com"
+                ],
+                "nameservers": [
+                    "zen-01.jimatdns.com",
+                    "ns2.mudahhosting.com",
+                    "ns1.mudahhosting.com",
+                    "zen-02.jimatdns.com"
+                ],
+                "open_ports": [
+                    "53/tcp (domain)",
+                    "111/tcp (tcpwrapped)",
+                    "53/tcp (tcpwrapped)",
+                    "443/tcp (tcpwrapped)",
+                    "995/tcp (tcpwrapped)",
+                    "995/tcp (pop3s)",
+                    "465/tcp (tcpwrapped)",
+                    "3306/tcp (tcpwrapped)",
+                    "110/tcp (pop3)",
+                    "80/tcp (tcpwrapped)",
+                    "993/tcp (tcpwrapped)",
+                    "993/tcp (imaps)",
+                    "587/tcp (tcpwrapped)",
+                    "143/tcp (imap)",
+                    "143/tcp (tcpwrapped)",
+                    "21/tcp (tcpwrapped)",
+                    "22/tcp (tcpwrapped)",
+                    "110/tcp (tcpwrapped)",
+                    "21/tcp (ftp)",
+                    "587/tcp (smtp)"
+                ],
+                "services": [
+                    "tcpwrapped",
+                    "imaps",
+                    "pop3s",
+                    "smtp",
+                    "ftp",
+                    "imap",
+                    "domain",
+                    "pop3"
+                ],
+                "txt_records": [
+                    "\"v=spf1 +a +mx +ip4:109.123.238.148 ~all\"",
+                    "\"v=spf1 a mx include:relay.mailbaby.net ~all\""
+                ]
+            },
+            "description": "Network services, open ports, DNS resolution, and infrastructure information",
+            "sources": [
+                "nmap",
+                "dnsenum",
+                "dnsdumpster"
+            ],
+            "title": "Network & DNS Info"
+        },
+        "2_subdomains_hosts": {
+            "data": {
+                "a_records": [
+                    "cpanel.certhora.com",
+                    "certs.zeroday-sec.com",
+                    "www.wazkybol.certhora.com",
+                    "cpcontacts.certhora.com",
+                    "www.certs.zeroday-sec.com",
+                    "webdisk.certhora.com",
+                    "webmail.certhora.com",
+                    "cpcalendars.certhora.com",
+                    "webmail.zeroday-sec.com",
+                    "wazkybol.certhora.com"
+                ],
+                "cname_records": [],
+                "hosts": [
+                    "certs.zeroday-sec.com",
+                    "certhora.com",
+                    "edge-security.com",
+                    "zeroday-sec.com",
+                    "25.zeroday-sec.com",
+                    "crt.sh",
+                    "proxies.yaml",
+                    "api-keys.yaml"
+                ],
+                "subdomains": [
+                    "cpanel.certhora.com",
+                    "certs.zeroday-sec.com",
+                    "www.zeroday-sec.com",
+                    "www.wazkybol.certhora.com",
+                    "cpcontacts.certhora.com",
+                    "www.certs.zeroday-sec.com",
+                    "webdisk.certhora.com",
+                    "webmail.certhora.com",
+                    "academy.zeroday-sec.com",
+                    "cpcalendars.certhora.com",
+                    "webmail.zeroday-sec.com",
+                    "wazkybol.certhora.com"
+                ]
+            },
+            "description": "Discovered subdomains, hostnames, and related domains",
+            "sources": [
+                "sublist3r",
+                "theharvester",
+                "dnsdumpster"
+            ],
+            "title": "Subdomains & Hosts"
+        },
+        "3_emails": {
+            "data": {
+                "email_addresses": [
+                    "cmartorella@edge-security.com",
+                    "team@zeroday-sec.com"
+                ]
+            },
+            "description": "Email addresses discovered during reconnaissance",
+            "sources": [
+                "theharvester",
+                "whatweb"
+            ],
+            "title": "Emails"
+        },
+        "4_web_technologies": {
+            "data": {
+                "cms_frameworks": [],
+                "programming_languages": [],
+                "server_info": [],
+                "technologies": [
+                    "Certhora - Professional Digital Certificates Platform",
+                    "LiteSpeed",
+                    "X-Frame-Options[SAMEORIGIN",
+                    "8.4.1",
+                    "HTML5",
+                    "Script",
+                    "X-XSS-Protection[1; mode=block",
+                    "X-XSS-Protection[1;  mode=block",
+                    "X-Powered-By[PHP/8.4.1",
+                    "Site Maintenance"
+                ]
+            },
+            "description": "Web server technologies, frameworks, and software versions",
+            "sources": [
+                "whatweb"
+            ],
+            "title": "Web Technologies"
+        },
+        "5_http_headers": {
+            "data": {
+                "custom_headers": [],
+                "security_headers": [
+                    "alt-svc",
+                    "SAMEORIGIN",
+                    "max-age=31536000",
+                    "1;  mode=block",
+                    "1; mode=block",
+                    "x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc",
+                    "PHP/8.4.1"
+                ],
+                "server_headers": []
+            },
+            "description": "HTTP response headers and security configurations",
+            "sources": [
+                "httpx",
+                "whatweb"
+            ],
+            "title": "HTTP Headers"
+        }
+    },
+    "metadata": {
+        "categories": 5,
+        "created_from": [
+            "reports/results_zeroday-sec.com.json",
+            "reports/results_certhora.com.json"
+        ],
+        "description": "Data Dictionary for Security Reconnaissance Tools"
+    }
+}
