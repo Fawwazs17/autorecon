@@ -63,7 +63,7 @@ The scanner will create the following directories and files:
 *   `results/`: Contains the raw output files from each scanning tool.
 *   `reports/`: Contains the generated output files:
     *   `results_example.com.json`: Aggregated JSON results from all tools
-    *   `data_dictionary_example.com.md`: Auto-generated data dictionary describing the scan results structure
+    *   `data_dictionary_example.com.json`: Categorized JSON data organized into 5 main categories
     *   `report_example.com.pdf`: Comprehensive PDF report
 
 ## Troubleshooting

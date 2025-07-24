@@ -1,317 +1,140 @@
 import json
 import os
 from datetime import datetime
-from typing import Dict, Any, List
+from typing import Dict, Any
 
-def analyze_data_structure(data: Any, path: str = "") -> Dict[str, str]:
-    """Recursively analyze data structure and return field descriptions."""
-    fields = {}
+def categorize_scan_results(aggregated_data: Dict[str, Any]) -> Dict[str, Any]:
+    """Reorganize aggregated scan results into categorized structure."""
     
-    if isinstance(data, dict):
-        for key, value in data.items():
-            current_path = f"{path}.{key}" if path else key
-            
-            if isinstance(value, (dict, list)) and value:
-                # Recursively analyze nested structures
-                nested_fields = analyze_data_structure(value, current_path)
-                fields.update(nested_fields)
-            else:
-                # Describe the field based on its type and content
-                field_type = type(value).__name__
-                if isinstance(value, str):
-                    if "@" in value and "." in value:
-                        description = f"Email address (string)"
-                    elif value.startswith(("http://", "https://")):
-                        description = f"URL (string)"
-                    elif value.replace(".", "").replace(":", "").isdigit():
-                        description = f"IP address or port (string)"
-                    else:
-                        description = f"Text value (string)"
-                elif isinstance(value, bool):
-                    description = f"Boolean flag (boolean)"
-                elif isinstance(value, int):
-                    description = f"Numeric value (integer)"
-                elif isinstance(value, list):
-                    if not value:
-                        description = f"Empty list (array)"
-                    else:
-                        sample_type = type(value[0]).__name__ if value else "unknown"
-                        description = f"Array of {sample_type} values (array)"
-                else:
-                    description = f"{field_type} value"
-                
-                fields[current_path] = description
-                
-    elif isinstance(data, list) and data:
-        # Analyze first item as representative of the list structure
-        if isinstance(data[0], dict):
-            nested_fields = analyze_data_structure(data[0], path)
-            fields.update(nested_fields)
-    
-    return fields
-
-def categorize_fields(fields: Dict[str, str], aggregated_data: Dict[str, Any]) -> Dict[str, Dict[str, List[str]]]:
-    """Categorize fields into the 5 main categories based on their source and content."""
-    
-    categories = {
-        "Network & DNS Info": {
-            "description": "Network infrastructure and DNS-related information",
-            "sources": ["nmap", "dnsenum", "dnsdumpster"],
-            "fields": []
+    categorized_data = {
+        "scan_metadata": {
+            "timestamp": datetime.now().isoformat(),
+            "total_sources": len([k for k, v in aggregated_data.items() if v]),
+            "available_sources": [k for k, v in aggregated_data.items() if v]
         },
-        "Subdomains & Hosts": {
-            "description": "Discovered subdomains and host information",
-            "sources": ["sublist3r", "theharvester", "dnsdumpster"],
-            "fields": []
-        },
-        "Emails": {
-            "description": "Email addresses discovered during reconnaissance",
-            "sources": ["theharvester"],
-            "fields": []
-        },
-        "Web Technologies": {
-            "description": "Web technologies and frameworks detected",
-            "sources": ["whatweb"],
-            "fields": []
-        },
-        "HTTP Headers": {
-            "description": "HTTP response headers and security information",
-            "sources": ["httpx"],
-            "fields": []
-        }
+        "network_dns_info": {},
+        "subdomains_hosts": {},
+        "emails": {},
+        "web_technologies": {},
+        "http_headers": {}
     }
+
+    # 1. Network & DNS Info - Sources: nmap, dnsenum, dnsdumpster
+    if 'nmap' in aggregated_data and aggregated_data['nmap']:
+        categorized_data["network_dns_info"]["nmap"] = aggregated_data['nmap']
     
-    # Categorize fields based on their source tool
-    for field_path, description in fields.items():
-        source_tool = field_path.split('.')[0]
+    if 'dnsenum' in aggregated_data and aggregated_data['dnsenum']:
+        categorized_data["network_dns_info"]["dnsenum"] = aggregated_data['dnsenum']
+    
+    # For dnsdumpster, separate network info from subdomain info
+    if 'dnsdumpster' in aggregated_data and aggregated_data['dnsdumpster']:
+        dnsdumpster_data = aggregated_data['dnsdumpster']
         
-        if source_tool in ["nmap", "dnsenum", "dnsdumpster"]:
-            # Check if it's specifically subdomain/host related from dnsdumpster
-            if source_tool == "dnsdumpster" and any(x in field_path.lower() for x in ["subdomain", "host", "a.", "cname"]):
-                categories["Subdomains & Hosts"]["fields"].append({
-                    "field": field_path,
-                    "description": description,
-                    "source": source_tool
-                })
-            else:
-                categories["Network & DNS Info"]["fields"].append({
-                    "field": field_path,
-                    "description": description,
-                    "source": source_tool
-                })
-                
-        elif source_tool in ["sublist3r"] or (source_tool == "theharvester" and "hosts" in field_path):
-            categories["Subdomains & Hosts"]["fields"].append({
-                "field": field_path,
-                "description": description,
-                "source": source_tool
-            })
-            
-        elif source_tool == "theharvester" and "email" in field_path.lower():
-            categories["Emails"]["fields"].append({
-                "field": field_path,
-                "description": description,
-                "source": source_tool
-            })
-            
-        elif source_tool == "whatweb":
-            categories["Web Technologies"]["fields"].append({
-                "field": field_path,
-                "description": description,
-                "source": source_tool
-            })
-            
-        elif source_tool == "httpx":
-            categories["HTTP Headers"]["fields"].append({
-                "field": field_path,
-                "description": description,
-                "source": source_tool
-            })
-        else:
-            # Default categorization for uncategorized fields
-            if "email" in field_path.lower():
-                categories["Emails"]["fields"].append({
-                    "field": field_path,
-                    "description": description,
-                    "source": source_tool
-                })
-            elif any(x in field_path.lower() for x in ["subdomain", "host", "domain"]):
-                categories["Subdomains & Hosts"]["fields"].append({
-                    "field": field_path,
-                    "description": description,
-                    "source": source_tool
-                })
-            else:
-                categories["Network & DNS Info"]["fields"].append({
-                    "field": field_path,
-                    "description": description,
-                    "source": source_tool
-                })
+        # Network/DNS info from dnsdumpster (MX, NS records, total counts)
+        network_info = {}
+        if 'mx' in dnsdumpster_data:
+            network_info['mx_records'] = dnsdumpster_data['mx']
+        if 'ns' in dnsdumpster_data:
+            network_info['ns_records'] = dnsdumpster_data['ns']
+        if 'total_a_recs' in dnsdumpster_data:
+            network_info['total_a_records'] = dnsdumpster_data['total_a_recs']
+        
+        if network_info:
+            categorized_data["network_dns_info"]["dnsdumpster"] = network_info
+
+    # 2. Subdomains & Hosts - Sources: sublist3r, theharvester, dnsdumpster
+    if 'sublist3r' in aggregated_data and aggregated_data['sublist3r']:
+        categorized_data["subdomains_hosts"]["sublist3r"] = aggregated_data['sublist3r']
     
-    return categories
-
-def generate_sample_data(aggregated_data: Dict[str, Any], max_items: int = 3) -> Dict[str, Any]:
-    """Generate sample data for documentation purposes."""
-    sample = {}
+    if 'theharvester' in aggregated_data and aggregated_data['theharvester']:
+        theharvester_data = aggregated_data['theharvester']
+        
+        # Extract hosts/subdomains from theharvester
+        hosts_data = {}
+        if 'hosts' in theharvester_data and theharvester_data['hosts']:
+            hosts_data['discovered_hosts'] = theharvester_data['hosts']
+        if 'ips' in theharvester_data and theharvester_data['ips']:
+            hosts_data['discovered_ips'] = theharvester_data['ips']
+        
+        if hosts_data:
+            categorized_data["subdomains_hosts"]["theharvester"] = hosts_data
     
-    for key, value in aggregated_data.items():
-        if isinstance(value, list):
-            # Take first few items for lists
-            sample[key] = value[:max_items] if len(value) > max_items else value
-        elif isinstance(value, dict):
-            # For dictionaries, take a subset of keys
-            sample_dict = {}
-            for i, (k, v) in enumerate(value.items()):
-                if i >= max_items:
-                    sample_dict["..."] = "additional fields"
-                    break
-                if isinstance(v, list):
-                    sample_dict[k] = v[:max_items] if len(v) > max_items else v
-                else:
-                    sample_dict[k] = v
-            sample[key] = sample_dict
-        else:
-            sample[key] = value
+    # Subdomain/host info from dnsdumpster (A records, CNAME records)
+    if 'dnsdumpster' in aggregated_data and aggregated_data['dnsdumpster']:
+        dnsdumpster_data = aggregated_data['dnsdumpster']
+        
+        subdomain_info = {}
+        if 'a' in dnsdumpster_data and dnsdumpster_data['a']:
+            subdomain_info['a_records'] = dnsdumpster_data['a']
+        if 'cname' in dnsdumpster_data and dnsdumpster_data['cname']:
+            subdomain_info['cname_records'] = dnsdumpster_data['cname']
+        
+        if subdomain_info:
+            categorized_data["subdomains_hosts"]["dnsdumpster"] = subdomain_info
+
+    # 3. Emails - Source: theharvester and others
+    if 'theharvester' in aggregated_data and aggregated_data['theharvester']:
+        theharvester_data = aggregated_data['theharvester']
+        
+        if 'emails' in theharvester_data:
+            categorized_data["emails"]["theharvester"] = {
+                "discovered_emails": theharvester_data['emails']
+            }
     
-    return sample
+    # Check if whatweb has email information
+    if 'whatweb' in aggregated_data and aggregated_data['whatweb']:
+        whatweb_data = aggregated_data['whatweb']
+        if 'Email' in whatweb_data:
+            if 'whatweb' not in categorized_data["emails"]:
+                categorized_data["emails"]["whatweb"] = {}
+            categorized_data["emails"]["whatweb"]["contact_email"] = whatweb_data['Email']
 
-def generate_data_dictionary(domain: str, aggregated_data: Dict[str, Any]) -> str:
-    """Generate a comprehensive data dictionary based on the aggregated results."""
+    # 4. Web Technologies - Source: whatweb
+    if 'whatweb' in aggregated_data and aggregated_data['whatweb']:
+        # Create a clean copy without email (since that goes to emails category)
+        whatweb_clean = {k: v for k, v in aggregated_data['whatweb'].items() if k != 'Email'}
+        if whatweb_clean:
+            categorized_data["web_technologies"]["whatweb"] = whatweb_clean
+
+    # 5. HTTP Headers - Source: httpx
+    if 'httpx' in aggregated_data and aggregated_data['httpx']:
+        categorized_data["http_headers"]["httpx"] = aggregated_data['httpx']
+
+    # Remove empty categories
+    categories_to_remove = []
+    for category, data in categorized_data.items():
+        if category != "scan_metadata" and not data:
+            categories_to_remove.append(category)
     
-    # Analyze the data structure
-    fields = analyze_data_structure(aggregated_data)
-    
-    # Categorize fields
-    categories = categorize_fields(fields, aggregated_data)
-    
-    # Generate sample data
-    sample_data = generate_sample_data(aggregated_data)
-    
-    # Generate the markdown content
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    
-    content = f"""# Data Dictionary - Security Scan Results
-## Domain: {domain}
-## Generated: {timestamp}
+    for category in categories_to_remove:
+        del categorized_data[category]
 
----
-
-## Overview
-This data dictionary describes the structure and content of the security scan results for **{domain}**. The data is organized into five main categories based on the type of information and source tools.
-
-## Data Categories
-
-"""
-
-    # Add each category
-    for category_name, category_info in categories.items():
-        if category_info["fields"]:  # Only include categories that have data
-            content += f"""### {category_name}
-**Description**: {category_info["description"]}  
-**Primary Sources**: {", ".join(category_info["sources"])}
-
-| Field Path | Description | Source Tool |
-|------------|-------------|-------------|
-"""
-            for field_info in category_info["fields"]:
-                content += f"| `{field_info['field']}` | {field_info['description']} | {field_info['source']} |\n"
-            
-            content += "\n"
-
-    # Add data structure overview
-    content += """---
-
-## Complete Data Structure
-
-The following shows the complete structure of the aggregated results:
-
-```json
-"""
-    content += json.dumps(sample_data, indent=2)
-    content += """
-```
-
----
-
-## Tool Sources
-
-### Network & DNS Scanning Tools
-- **nmap**: Network port scanner and service detection
-- **dnsenum**: DNS enumeration and zone transfer attempts  
-- **dnsdumpster**: DNS reconnaissance and subdomain discovery
-
-### Subdomain & Host Discovery Tools
-- **sublist3r**: Subdomain enumeration using OSINT
-- **theharvester**: Email, subdomain and host OSINT gathering
-- **dnsdumpster**: DNS record analysis for subdomains
-
-### Email Discovery Tools
-- **theharvester**: Email address harvesting from public sources
-
-### Web Technology Detection Tools
-- **whatweb**: Web application technology fingerprinting
-
-### HTTP Analysis Tools
-- **httpx**: HTTP header analysis and security assessment
-
----
-
-## Data Quality Notes
-
-"""
-
-    # Add data quality information
-    total_sources = sum(1 for key, value in aggregated_data.items() if value)
-    available_sources = [key for key, value in aggregated_data.items() if value]
-    
-    content += f"- **Total data sources processed**: {total_sources}\n"
-    content += f"- **Available data sources**: {', '.join(available_sources)}\n"
-    
-    if not aggregated_data.get("nmap"):
-        content += "- ⚠️ **Warning**: No nmap data available - port scan may have failed\n"
-    if not aggregated_data.get("whatweb"):
-        content += "- ⚠️ **Warning**: No whatweb data available - web technology detection may have failed\n"
-    if not aggregated_data.get("theharvester"):
-        content += "- ⚠️ **Warning**: No theharvester data available - email/host discovery may have failed\n"
-
-    content += f"""
----
-
-## Usage Notes
-
-1. **Empty Arrays**: Empty arrays (`[]`) indicate the tool ran but found no results
-2. **Missing Keys**: Missing tool sections indicate the tool failed to run or produce output
-3. **Nested Data**: Some tools produce nested data structures - refer to field paths for navigation
-4. **Data Types**: All data is JSON-serializable (strings, numbers, booleans, arrays, objects)
-
----
-
-*This data dictionary was automatically generated based on the actual scan results for {domain}.*
-"""
-
-    return content
+    return categorized_data
 
 def create_data_dictionary_file(domain: str, aggregated_data: Dict[str, Any], output_dir: str = "reports") -> str:
-    """Create and save the data dictionary file."""
+    """Create and save the categorized data dictionary JSON file."""
     
-    # Generate the data dictionary content
-    content = generate_data_dictionary(domain, aggregated_data)
+    # Generate the categorized data structure
+    categorized_data = categorize_scan_results(aggregated_data)
+    
+    # Add domain info to metadata
+    categorized_data["scan_metadata"]["domain"] = domain
     
     # Create output directory if it doesn't exist
     os.makedirs(output_dir, exist_ok=True)
     
     # Save to file
-    filename = f"data_dictionary_{domain}.md"
+    filename = f"data_dictionary_{domain}.json"
     filepath = os.path.join(output_dir, filename)
     
     with open(filepath, 'w', encoding='utf-8') as f:
-        f.write(content)
+        json.dump(categorized_data, f, indent=2)
     
-    print(f"Data dictionary generated: {filepath}")
+    print(f"Data dictionary JSON generated: {filepath}")
     return filepath
 
 def generate_data_dictionary_from_json(json_file_path: str) -> str:
-    """Generate data dictionary from an existing JSON file."""
+    """Generate categorized data dictionary from an existing aggregated JSON file."""
     
     # Extract domain from filename
     filename = os.path.basename(json_file_path)
@@ -324,7 +147,7 @@ def generate_data_dictionary_from_json(json_file_path: str) -> str:
     with open(json_file_path, 'r', encoding='utf-8') as f:
         aggregated_data = json.load(f)
     
-    # Generate and save the data dictionary
+    # Generate and save the categorized data dictionary
     output_dir = os.path.dirname(json_file_path)
     return create_data_dictionary_file(domain, aggregated_data, output_dir)
 
@@ -335,4 +158,4 @@ if __name__ == "__main__":
         json_file = sys.argv[1]
         generate_data_dictionary_from_json(json_file)
     else:
-        print("Usage: python data_dictionary_generator.py <path_to_results_json>")
+        print("Usage: python3 data_dictionary_generator.py <path_to_results_json>")
