@@ -1,0 +1,194 @@
+{
+    "categories": {
+        "1_network_dns_info": {
+            "data": {
+                "asn_info": [
+                    "AS32244 - LIQUIDWEB (United States)"
+                ],
+                "dns_records": [],
+                "ip_addresses": [
+                    "69.167.164.199"
+                ],
+                "mx_records": [],
+                "nameservers": [
+                    "ns3.safesecureweb.com",
+                    "ns2.safesecureweb.com",
+                    "ns1.safesecureweb.com"
+                ],
+                "open_ports": [],
+                "services": [],
+                "txt_records": [
+                    "\"google-site-verification=kW9t2V_S7WjOX57zq0tP8Ae_WJhRwUcZoqpdEkvuXJk\"",
+                    "\"55d34914-636b-4a56-b349-fdb9f2c1eaca\""
+                ]
+            },
+            "description": "Network services, open ports, DNS resolution, and infrastructure information",
+            "sources": [
+                "nmap",
+                "dnsenum",
+                "dnsdumpster"
+            ],
+            "title": "Network & DNS Info"
+        },
+        "2_subdomains_hosts": {
+            "data": {
+                "a_records": [
+                    "10388.test.com",
+                    "gcussw1302b.rh.mysql.cpanel.two.local.100x25gb.test.com",
+                    "1024.test.com",
+                    "104.test.com",
+                    "lhopps-sanitytest-singlehop.03.test.com",
+                    "118.test.com",
+                    "130.test.com",
+                    "008.test.com",
+                    "10_0_8_8.test.com",
+                    "111.test.com",
+                    "112.test.com",
+                    "03052016ipv42.test.com",
+                    "10.test.com",
+                    "124.test.com",
+                    "128.test.com",
+                    "113-136-75-38.test.com",
+                    "110.test.com",
+                    "gcussw1302e.rh.mysql.cpanel.two.san.100x25.test.com",
+                    "03041495.test.com",
+                    "lhopps-sanityphx-singlehop.05.test.com",
+                    "132.test.com",
+                    "134.test.com",
+                    "12.test.com",
+                    "103101.test.com",
+                    "lhopps-sanitychi-singlehop.04.test.com",
+                    "03052016ipv4.test.com",
+                    "11.test.com",
+                    "105.test.com",
+                    "113.test.com",
+                    "123.test.com",
+                    "109.test.com",
+                    "122.test.com",
+                    "abcdefghij.123.test.com",
+                    "00vos.test.com",
+                    "103.test.com",
+                    "121.test.com",
+                    "126.test.com",
+                    "114.test.com",
+                    "101.test.com",
+                    "13.test.com",
+                    "116-137-75-38.test.com",
+                    "100.test.com",
+                    "120.test.com",
+                    "traff.022.test.com",
+                    "123as.test.com",
+                    "129.test.com",
+                    "103132.test.com",
+                    "1111.test.com",
+                    "08s.test.com",
+                    "133.test.com"
+                ],
+                "cname_records": [],
+                "hosts": [],
+                "subdomains": [
+                    "10388.test.com",
+                    "gcussw1302b.rh.mysql.cpanel.two.local.100x25gb.test.com",
+                    "1024.test.com",
+                    "104.test.com",
+                    "lhopps-sanitytest-singlehop.03.test.com",
+                    "118.test.com",
+                    "130.test.com",
+                    "008.test.com",
+                    "10_0_8_8.test.com",
+                    "111.test.com",
+                    "112.test.com",
+                    "03052016ipv42.test.com",
+                    "10.test.com",
+                    "124.test.com",
+                    "128.test.com",
+                    "113-136-75-38.test.com",
+                    "110.test.com",
+                    "gcussw1302e.rh.mysql.cpanel.two.san.100x25.test.com",
+                    "03041495.test.com",
+                    "lhopps-sanityphx-singlehop.05.test.com",
+                    "132.test.com",
+                    "134.test.com",
+                    "12.test.com",
+                    "103101.test.com",
+                    "lhopps-sanitychi-singlehop.04.test.com",
+                    "03052016ipv4.test.com",
+                    "11.test.com",
+                    "105.test.com",
+                    "113.test.com",
+                    "123.test.com",
+                    "109.test.com",
+                    "122.test.com",
+                    "abcdefghij.123.test.com",
+                    "00vos.test.com",
+                    "103.test.com",
+                    "121.test.com",
+                    "126.test.com",
+                    "114.test.com",
+                    "101.test.com",
+                    "13.test.com",
+                    "116-137-75-38.test.com",
+                    "100.test.com",
+                    "120.test.com",
+                    "traff.022.test.com",
+                    "123as.test.com",
+                    "129.test.com",
+                    "103132.test.com",
+                    "1111.test.com",
+                    "08s.test.com",
+                    "133.test.com"
+                ]
+            },
+            "description": "Discovered subdomains, hostnames, and related domains",
+            "sources": [
+                "sublist3r",
+                "theharvester",
+                "dnsdumpster"
+            ],
+            "title": "Subdomains & Hosts"
+        },
+        "3_emails": {
+            "data": {
+                "email_addresses": []
+            },
+            "description": "Email addresses discovered during reconnaissance",
+            "sources": [
+                "theharvester",
+                "whatweb"
+            ],
+            "title": "Emails"
+        },
+        "4_web_technologies": {
+            "data": {
+                "cms_frameworks": [],
+                "programming_languages": [],
+                "server_info": [],
+                "technologies": []
+            },
+            "description": "Web server technologies, frameworks, and software versions",
+            "sources": [
+                "whatweb"
+            ],
+            "title": "Web Technologies"
+        },
+        "5_http_headers": {
+            "data": {
+                "custom_headers": [],
+                "security_headers": [],
+                "server_headers": []
+            },
+            "description": "HTTP response headers and security configurations",
+            "sources": [
+                "httpx",
+                "whatweb"
+            ],
+            "title": "HTTP Headers"
+        }
+    },
+    "metadata": {
+        "categories": 5,
+        "created_at": "2025-07-24T08:04:16.669724",
+        "description": "Data Dictionary for Security Reconnaissance Tools",
+        "domain": "test.com"
+    }
+}

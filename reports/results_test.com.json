@@ -1,0 +1,757 @@
+{
+    "dnsdumpster": {
+        "a": [
+            {
+                "host": "008.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "00vos.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "traff.022.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "lhopps-sanitytest-singlehop.03.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "03041495.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "03052016ipv4.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "03052016ipv42.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "lhopps-sanitychi-singlehop.04.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "lhopps-sanityphx-singlehop.05.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "08s.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "10.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "100.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "gcussw1302e.rh.mysql.cpanel.two.san.100x25.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "gcussw1302b.rh.mysql.cpanel.two.local.100x25gb.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "101.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "1024.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "103.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "103101.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "103132.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "10388.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "104.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "105.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "109.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "10_0_8_8.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "11.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "110.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "111.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "1111.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "112.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "113.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "113-136-75-38.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "114.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "116-137-75-38.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "118.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "12.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "120.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "121.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "122.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "123.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "abcdefghij.123.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "123as.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "124.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "126.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "128.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "129.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "13.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "130.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "132.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "133.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "134.test.com",
+                "ips": [
+                    {
+                        "asn": "32244",
+                        "asn_name": "LIQUIDWEB",
+                        "asn_range": "69.167.128.0/18",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "69.167.164.199",
+                        "ptr": ""
+                    }
+                ]
+            }
+        ],
+        "cname": [],
+        "mx": [],
+        "ns": [
+            {
+                "host": "ns2.safesecureweb.com",
+                "ips": [
+                    {
+                        "asn": "20021",
+                        "asn_name": "LNH-INC",
+                        "asn_range": "76.12.92.0/24",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "76.12.92.1",
+                        "ptr": "ns2.safesecureweb.com"
+                    }
+                ]
+            },
+            {
+                "host": "ns1.safesecureweb.com",
+                "ips": [
+                    {
+                        "asn": "20021",
+                        "asn_name": "LNH-INC",
+                        "asn_range": "204.12.76.0/24",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "204.12.76.1",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "ns3.safesecureweb.com",
+                "ips": [
+                    {
+                        "asn": "20021",
+                        "asn_name": "LNH-INC",
+                        "asn_range": "216.74.36.0/24",
+                        "country": "United States",
+                        "country_code": "US",
+                        "ip": "216.74.36.1",
+                        "ptr": "ns3.safesecureweb.com"
+                    }
+                ]
+            }
+        ],
+        "total_a_recs": 6036,
+        "txt": [
+            "\"55d34914-636b-4a56-b349-fdb9f2c1eaca\"",
+            "\"google-site-verification=kW9t2V_S7WjOX57zq0tP8Ae_WJhRwUcZoqpdEkvuXJk\""
+        ]
+    }
+}

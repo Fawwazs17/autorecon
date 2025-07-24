@@ -1,0 +1,142 @@
+{
+    "categories": {
+        "1_network_dns_info": {
+            "data": {
+                "asn_info": [
+                    "AS141995 - CAPL-AS-AP Contabo Asia Private Limited, SG (Singapore)"
+                ],
+                "dns_records": [],
+                "ip_addresses": [
+                    "109.123.238.148"
+                ],
+                "mx_records": [
+                    "0 certhora.com"
+                ],
+                "nameservers": [
+                    "ns1.mudahhosting.com",
+                    "ns2.mudahhosting.com"
+                ],
+                "open_ports": [
+                    "22/tcp (tcpwrapped)",
+                    "53/tcp (tcpwrapped)",
+                    "587/tcp (tcpwrapped)",
+                    "995/tcp (tcpwrapped)",
+                    "465/tcp (tcpwrapped)",
+                    "110/tcp (tcpwrapped)",
+                    "21/tcp (tcpwrapped)",
+                    "993/tcp (tcpwrapped)",
+                    "443/tcp (tcpwrapped)",
+                    "143/tcp (tcpwrapped)",
+                    "111/tcp (tcpwrapped)",
+                    "3306/tcp (tcpwrapped)",
+                    "80/tcp (tcpwrapped)"
+                ],
+                "services": [
+                    "tcpwrapped"
+                ],
+                "txt_records": [
+                    "\"v=spf1 +a +mx +ip4:109.123.238.148 ~all\""
+                ]
+            },
+            "description": "Network services, open ports, DNS resolution, and infrastructure information",
+            "sources": [
+                "nmap",
+                "dnsenum",
+                "dnsdumpster"
+            ],
+            "title": "Network & DNS Info"
+        },
+        "2_subdomains_hosts": {
+            "data": {
+                "a_records": [
+                    "cpcontacts.certhora.com",
+                    "webdisk.certhora.com",
+                    "wazkybol.certhora.com",
+                    "www.wazkybol.certhora.com",
+                    "cpanel.certhora.com",
+                    "webmail.certhora.com",
+                    "cpcalendars.certhora.com"
+                ],
+                "cname_records": [],
+                "hosts": [
+                    "api-keys.yaml",
+                    "certhora.com",
+                    "edge-security.com",
+                    "proxies.yaml"
+                ],
+                "subdomains": [
+                    "cpcontacts.certhora.com",
+                    "webdisk.certhora.com",
+                    "wazkybol.certhora.com",
+                    "www.wazkybol.certhora.com",
+                    "cpanel.certhora.com",
+                    "webmail.certhora.com",
+                    "cpcalendars.certhora.com"
+                ]
+            },
+            "description": "Discovered subdomains, hostnames, and related domains",
+            "sources": [
+                "sublist3r",
+                "theharvester",
+                "dnsdumpster"
+            ],
+            "title": "Subdomains & Hosts"
+        },
+        "3_emails": {
+            "data": {
+                "email_addresses": [
+                    "cmartorella@edge-security.com"
+                ]
+            },
+            "description": "Email addresses discovered during reconnaissance",
+            "sources": [
+                "theharvester",
+                "whatweb"
+            ],
+            "title": "Emails"
+        },
+        "4_web_technologies": {
+            "data": {
+                "cms_frameworks": [],
+                "programming_languages": [],
+                "server_info": [],
+                "technologies": [
+                    "HTML5",
+                    "X-XSS-Protection[1; mode=block",
+                    "Certhora - Professional Digital Certificates Platform",
+                    "Script",
+                    "8.4.1",
+                    "X-Powered-By[PHP/8.4.1"
+                ]
+            },
+            "description": "Web server technologies, frameworks, and software versions",
+            "sources": [
+                "whatweb"
+            ],
+            "title": "Web Technologies"
+        },
+        "5_http_headers": {
+            "data": {
+                "custom_headers": [],
+                "security_headers": [
+                    "1; mode=block",
+                    "alt-svc",
+                    "PHP/8.4.1"
+                ],
+                "server_headers": []
+            },
+            "description": "HTTP response headers and security configurations",
+            "sources": [
+                "httpx",
+                "whatweb"
+            ],
+            "title": "HTTP Headers"
+        }
+    },
+    "metadata": {
+        "categories": 5,
+        "created_at": "2025-07-24T08:05:03.045199",
+        "description": "Data Dictionary for Security Reconnaissance Tools",
+        "domain": "certhora.com"
+    }
+}

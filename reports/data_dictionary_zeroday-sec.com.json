@@ -1,0 +1,143 @@
+{
+    "categories": {
+        "1_network_dns_info": {
+            "data": {
+                "asn_info": [
+                    "AS136727 - JTS-AS-AP Jimat Technology Solution, MY (Malaysia)"
+                ],
+                "dns_records": [],
+                "ip_addresses": [
+                    "103.191.76.181"
+                ],
+                "mx_records": [
+                    "0 zeroday-sec.com"
+                ],
+                "nameservers": [
+                    "zen-01.jimatdns.com",
+                    "zen-02.jimatdns.com"
+                ],
+                "open_ports": [
+                    "110/tcp (pop3)",
+                    "587/tcp (smtp)",
+                    "993/tcp (imaps)",
+                    "53/tcp (domain)",
+                    "443/tcp (tcpwrapped)",
+                    "995/tcp (pop3s)",
+                    "21/tcp (ftp)",
+                    "80/tcp (tcpwrapped)",
+                    "143/tcp (imap)"
+                ],
+                "services": [
+                    "imap",
+                    "domain",
+                    "pop3s",
+                    "smtp",
+                    "ftp",
+                    "pop3",
+                    "tcpwrapped",
+                    "imaps"
+                ],
+                "txt_records": [
+                    "\"v=spf1 a mx include:relay.mailbaby.net ~all\""
+                ]
+            },
+            "description": "Network services, open ports, DNS resolution, and infrastructure information",
+            "sources": [
+                "nmap",
+                "dnsenum",
+                "dnsdumpster"
+            ],
+            "title": "Network & DNS Info"
+        },
+        "2_subdomains_hosts": {
+            "data": {
+                "a_records": [
+                    "www.certs.zeroday-sec.com",
+                    "certs.zeroday-sec.com",
+                    "webmail.zeroday-sec.com"
+                ],
+                "cname_records": [],
+                "hosts": [
+                    "certs.zeroday-sec.com",
+                    "25.zeroday-sec.com",
+                    "proxies.yaml",
+                    "api-keys.yaml",
+                    "zeroday-sec.com",
+                    "edge-security.com",
+                    "crt.sh"
+                ],
+                "subdomains": [
+                    "webmail.zeroday-sec.com",
+                    "www.zeroday-sec.com",
+                    "www.certs.zeroday-sec.com",
+                    "certs.zeroday-sec.com",
+                    "academy.zeroday-sec.com"
+                ]
+            },
+            "description": "Discovered subdomains, hostnames, and related domains",
+            "sources": [
+                "sublist3r",
+                "theharvester",
+                "dnsdumpster"
+            ],
+            "title": "Subdomains & Hosts"
+        },
+        "3_emails": {
+            "data": {
+                "email_addresses": [
+                    "cmartorella@edge-security.com",
+                    "team@zeroday-sec.com"
+                ]
+            },
+            "description": "Email addresses discovered during reconnaissance",
+            "sources": [
+                "theharvester",
+                "whatweb"
+            ],
+            "title": "Emails"
+        },
+        "4_web_technologies": {
+            "data": {
+                "cms_frameworks": [],
+                "programming_languages": [],
+                "server_info": [],
+                "technologies": [
+                    "Site Maintenance",
+                    "X-Frame-Options[SAMEORIGIN",
+                    "HTML5",
+                    "LiteSpeed",
+                    "X-XSS-Protection[1;  mode=block"
+                ]
+            },
+            "description": "Web server technologies, frameworks, and software versions",
+            "sources": [
+                "whatweb"
+            ],
+            "title": "Web Technologies"
+        },
+        "5_http_headers": {
+            "data": {
+                "custom_headers": [],
+                "security_headers": [
+                    "x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc",
+                    "max-age=31536000",
+                    "1;  mode=block",
+                    "SAMEORIGIN"
+                ],
+                "server_headers": []
+            },
+            "description": "HTTP response headers and security configurations",
+            "sources": [
+                "httpx",
+                "whatweb"
+            ],
+            "title": "HTTP Headers"
+        }
+    },
+    "metadata": {
+        "categories": 5,
+        "created_at": "2025-07-24T08:05:03.044286",
+        "description": "Data Dictionary for Security Reconnaissance Tools",
+        "domain": "zeroday-sec.com"
+    }
+}
