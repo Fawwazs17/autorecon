@@ -61,7 +61,9 @@ def main():
         results = aggregate_results(domain)
 
         # Save results to JSON file
-        json_output_path = os.path.join("reports", f"results_{domain}.json")
+        reports_dir = "reports"
+        os.makedirs(reports_dir, exist_ok=True)
+        json_output_path = os.path.join(reports_dir, f"results_{domain}.json")
         with open(json_output_path, 'w') as f:
             import json
             json.dump(results, f, indent=4)
@@ -93,8 +95,8 @@ def aggregate_results(domain):
         results['whatweb'] = parse_whatweb(f"results/whatweb_{domain}.txt")
     if os.path.exists(f"results/dnsenum_{domain}.xml"):
         results['dnsenum'] = parse_dnsenum(f"results/dnsenum_{domain}.xml")
-    if os.path.exists(f"results/theharvester_{domain}.txt"):
-        results['theharvester'] = parse_theharvester(f"results/theharvester_{domain}.txt")
+    if os.path.exists(f"results/theharvester_{domain}.json"):
+        results['theharvester'] = parse_theharvester(f"results/theharvester_{domain}.json")
     if os.path.exists(f"results/httpx_headers_{domain}.txt"):
         results['httpx'] = parse_httpx(f"results/httpx_headers_{domain}.txt")
     if os.path.exists(f"results/sublist3r_{domain}.txt"):

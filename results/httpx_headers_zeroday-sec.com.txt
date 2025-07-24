@@ -1,0 +1,41 @@
+HTTP/1.1 200 OK
+Connection: Keep-Alive
+Keep-Alive: timeout=5, max=100
+content-type: text/html
+last-modified: Wed, 19 Feb 2025 14:31:55 GMT
+accept-ranges: bytes
+content-encoding: br
+vary: Accept-Encoding
+content-length: 350
+date: Thu, 24 Jul 2025 07:20:54 GMT
+server: LiteSpeed
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+x-xss-protection: 1;  mode=block
+x-download-options: noopen
+x-permitted-cross-domain-policies: master-only
+x-dns-prefetch-control: on
+referrer-policy: no-referrer-when-downgrade
+strict-transport-security: max-age=31536000
+content-security-policy: block-all-mixed-content
+alt-svc: h3=":443"; ma=2592000, h3-29=":443"; ma=2592000, h3-Q050=":443"; ma=2592000, h3-Q046=":443"; ma=2592000, h3-Q043=":443"; ma=2592000, quic=":443"; ma=2592000; v="43,46"
+
+<!doctype html>
+<title>Site Maintenance</title>
+<style>
+  body { text-align: center; padding: 150px; }
+  h1 { font-size: 50px; }
+  body { font: 20px Helvetica, sans-serif; color: #333; }
+  article { display: block; text-align: left; width: 650px; margin: 0 auto; }
+  a { color: #dc8100; text-decoration: none; }
+  a:hover { color: #333; text-decoration: none; }
+</style>
+
+<article>
+    <h1>We&rsquo;ll be back soon!</h1>
+    <div>
+        <p>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment. If you need to you can always <a href="mailto:team@zeroday-sec.com">contact 
+us</a>, otherwise we&rsquo;ll be back online shortly!</p>
+        <p>&mdash; 0day Team</p>
+    </div>
+</article>

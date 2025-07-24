@@ -3,8 +3,9 @@ import os
 
 def sublist3r_scan(domain):
     print(f"Running sublist3r scan on {domain}...")
+    os.makedirs("results", exist_ok=True)
     output_file = f"results/sublist3r_{domain}.txt"
-    command = ["/home/kali/Desktop/python-security-scanner/venv/bin/sublist3r", "-d", domain, "-o", output_file]
+    command = ["/usr/bin/sublist3r", "-d", domain, "-o", output_file]
     try:
         result = subprocess.run(command, check=True, capture_output=True, text=True)
         print(f"sublist3r scan for {domain} completed.")

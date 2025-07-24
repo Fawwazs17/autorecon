@@ -1,33 +1,26 @@
-import re
+import json
 
-def parse_theharvester(text_file):
+def parse_theharvester(json_file):
     emails = set()
     hosts = set()
+    ips = set()
     try:
-        with open(text_file, 'r') as f:
-            content = f.read()
+        with open(json_file, 'r') as f:
+            data = json.load(f)
+        print(f"Parsing theHarvester JSON: {data}") # Debugging line
 
-        # Regex to find emails
-        email_pattern = re.compile(r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}')
-        found_emails = email_pattern.findall(content)
-        for email in found_emails:
-            emails.add(email)
-
-        # Regex to find hosts/subdomains (simplified, may need refinement)
-        # This pattern looks for lines that might contain hostnames
-        host_pattern = re.compile(r'\b([a-zA-Z0-9.-]+\.[a-zA-Z]{2,})\b')
-        found_hosts = host_pattern.findall(content)
-        for host in found_hosts:
-            # Filter out common non-host strings that might match the pattern
-            if not any(ext in host for ext in ['.css', '.js', '.png', '.jpg', '.gif', '.svg', '.pdf']):
-                hosts.add(host)
+        emails = set(data.get('emails', []))
+        hosts = set(data.get('hosts', []))
+        ips = set(data.get('ips', [])) # Extract IPs
 
     except FileNotFoundError:
-        return {'emails': [], 'hosts': []}
+        print(f"theHarvester JSON file not found: {json_file}")
+        return {'emails': [], 'hosts': [], 'ips': []}
+    except json.JSONDecodeError as e:
+        print(f"Error decoding JSON from theHarvester file {json_file}: {e}")
+        return {'emails': [], 'hosts': [], 'ips': []}
     except Exception as e:
-        print(f"Error parsing theHarvester text file {text_file}: {e}")
-        return {'emails': [], 'hosts': []}
+        print(f"Error parsing theHarvester JSON file {json_file}: {e}")
+        return {'emails': [], 'hosts': [], 'ips': []}
 
-    return {'emails': list(emails), 'hosts': list(hosts)}
-
-    return {'emails': list(emails), 'hosts': list(hosts)}
+    return {'emails': list(emails), 'hosts': list(hosts), 'ips': list(ips)}
