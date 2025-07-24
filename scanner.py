@@ -69,6 +69,11 @@ def main():
             json.dump(results, f, indent=4)
         print(f"Aggregated results saved to {json_output_path}")
 
+        # Generate data dictionary based on the aggregated results
+        from data_dictionary_generator import create_data_dictionary_file
+        data_dict_path = create_data_dictionary_file(domain, results, reports_dir)
+        print(f"Data dictionary generated: {data_dict_path}")
+
         from report_generator import generate_report
         generate_report(domain, results)
 
