@@ -1,0 +1,5 @@
+www.zeroday-sec.com
+academy.zeroday-sec.com
+certs.zeroday-sec.com
+www.certs.zeroday-sec.com
+webmail.zeroday-sec.com

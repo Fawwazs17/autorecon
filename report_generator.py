@@ -114,12 +114,13 @@ def determine_severity(tool_name, finding):
             return 'Informational'
     return 'Informational' # Default for anything not explicitly handled
 
-def generate_report(domain, results):
+def generate_report(domain, results, author):
     doc = SimpleDocTemplate(f"reports/report_{domain}.pdf")
     styles = getSampleStyleSheet()
     story = []
 
     story.append(Paragraph(f"Security Scan Report for {domain}", styles['h1']))
+    story.append(Paragraph(f"Author: {author}", styles['h2']))
     story.append(Spacer(1, 12))
 
     categorized_data = categorize_results(results)

@@ -3,8 +3,7 @@ import subprocess
 import os
 
 def whatweb_scan(domain):
-    print(f"Running whatweb scan on {domain}...")
-    # Try the more robust command first
+    # print(f"Running whatweb scan on {domain}...")
     os.makedirs("results", exist_ok=True)
     output_file = f"results/whatweb_{domain}.txt"
     command = [
@@ -16,10 +15,13 @@ def whatweb_scan(domain):
         f"--log-brief={output_file}"
     ]
     try:
-        subprocess.run(command, check=True)
-        print(f"WhatWeb scan for {domain} completed.")
+        with open(os.devnull, 'w') as devnull:
+            subprocess.run(command, check=True, stdout=devnull, stderr=devnull)
+        # print(f"WhatWeb scan for {domain} completed.")
     except subprocess.CalledProcessError as e:
-        print(f"WhatWeb scan failed for {domain}: {e}")
+        # print(f"WhatWeb scan failed for {domain}: {e}")
+        pass
     except FileNotFoundError:
-        print("WhatWeb is not installed or not in PATH. Please ensure 'whatweb' is in your system's PATH.")
+        # print("WhatWeb is not installed or not in PATH. Please ensure 'whatweb' is in your system's PATH.")
+        pass
 

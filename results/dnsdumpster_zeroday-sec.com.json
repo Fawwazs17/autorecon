@@ -10,8 +10,7 @@
           "country": "Malaysia",
           "country_code": "MY",
           "ip": "103.191.76.181",
-          "ptr": "",
-          "revip_count": 2797
+          "ptr": ""
         }
       ]
     },
@@ -25,8 +24,7 @@
           "country": "Malaysia",
           "country_code": "MY",
           "ip": "103.191.76.181",
-          "ptr": "",
-          "revip_count": 2797
+          "ptr": ""
         }
       ]
     },
@@ -40,14 +38,12 @@
           "country": "Malaysia",
           "country_code": "MY",
           "ip": "103.191.76.181",
-          "ptr": "",
-          "revip_count": 2797
+          "ptr": ""
         }
       ]
     }
   ],
   "cname": [],
-  "file_id": "ad712709-ccf2-45ae-8418-c8d56b57fd1f",
   "mx": [
     {
       "host": "0 zeroday-sec.com",
@@ -66,7 +62,7 @@
   ],
   "ns": [
     {
-      "host": "zen-02.jimatdns.com",
+      "host": "zen-01.jimatdns.com",
       "ips": [
         {
           "asn": "136727",
@@ -80,7 +76,7 @@
       ]
     },
     {
-      "host": "zen-01.jimatdns.com",
+      "host": "zen-02.jimatdns.com",
       "ips": [
         {
           "asn": "136727",

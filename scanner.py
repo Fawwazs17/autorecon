@@ -1,8 +1,8 @@
-import argparse
 import threading
 import os
 import sys
 import datetime
+import time
 from scanners.nmap_scanner import nmap_scan
 from scanners.whatweb_scanner import whatweb_scan
 from scanners.dnsenum_scanner import dnsenum_scan
@@ -11,78 +11,105 @@ from scanners.httpx_scanner import httpx_scan
 from scanners.sublist3r_scanner import sublist3r_scan
 from scanners.dnsdumpster_scanner import dnsdumpster_scan
 
+def print_ascii_art():
+    try:
+        with open('autorecon_ascii_art.txt', 'r') as f:
+            print(f.read())
+    except FileNotFoundError:
+        print("ASCII art file not found.")
+
+def get_user_input():
+    author = input("Enter the author of the scan: ")
+    while True:
+        domain = input("Enter the domain name to scan: ")
+        if domain and '.' in domain:
+            return domain, author
+        else:
+            print("Invalid domain name. Please enter a valid domain.")
+
+def run_scan(scan_func, domain, results_dict, tool_name):
+    results_dict[tool_name] = scan_func(domain)
+
 def main():
-    parser = argparse.ArgumentParser(description='Automated security scanner.')
-    parser.add_argument('-d', '--domain', required=True, help='The domain name to scan.')
-    parser.add_argument('--log-file', help='Path to a file to log all terminal output.')
-    args = parser.parse_args()
+    print_ascii_art()
+    domain, author = get_user_input()
+    log_file = f"scan_log_{domain}.txt"
 
     original_stdout = sys.stdout
     original_stderr = sys.stderr
     log_file_handle = None
 
     try:
-        if args.log_file:
-            try:
-                log_file_handle = open(args.log_file, 'a') # 'a' for append mode
-                sys.stdout = log_file_handle
-                sys.stderr = log_file_handle
-                print(f"\n--- Scan started at {datetime.datetime.now()} ---")
-            except Exception as e:
-                print(f"Error opening log file {args.log_file}: {e}", file=original_stderr)
-                sys.stdout = original_stdout
-                sys.stderr = original_stderr
+        log_file_handle = open(log_file, 'a')
+        # Redirect stdout and stderr to the log file
+        sys.stdout = log_file_handle
+        sys.stderr = log_file_handle
 
-        domain = args.domain
-        print(f"Scanning domain: {domain}")
+        print(f"\n--- Scan started at {datetime.datetime.now()} by {author} ---", file=original_stdout)
 
-        scans = [
-            nmap_scan,
-            whatweb_scan,
-            dnsenum_scan,
-            theharvester_scan,
-            httpx_scan,
-            sublist3r_scan,
-            dnsdumpster_scan
-        ]
+        start_time = time.time()
+
+        scans = {
+            "Nmap": nmap_scan,
+            "WhatWeb": whatweb_scan,
+            "DNSEnum": dnsenum_scan,
+            "theHarvester": theharvester_scan,
+            "HTTPX": httpx_scan,
+            "Sublist3r": sublist3r_scan,
+            "DNSDumpster": dnsdumpster_scan
+        }
 
         threads = []
-        for scan_func in scans:
-            thread = threading.Thread(target=scan_func, args=(domain,))
-            threads.append(thread)
+        results = {}
+        print("\n--- Starting Scans ---", file=original_stdout)
+        for name, scan_func in scans.items():
+            print(f"[+] Starting {name} scan...", file=original_stdout)
+            thread = threading.Thread(target=run_scan, args=(scan_func, domain, results, name.lower()))
+            threads.append((name, thread))
             thread.start()
 
-        for thread in threads:
+        for name, thread in threads:
             thread.join()
+            print(f"[+] {name} scan finished.", file=original_stdout)
 
-        print("All scans completed.")
+        end_time = time.time()
+        duration = end_time - start_time
+        print(f"\nAll scans completed in {duration:.2f} seconds.", file=original_stdout)
 
-        # Add a call to the data aggregation function here
-        results = aggregate_results(domain)
+        # Restore stdout and stderr
+        sys.stdout = original_stdout
+        sys.stderr = original_stderr
+        log_file_handle.close()
 
-        # Save results to JSON file
+        # Now print to the actual terminal
+        print("\n--- Aggregating Results ---")
+        aggregated_results = aggregate_results(domain)
+
         reports_dir = "reports"
         os.makedirs(reports_dir, exist_ok=True)
         json_output_path = os.path.join(reports_dir, f"results_{domain}.json")
         with open(json_output_path, 'w') as f:
             import json
-            json.dump(results, f, indent=4)
+            json.dump(aggregated_results, f, indent=4)
         print(f"Aggregated results saved to {json_output_path}")
 
-        # Generate data dictionary based on the aggregated results
+        print("Generating data dictionary...")
         from data_dictionary_generator import create_data_dictionary_file
-        data_dict_path = create_data_dictionary_file(domain, results, reports_dir)
+        data_dict_path = create_data_dictionary_file(domain, aggregated_results, reports_dir)
         print(f"Data dictionary generated: {data_dict_path}")
 
+        print("Generating PDF report...")
         from report_generator import generate_report
-        generate_report(domain, results)
+        generate_report(domain, aggregated_results, author)
+        print(f"PDF report generated: reports/report_{domain}.pdf")
 
-    finally:
+    except Exception as e:
+        # Ensure stdout and stderr are restored on error
         if log_file_handle:
-            print(f"\n--- Scan finished at {datetime.datetime.now()} ---")
             log_file_handle.close()
-            sys.stdout = original_stdout
-            sys.stderr = original_stderr
+        sys.stdout = original_stdout
+        sys.stderr = original_stderr
+        print(f"An error occurred: {e}")
 
 def aggregate_results(domain):
     from parsers.nmap_parser import parse_nmap
@@ -108,10 +135,6 @@ def aggregate_results(domain):
         results['sublist3r'] = parse_sublist3r(f"results/sublist3r_{domain}.txt")
     if os.path.exists(f"results/dnsdumpster_{domain}.json"):
         results['dnsdumpster'] = parse_dnsdumpster(f"results/dnsdumpster_{domain}.json")
-
-    print("\n--- Aggregated Results ---")
-    import json
-    print(json.dumps(results, indent=4))
 
     return results
 
