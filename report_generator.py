@@ -9,14 +9,7 @@ from reportlab.graphics.shapes import Drawing
 from datetime import datetime
 from reportlab.lib.units import inch
 
-def calculate_scan_duration(timestamp_str):
-    """Calculate duration from timestamp to now (simplified for this example)"""
-    try:
-        # For this example, we'll just show the scan was completed
-        scan_time = datetime.fromisoformat(timestamp_str.replace('Z', '+00:00'))
-        return f"Completed at {scan_time.strftime('%H:%M:%S')}"
-    except:
-        return "N/A"
+
 
 def get_category_data_counts(data_dictionary):
     """Extract actual data counts from the JSON structure"""
@@ -147,7 +140,7 @@ def add_footer(canvas, doc):
     canvas.drawString(doc.width - 2*inch, 0.75 * inch, datetime.now().strftime("%Y-%m-%d %H:%M"))
     canvas.restoreState()
 
-def generate_report(domain, data_dictionary_path, output_path):
+def generate_report(domain, data_dictionary_path, output_path, author, scan_duration_str):
     """Generate the PDF reconnaissance report"""
     doc = SimpleDocTemplate(output_path, pagesize=letter, topMargin=inch, bottomMargin=inch)
     styles = getSampleStyleSheet()
@@ -193,17 +186,18 @@ def generate_report(domain, data_dictionary_path, output_path):
     # Extract scan metadata
     scan_metadata = data_dictionary.get("scan_metadata", {})
     target_domain = scan_metadata.get("domain", domain)
-    timestamp = scan_metadata.get("timestamp", "")
-    scan_duration = calculate_scan_duration(timestamp)
+    # Use the passed scan_duration_str directly
+    # timestamp = scan_metadata.get("timestamp", "")
+    # scan_duration = calculate_scan_duration(timestamp)
 
     # === FIRST PAGE: Header and Pie Chart ===
     story.append(Paragraph(f"🔍 Reconnaissance Report", styles['ReportTitle']))
     story.append(Paragraph(f"Target Domain: {target_domain}", styles['ReportTitle']))
     story.append(Spacer(1, 0.3 * inch))
     
-    story.append(Paragraph(f"<b>Prepared by:</b> Automated Recon Tool", styles['Normal']))
+    story.append(Paragraph(f"<b>Prepared by:</b> {author}", styles['Normal']))
     story.append(Paragraph(f"<b>Generated:</b> {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}", styles['Normal']))
-    story.append(Paragraph(f"<b>Scan Duration:</b> {scan_duration}", styles['Normal']))
+    story.append(Paragraph(f"<b>Scan Duration:</b> {scan_duration_str}", styles['Normal']))
     story.append(Paragraph(f"<b>Total Sources:</b> {scan_metadata.get('total_sources', 'N/A')}", styles['Normal']))
     story.append(Spacer(1, 0.5 * inch))
 
@@ -414,5 +408,7 @@ if __name__ == '__main__':
     domain = "zeroday-sec.com"
     data_path = f"data_dictionary_{domain}.json"
     output_path = f"reconnaissance_report_{domain}.pdf"
+    author_example = "Test User"
+    scan_duration_example = "00:05:30"
     
-    generate_report(domain, data_path, output_path)
+    generate_report(domain, data_path, output_path, author_example, scan_duration_example)

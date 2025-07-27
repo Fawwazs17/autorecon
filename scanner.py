@@ -76,7 +76,9 @@ def main():
 
         end_time = time.time()
         duration = end_time - start_time
-        scan_duration = time.strftime("%H:%M:%S", time.gmtime(duration))
+        minutes = int(duration // 60)
+        seconds = int(duration % 60)
+        scan_duration = f"{minutes} minute(s) {seconds} second(s)"
         print(f"\nAll scans completed in {duration:.2f} seconds.", file=original_stdout)
 
         # Restore stdout and stderr
@@ -104,7 +106,7 @@ def main():
         print("Generating PDF report...")
         from report_generator import generate_report
         pdf_output_path = os.path.join(reports_dir, f"report_{domain}.pdf")
-        generate_report(domain, data_dict_path, pdf_output_path)
+        generate_report(domain, data_dict_path, pdf_output_path, author, scan_duration)
         print(f"PDF report generated: {pdf_output_path}")
 
         # Clean up _ips.txt files
