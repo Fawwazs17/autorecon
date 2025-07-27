@@ -5,14 +5,19 @@ def sublist3r_scan(domain, log_handle):
     # print(f"Running sublist3r scan on {domain}...")
     os.makedirs("results", exist_ok=True)
     output_file = f"results/sublist3r_{domain}.txt"
-    command = ["/home/kali/Desktop/python-security-scanner/venv/bin/python", "/home/kali/Desktop/python-security-scanner/venv/lib/python3.13/site-packages/sublist3r.py", "-d", domain, "-o", output_file]
+    command = ["/usr/bin/sublist3r", "-d", domain, "-o", output_file]
     try:
-        subprocess.run(command, check=True, stdout=log_handle, stderr=log_handle)
+        subprocess.run(command, check=True, stdout=log_handle, stderr=log_handle, timeout=300) # 5 minutes timeout
         return output_file
-        # print(f"sublist3r scan for {domain} completed.")
     except subprocess.CalledProcessError as e:
-        # print(f"sublist3r scan failed for {domain}: {e.stderr}")
-        pass
+        log_handle.write(f"Sublist3r scan failed for {domain} with exit code {e.returncode}: {e.stderr.decode() if e.stderr else 'No stderr output'}\n")
+        return None
     except FileNotFoundError:
-        # print("sublist3r is not installed or not in PATH. Please ensure 'sublist3r' is in your system's PATH.")
-        pass
+        log_handle.write(f"Sublist3r executable not found. Please ensure 'sublist3r' is in your system's PATH or the venv path is correct.\n")
+        return None
+    except subprocess.TimeoutExpired:
+        log_handle.write(f"Sublist3r scan for {domain} timed out after 5 minutes.\n")
+        return None
+    except Exception as e:
+        log_handle.write(f"An unexpected error occurred during Sublist3r scan for {domain}: {e}\n")
+        return None
