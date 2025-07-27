@@ -3,6 +3,7 @@ import os
 import sys
 import datetime
 import time
+import glob
 from scanners.nmap_scanner import nmap_scan
 from scanners.whatweb_scanner import whatweb_scan
 from scanners.dnsenum_scanner import dnsenum_scan
@@ -106,6 +107,9 @@ def main():
         generate_report(domain, data_dict_path, pdf_output_path)
         print(f"PDF report generated: {pdf_output_path}")
 
+        # Clean up _ips.txt files
+        cleanup_ips_files()
+
     except Exception as e:
         # Ensure stdout and stderr are restored on error
         if log_file_handle:
@@ -140,6 +144,14 @@ def aggregate_results(domain):
         results['dnsdumpster'] = parse_dnsdumpster(f"results/dnsdumpster_{domain}.json")
 
     return results
+
+def cleanup_ips_files():
+    for f in glob.glob("*_ips.txt"):
+        try:
+            os.remove(f)
+            print(f"Cleaned up: {f}")
+        except OSError as e:
+            print(f"Error deleting file {f}: {e}")
 
 if __name__ == '__main__':
     main()
