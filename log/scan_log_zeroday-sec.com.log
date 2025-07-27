@@ -1,0 +1,300 @@
+
+--- Starting Scans ---
+Exception in thread Thread-5 (run_scan):
+Traceback (most recent call last):
+  File "/home/linuxbrew/.linuxbrew/opt/python@3.13/lib/python3.13/threading.py", line 1043, in _bootstrap_inner
+    self.run()
+    ~~~~~~~~^^
+  File "/home/linuxbrew/.linuxbrew/opt/python@3.13/lib/python3.13/threading.py", line 994, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kali/Desktop/python-security-scanner/scanner.py", line 31, in run_scan
+    results_dict[tool_name] = scan_func(domain, log_handle)
+                              ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/kali/Desktop/python-security-scanner/scanners/httpx_scanner.py", line 11, in httpx_scan
+    subprocess.run(command, check=True, stdout=f, stderr=log_handle)
+                                               ^
+NameError: name 'f' is not defined
+/home/kali/Desktop/python-security-scanner/venv/lib/python3.13/site-packages/sublist3r.py:78: SyntaxWarning: invalid escape sequence '\_'
+  \___ \| | | | '_ \| | / __| __| |_ \| '__|
+/home/kali/Desktop/python-security-scanner/venv/lib/python3.13/site-packages/sublist3r.py:286: SyntaxWarning: invalid escape sequence '\/'
+  link_regx = re.compile('<cite.*?>(.*?)<\/cite>')
+/home/kali/Desktop/python-security-scanner/venv/lib/python3.13/site-packages/sublist3r.py:343: SyntaxWarning: invalid escape sequence '\/'
+  link = re.sub("<(\/)?b>", "", link)
+/home/kali/Desktop/python-security-scanner/venv/lib/python3.13/site-packages/sublist3r.py:439: SyntaxWarning: invalid escape sequence '\/'
+  link = re.sub('<(\/)?strong>|<span.*?>|<|>', '', link)
+/home/kali/Desktop/python-security-scanner/venv/lib/python3.13/site-packages/sublist3r.py:658: SyntaxWarning: invalid escape sequence '\/'
+  tbl_regex = re.compile('<a name="hostanchor"><\/a>Host Records.*?<table.*?>(.*?)</table>', re.S)
+/home/kali/Desktop/python-security-scanner/venv/lib/python3.13/site-packages/sublist3r.py:898: SyntaxWarning: invalid escape sequence '\-'
+  domain_check = re.compile("^(http|https)?[a-zA-Z0-9]+([\-\.]{1}[a-zA-Z0-9]+)*\.[a-zA-Z]{2,}$")
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-07-27 21:41 +08
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0[91m
+                 ____        _     _ _     _   _____
+                / ___| _   _| |__ | (_)___| |_|___ / _ __
+                \___ \| | | | '_ \| | / __| __| |_ \| '__|
+                 ___) | |_| | |_) | | \__ \ |_ ___) | |
+                |____/ \__,_|_.__/|_|_|___/\__|____/|_|[0m[93m
+
+                # Coded By Ahmed Aboul-Ela - @aboul3la
+    
+[94m[-] Enumerating subdomains now for zeroday-sec.com[0m
+[92m[-] Searching now in Baidu..[0m
+[92m[-] Searching now in Yahoo..[0m
+[92m[-] Searching now in Google..[0m
+[92m[-] Searching now in Bing..[0m
+[92m[-] Searching now in Ask..[0m
+[92m[-] Searching now in Netcraft..[0m
+[92m[-] Searching now in DNSdumpster..[0m
+[92m[-] Searching now in Virustotal..[0m
+[92m[-] Searching now in ThreatCrowd..[0m
+[92m[-] Searching now in SSL Certificates..[0m
+[92m[-] Searching now in PassiveDNS..[0m
+Process DNSdumpster-8:
+Traceback (most recent call last):
+  File "/home/linuxbrew/.linuxbrew/opt/python@3.13/lib/python3.13/multiprocessing/process.py", line 313, in _bootstrap
+    self.run()
+    ~~~~~~~~^^
+  File "/home/kali/Desktop/python-security-scanner/venv/lib/python3.13/site-packages/sublist3r.py", line 268, in run
+    domain_list = self.enumerate()
+  File "/home/kali/Desktop/python-security-scanner/venv/lib/python3.13/site-packages/sublist3r.py", line 647, in enumerate
+    token = self.get_csrftoken(resp)
+  File "/home/kali/Desktop/python-security-scanner/venv/lib/python3.13/site-packages/sublist3r.py", line 641, in get_csrftoken
+    token = csrf_regex.findall(resp)[0]
+            ~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+[91m[!] Error: Virustotal probably now is blocking our requests[0m
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0AXFR record query failed: NOTAUTH
+AXFR record query failed: NOTAUTH
+[91m[!] Error: Google probably now is blocking our requests[0m
+[91m[~] Finished now the Google Enumeration ...[0m
+100  2236  100  2236    0     0   2342      0 --:--:-- --:--:-- --:--:--  2341
+[93m[-] Saving results to file: [0m[91mresults/sublist3r_zeroday-sec.com.txt[0m
+[93m[-] Total Unique Subdomains Found: 5[0m
+[92mwww.zeroday-sec.com[0m
+[92macademy.zeroday-sec.com[0m
+[92mcerts.zeroday-sec.com[0m
+[92mwww.certs.zeroday-sec.com[0m
+[92mwebmail.zeroday-sec.com[0m
+dnsenum VERSION:1.3.1
+[1;34m
+-----   zeroday-sec.com   -----
+[0m[1;31m
+
+Host's addresses:
+__________________
+
+[0mzeroday-sec.com.                         14400    IN    A        103.191.76.181
+[1;31m
+
+Name Servers:
+______________
+
+[0mzen-01.jimatdns.com.                     3600     IN    A        103.191.76.181
+zen-02.jimatdns.com.                     3600     IN    A        103.191.76.181
+[1;31m
+
+Mail (MX) Servers:
+___________________
+
+[0mzeroday-sec.com.                         14400    IN    A        103.191.76.181
+[1;31m
+
+Trying Zone Transfers and getting Bind Versions:
+_________________________________________________
+
+[0m
+Trying Zone Transfer for zeroday-sec.com on zen-01.jimatdns.com ... 
+
+Trying Zone Transfer for zeroday-sec.com on zen-02.jimatdns.com ... 
+[1;31m
+
+Brute forcing with /usr/share/dnsenum/dns.txt:
+_______________________________________________
+
+[0mautodiscover.zeroday-sec.com.            14400    IN    A        103.191.76.181
+ftp.zeroday-sec.com.                     14400    IN    A        103.191.76.181
+mail.zeroday-sec.com.                    14400    IN    CNAME    zeroday-sec.com.
+zeroday-sec.com.                         14390    IN    A        103.191.76.181
+webmail.zeroday-sec.com.                 14400    IN    A        103.191.76.181
+www.zeroday-sec.com.                     14400    IN    CNAME    zeroday-sec.com.
+zeroday-sec.com.                         14383    IN    A        103.191.76.181
+[1;31m
+
+zeroday-sec.com class C netranges:
+___________________________________
+
+[0m 103.191.76.0/24
+[1;31m
+
+Performing reverse lookup on 256 ip addresses:
+_______________________________________________
+
+[0m
+0 results out of 256 IP addresses.
+[1;31m
+
+zeroday-sec.com ip blocks:
+___________________________
+
+[0m
+done.
+Read proxies.yaml from /etc/theHarvester/proxies.yaml
+*******************************************************************
+*  _   _                                            _             *
+* | |_| |__   ___    /\  /\__ _ _ ____   _____  ___| |_ ___ _ __  *
+* | __|  _ \ / _ \  / /_/ / _` | '__\ \ / / _ \/ __| __/ _ \ '__| *
+* | |_| | | |  __/ / __  / (_| | |   \ V /  __/\__ \ ||  __/ |    *
+*  \__|_| |_|\___| \/ /_/ \__,_|_|    \_/ \___||___/\__\___|_|    *
+*                                                                 *
+* theHarvester 4.8.0                                              *
+* Coded by Christian Martorella                                   *
+* Edge-Security Research                                          *
+* cmartorella@edge-security.com                                   *
+*                                                                 *
+*******************************************************************
+
+[*] Target: zeroday-sec.com 
+
+Read api-keys.yaml from /etc/theHarvester/api-keys.yaml
+[94m[*] Searching Duckduckgo. 
+	Searching 0 results.
+[94m[*] Searching Bing. 
+[94m[*] Searching Otx. 
+[94m[*] Searching CRTsh. 
+
+[*] IPs found: 2
+-------------------
+103.191.76.131
+110.4.45.109
+
+[*] No emails found.
+
+[*] No people found.
+
+[*] Hosts found: 1
+---------------------
+certs.zeroday-sec.com
+
+[*] Reporting started.
+[*] XML File saved.
+[*] JSON File saved.
+
+
+
+Nmap scan report for zeroday-sec.com (103.191.76.181)
+Host is up (0.0092s latency).
+Not shown: 932 filtered tcp ports (no-response), 58 closed tcp ports (reset)
+PORT    STATE SERVICE   VERSION
+21/tcp  open  ftp       Pure-FTPd
+53/tcp  open  domain    PowerDNS Authoritative Server 4.9.5
+80/tcp  open  http      LiteSpeed
+110/tcp open  pop3      Dovecot pop3d
+143/tcp open  imap      Dovecot imapd
+443/tcp open  ssl/https LiteSpeed
+465/tcp open  ssl/smtp  Exim smtpd 4.98.2
+587/tcp open  smtp      Exim smtpd 4.98.2
+993/tcp open  imaps?
+995/tcp open  pop3s?
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port80-TCP:V=7.95%I=7%D=7/27%Time=68862CA0%P=aarch64-unknown-linux-gnu%
+SF:r(GetRequest,173,"HTTP/1\.0\x20200\x20OK\r\nConnection:\x20close\r\ncon
+SF:tent-type:\x20text/html\r\nlast-modified:\x20Sat,\x2010\x20Oct\x202020\
+SF:x2019:37:25\x20GMT\r\naccept-ranges:\x20bytes\r\ncontent-length:\x20163
+SF:\r\ndate:\x20Sun,\x2027\x20Jul\x202025\x2013:41:52\x20GMT\r\nserver:\x2
+SF:0LiteSpeed\r\n\r\n<html><head><META\x20HTTP-EQUIV=\"Cache-control\"\x20
+SF:CONTENT=\"no-cache\"><META\x20HTTP-EQUIV=\"refresh\"\x20CONTENT=\"0;URL
+SF:=/cgi-sys/defaultwebpage\.cgi\"></head><body></body></html>\n")%r(HTTPO
+SF:ptions,8F,"HTTP/1\.0\x20200\x20OK\r\nConnection:\x20close\r\nallow:\x20
+SF:OPTIONS,HEAD,GET,POST\r\ncontent-length:\x200\r\ndate:\x20Sun,\x2027\x2
+SF:0Jul\x202025\x2013:41:52\x20GMT\r\nserver:\x20LiteSpeed\r\n\r\n")%r(RTS
+SF:PRequest,3F0,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20clos
+SF:e\r\ncache-control:\x20private,\x20no-cache,\x20no-store,\x20must-reval
+SF:idate,\x20max-age=0\r\npragma:\x20no-cache\r\ncontent-type:\x20text/htm
+SF:l\r\ncontent-length:\x20769\r\ndate:\x20Sun,\x2027\x20Jul\x202025\x2013
+SF::41:52\x20GMT\r\nserver:\x20LiteSpeed\r\n\r\n<!DOCTYPE\x20html>\n<html\
+SF:x20style=\"height:100%\">\n<head>\n<meta\x20name=\"viewport\"\x20conten
+SF:t=\"width=device-width,\x20initial-scale=1,\x20shrink-to-fit=no\"\x20/>
+SF:\n<title>\x20400\x20Bad\x20Request\r\n</title><style>@media\x20\(prefer
+SF:s-color-scheme:dark\){body{background-color:#000!important}}</style></h
+SF:ead>\n<body\x20style=\"color:\x20#444;\x20margin:0;font:\x20normal\x201
+SF:4px/20px\x20Arial,\x20Helvetica,\x20sans-serif;\x20height:100%;\x20back
+SF:ground-color:\x20#fff;\">\n<div\x20style=\"height:auto;\x20min-height:1
+SF:00%;\x20\">\x20\x20\x20\x20\x20<div\x20style=\"text-align:\x20center;\x
+SF:20width:800px;\x20margin-left:\x20-400px;\x20position:absolute;\x20top:
+SF:\x2030%;\x20left:50%;\">\n\x20\x20\x20\x20\x20\x20\x20\x20<h1\x20style=
+SF:\"margin:0;\x20font-size:150px;\x20line-height:150px;\x20font-weight:bo
+SF:ld;\">400</h1>\n<h2\x20style=\"margin")%r(FourOhFourRequest,27BA,"HTTP/
+SF:1\.0\x20404\x20Not\x20Found\r\nConnection:\x20close\r\ncontent-type:\x2
+SF:0text/html\r\ndate:\x20Sun,\x2027\x20Jul\x202025\x2013:41:57\x20GMT\r\n
+SF:server:\x20LiteSpeed\r\n\r\n\n\n\n<!DOCTYPE\x20html>\n<html>\n\x20\x20\
+SF:x20\x20<head>\n\x20\x20\x20\x20<meta\x20http-equiv=\"Content-type\"\x20
+SF:content=\"text/html;\x20charset=utf-8\">\n\x20\x20\x20\x20<meta\x20http
+SF:-equiv=\"Cache-control\"\x20content=\"no-cache\">\n\x20\x20\x20\x20<met
+SF:a\x20http-equiv=\"Pragma\"\x20content=\"no-cache\">\n\x20\x20\x20\x20<m
+SF:eta\x20http-equiv=\"Expires\"\x20content=\"0\">\n\x20\x20\x20\x20<meta\
+SF:x20name=\"viewport\"\x20content=\"width=device-width,\x20initial-scale=
+SF:1\.0\">\n\x20\x20\x20\x20<title>404\x20Not\x20Found</title>\n\x20\x20\x
+SF:20\x20<style\x20type=\"text/css\">\n\x20\x20\x20\x20\x20\x20\x20\x20bod
+SF:y\x20{\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-family:\x2
+SF:0Arial,\x20Helvetica,\x20sans-serif;\n\x20\x20\x20\x20\x20\x20\x20\x20\
+SF:x20\x20\x20\x20font-size:\x2014px;\n\x20\x20\x20\x20\x20\x20\x20\x20\x2
+SF:0\x20\x20\x20line-height:\x201\.428571429;\n\x20\x20\x20\x20\x20\x20\x2
+SF:0\x20\x20\x20\x20\x20background-color:\x20#ffffff;\n\x20\x20\x20\x20\x2
+SF:0\x20\x20\x20\x20\x20\x20\x20color:\x20#2F3230;\n\x20\x20\x20\x20\x20\x
+SF:20\x20\x20\x20\x20\x20\x20padding:\x200;\n\x20\x20\x20\x20\x20\x20\x20\
+SF:x20\x20\x20\x20\x20margin:\x200;\n\x20\x20\x20\x20\x20\x20\x20\x20}\n\x
+SF:20\x20\x20\x20\x20\x20\x20\x20section,\x20footer\x20{\n\x20\x20\x20\x20
+SF:\x20\x20\x20\x20\x20\x20\x20\x20display:\x20block;\n\x20\x20\x20\x20\x2
+SF:0\x20\x20\x20\x20\x20\x20\x20padding:\x200;\n\x20\x20\x20\x20\x20\x20\x
+SF:20\x20\x20\x20\x20\x20margin:\x200;\n\x20\x20\x20\x20\x20\x20\x20\x20}\
+SF:n\x20\x20\x20\x20\x20\x20");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port443-TCP:V=7.95%T=SSL%I=7%D=7/27%Time=68862CA6%P=aarch64-unknown-lin
+SF:ux-gnu%r(GetRequest,7FEA,"HTTP/1\.0\x20200\x20OK\r\nConnection:\x20clos
+SF:e\r\nx-dns-prefetch-control:\x20on\r\ncontent-type:\x20text/html;\x20ch
+SF:arset=UTF-8\r\nlink:\x20<https://zenjimat\.xyz/index\.php/wp-json/>;\x2
+SF:0rel=\"https://api\.w\.org/\"\r\netag:\x20\"679-1753612868;;;\"\r\nx-li
+SF:tespeed-cache:\x20hit\r\ncontent-length:\x2098622\r\ndate:\x20Sun,\x202
+SF:7\x20Jul\x202025\x2013:41:58\x20GMT\r\nserver:\x20LiteSpeed\r\nx-conten
+SF:t-type-options:\x20nosniff\r\nx-frame-options:\x20SAMEORIGIN\r\nx-xss-p
+SF:rotection:\x201;\x20\x20mode=block\r\nx-download-options:\x20noopen\r\n
+SF:x-permitted-cross-domain-policies:\x20master-only\r\nreferrer-policy:\x
+SF:20no-referrer-when-downgrade\r\nstrict-transport-security:\x20max-age=3
+SF:1536000\r\ncontent-security-policy:\x20block-all-mixed-content\r\n\r\n<
+SF:!DOCTYPE\x20html><html\x20lang=\"en-US\"><head><script\x20data-no-optim
+SF:ize=\"1\">var\x20litespeed_docref=sessionStorage\.getItem\(\"litespeed_
+SF:docref\"\);litespeed_docref&&\(Object\.defineProperty\(document,\"refer
+SF:rer\",{get:function\(\){return\x20litespeed_docref}}\),sessionStorage\.
+SF:removeItem\(\"litespeed_doc")%r(HTTPOptions,1E3,"HTTP/1\.0\x20200\x20OK
+SF:\r\nConnection:\x20close\r\nallow:\x20OPTIONS,HEAD,GET,POST\r\ncontent-
+SF:length:\x200\r\ndate:\x20Sun,\x2027\x20Jul\x202025\x2013:41:58\x20GMT\r
+SF:\nserver:\x20LiteSpeed\r\nx-content-type-options:\x20nosniff\r\nx-frame
+SF:-options:\x20SAMEORIGIN\r\nx-xss-protection:\x201;\x20\x20mode=block\r\
+SF:nx-download-options:\x20noopen\r\nx-permitted-cross-domain-policies:\x2
+SF:0master-only\r\nx-dns-prefetch-control:\x20on\r\nreferrer-policy:\x20no
+SF:-referrer-when-downgrade\r\nstrict-transport-security:\x20max-age=31536
+SF:000\r\ncontent-security-policy:\x20block-all-mixed-content\r\n\r\n")%r(
+SF:FourOhFourRequest,5F2,"HTTP/1\.0\x20404\x20Not\x20Found\r\nConnection:\
+SF:x20close\r\ncache-control:\x20private,\x20no-cache,\x20no-store,\x20mus
+SF:t-revalidate,\x20max-age=0\r\npragma:\x20no-cache\r\ncontent-type:\x20t
+SF:ext/html\r\ncontent-length:\x201251\r\ndate:\x20Sun,\x2027\x20Jul\x2020
+SF:25\x2013:41:58\x20GMT\r\nserver:\x20LiteSpeed\r\nx-content-type-options
+SF::\x20nosniff\r\n\r\n<!DOCTYPE\x20html>\n<html\x20style=\"height:100%\">
+SF:\n<head>\n<meta\x20name=\"viewport\"\x20content=\"width=device-width,\x
+SF:20initial-scale=1,\x20shrink-to-fit=no\"\x20/>\n<title>\x20404\x20Not\x
+SF:20Found\r\n</title><style>@media\x20\(prefers-color-scheme:dark\){body{
+SF:background-color:#000!important}}</style></head>\n<body\x20style=\"colo
+SF:r:\x20#444;\x20margin:0;font:\x20normal\x2014px/20px\x20Arial,\x20Helve
+SF:tica,\x20sans-serif;\x20height:100%;\x20background-color:\x20#fff;\">\n
+SF:<div\x20style=\"height:auto;\x20min-height:100%;\x20\">\x20\x20\x20\x20
+SF:\x20<div\x20style=\"text-align:\x20center;\x20width:800px;\x20margin-le
+SF:ft:\x20-400px;\x20position:absolute;\x20top:\x2030%;\x20left:50%;\">\n\
+SF:x20\x20\x20\x20\x20\x20\x20\x20<h1\x20style=\"margin:0;\x20font-size:15
+SF:0px;\x20line-height:150px;\x20font-weight:bol");
+Service Info: Host: zen.ix-dns.com
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 48.75 seconds

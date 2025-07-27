@@ -27,19 +27,20 @@ def get_user_input():
         else:
             print("Invalid domain name. Please enter a valid domain.")
 
-def run_scan(scan_func, domain, results_dict, tool_name):
-    results_dict[tool_name] = scan_func(domain)
+def run_scan(scan_func, domain, results_dict, tool_name, log_handle):
+    results_dict[tool_name] = scan_func(domain, log_handle)
 
 def main():
     print_ascii_art()
     domain, author = get_user_input()
-    log_file = f"scan_log_{domain}.txt"
+    log_file = f"log/scan_log_{domain}.log"
 
     original_stdout = sys.stdout
     original_stderr = sys.stderr
     log_file_handle = None
 
     try:
+        os.makedirs('log', exist_ok=True)
         log_file_handle = open(log_file, 'a')
         # Redirect stdout and stderr to the log file
         sys.stdout = log_file_handle
@@ -61,10 +62,10 @@ def main():
 
         threads = []
         results = {}
-        print("\n--- Starting Scans ---", file=original_stdout)
+        print("\n--- Starting Scans ---")
         for name, scan_func in scans.items():
             print(f"[+] Starting {name} scan...", file=original_stdout)
-            thread = threading.Thread(target=run_scan, args=(scan_func, domain, results, name.lower()))
+            thread = threading.Thread(target=run_scan, args=(scan_func, domain, results, name.lower(), log_file_handle))
             threads.append((name, thread))
             thread.start()
 

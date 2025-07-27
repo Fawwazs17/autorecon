@@ -2,14 +2,14 @@
 import subprocess
 import os
 
-def nmap_scan(domain):
+def nmap_scan(domain, log_handle):
     # print(f"Running nmap scan on {domain}...")
     os.makedirs("results", exist_ok=True)
-    command = ["/usr/bin/nmap", domain, "-T4", "-sV", "-oX", f"results/nmap_{domain}.xml"]
+    output_file = f"results/nmap_{domain}.xml"
+    command = ["/usr/bin/nmap", domain, "-T4", "-sV", "-oX", output_file]
     try:
-        # Redirect stdout and stderr to /dev/null to prevent any output
-        with open(os.devnull, 'w') as devnull:
-            subprocess.run(command, check=True, stdout=devnull, stderr=devnull)
+        subprocess.run(command, check=True, stdout=log_handle, stderr=log_handle)
+        return output_file
         # print(f"Nmap scan for {domain} completed.")
     except subprocess.CalledProcessError as e:
         # print(f"Nmap scan failed for {domain}: {e}")

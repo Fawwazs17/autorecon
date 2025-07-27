@@ -1,0 +1,210 @@
+{
+    "nmap": [
+        {
+            "ip": "103.191.76.181",
+            "ports": [
+                {
+                    "portid": "21",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "ftp"
+                },
+                {
+                    "portid": "53",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "domain"
+                },
+                {
+                    "portid": "80",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "http"
+                },
+                {
+                    "portid": "110",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "pop3"
+                },
+                {
+                    "portid": "143",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "imap"
+                },
+                {
+                    "portid": "443",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "https"
+                },
+                {
+                    "portid": "465",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "smtp"
+                },
+                {
+                    "portid": "587",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "smtp"
+                },
+                {
+                    "portid": "993",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "imaps"
+                },
+                {
+                    "portid": "995",
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "pop3s"
+                }
+            ]
+        }
+    ],
+    "whatweb": {
+        "url": "https://zeroday-sec.com/",
+        "status": "200 OK",
+        "Email": "team@zeroday-sec.com",
+        "HTML5": true,
+        "HTTPServer": "LiteSpeed",
+        "IP": "103.191.76.181",
+        "LiteSpeed": true,
+        "Strict-Transport-Security": "max-age=31536000",
+        "Title": "Site Maintenance",
+        "UncommonHeaders": "x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1;  mode=block"
+    },
+    "dnsenum": [
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181",
+        "103.191.76.181"
+    ],
+    "theharvester": {
+        "emails": [],
+        "hosts": [
+            "certs.zeroday-sec.com"
+        ],
+        "ips": [
+            "110.4.45.109",
+            "103.191.76.131"
+        ]
+    },
+    "sublist3r": [
+        "www.zeroday-sec.com",
+        "academy.zeroday-sec.com",
+        "certs.zeroday-sec.com",
+        "www.certs.zeroday-sec.com",
+        "webmail.zeroday-sec.com"
+    ],
+    "dnsdumpster": {
+        "a": [
+            {
+                "host": "certs.zeroday-sec.com",
+                "ips": [
+                    {
+                        "asn": "136727",
+                        "asn_name": "JTS-AS-AP Jimat Technology Solution, MY",
+                        "asn_range": "103.191.76.0/24",
+                        "country": "Malaysia",
+                        "country_code": "MY",
+                        "ip": "103.191.76.181",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "www.certs.zeroday-sec.com",
+                "ips": [
+                    {
+                        "asn": "136727",
+                        "asn_name": "JTS-AS-AP Jimat Technology Solution, MY",
+                        "asn_range": "103.191.76.0/24",
+                        "country": "Malaysia",
+                        "country_code": "MY",
+                        "ip": "103.191.76.181",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "webmail.zeroday-sec.com",
+                "ips": [
+                    {
+                        "asn": "136727",
+                        "asn_name": "JTS-AS-AP Jimat Technology Solution, MY",
+                        "asn_range": "103.191.76.0/24",
+                        "country": "Malaysia",
+                        "country_code": "MY",
+                        "ip": "103.191.76.181",
+                        "ptr": ""
+                    }
+                ]
+            }
+        ],
+        "cname": [],
+        "mx": [
+            {
+                "host": "0 zeroday-sec.com",
+                "ips": [
+                    {
+                        "asn": "136727",
+                        "asn_name": "JTS-AS-AP Jimat Technology Solution, MY",
+                        "asn_range": "103.191.76.0/24",
+                        "country": "Malaysia",
+                        "country_code": "MY",
+                        "ip": "103.191.76.181",
+                        "ptr": ""
+                    }
+                ]
+            }
+        ],
+        "ns": [
+            {
+                "host": "zen-01.jimatdns.com",
+                "ips": [
+                    {
+                        "asn": "136727",
+                        "asn_name": "JTS-AS-AP Jimat Technology Solution, MY",
+                        "asn_range": "103.191.76.0/24",
+                        "country": "Malaysia",
+                        "country_code": "MY",
+                        "ip": "103.191.76.181",
+                        "ptr": ""
+                    }
+                ]
+            },
+            {
+                "host": "zen-02.jimatdns.com",
+                "ips": [
+                    {
+                        "asn": "136727",
+                        "asn_name": "JTS-AS-AP Jimat Technology Solution, MY",
+                        "asn_range": "103.191.76.0/24",
+                        "country": "Malaysia",
+                        "country_code": "MY",
+                        "ip": "103.191.76.181",
+                        "ptr": ""
+                    }
+                ]
+            }
+        ],
+        "total_a_recs": 3,
+        "txt": [
+            "\"v=spf1 a mx include:relay.mailbaby.net ~all\""
+        ]
+    }
+}

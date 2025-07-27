@@ -2,7 +2,7 @@
 import subprocess
 import os
 
-def whatweb_scan(domain):
+def whatweb_scan(domain, log_handle):
     # print(f"Running whatweb scan on {domain}...")
     os.makedirs("results", exist_ok=True)
     output_file = f"results/whatweb_{domain}.txt"
@@ -15,7 +15,8 @@ def whatweb_scan(domain):
     ]
     try:
         with open(output_file, 'w') as f:
-            subprocess.run(command, check=True, stdout=f, stderr=subprocess.DEVNULL)
+            subprocess.run(command, check=True, stdout=f, stderr=log_handle)
+        return output_file
         # print(f"WhatWeb scan for {domain} completed.")
     except subprocess.CalledProcessError as e:
         # print(f"WhatWeb scan failed for {domain}: {e}")

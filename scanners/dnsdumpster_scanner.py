@@ -1,7 +1,7 @@
 import subprocess
 import os
 
-def dnsdumpster_scan(domain):
+def dnsdumpster_scan(domain, log_handle):
     # print(f"Running DNSDumpster scan on {domain}...")
     os.makedirs("results", exist_ok=True)
     output_file = f"results/dnsdumpster_{domain}.json"
@@ -13,8 +13,8 @@ def dnsdumpster_scan(domain):
         "-o", output_file
     ]
     try:
-        with open(os.devnull, 'w') as devnull:
-            subprocess.run(command, check=True, stdout=devnull, stderr=devnull)
+        subprocess.run(command, check=True, stdout=log_handle, stderr=log_handle)
+        return output_file
         # print(f"DNSDumpster scan for {domain} completed.")
     except subprocess.CalledProcessError as e:
         # print(f"DNSDumpster scan failed for {domain}: {e}")
