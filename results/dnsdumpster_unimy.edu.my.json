@@ -321,13 +321,13 @@
   ],
   "total_a_recs": 8,
   "txt": [
+    "\"v=spf1 include:spf.protection.outlook.com ip4:23.251.233.28 ~all\"",
+    "\"google-site-verification=ahvyKXixBrRcAQ_lcB0O8yEgQDcBZXuQ1uPW9xf9VTM\"",
     "\"openatts a=dns-did; p=did:ethr:0xdaa884f6a23c25edfd653f38aef622dde5a2b462#controller; v=1.0;\"",
     "\"Sendinblue-code:67192ff1fa576f9929a80b99f9883198\"",
     "\"openatts net=ethereum netId=1 addr=0x1c30b5b5245b493566d03b56e184f308d1153e74\"",
     "\"google-site-verification=pioAe8hu3cTr0XAYwDj6mzl-GY6_LH_JVgDM753BIt4\"",
     "\"ZOOM_verify_VMxRglEPE7A35irDn8bz6x\"",
-    "\"v=spf1 include:spf.protection.outlook.com ip4:23.251.233.28 ~all\"",
-    "\"openai-domain-verification=dv-9aiC8oXDLkYwMGKW92rmJgYe\"",
-    "\"google-site-verification=ahvyKXixBrRcAQ_lcB0O8yEgQDcBZXuQ1uPW9xf9VTM\""
+    "\"openai-domain-verification=dv-9aiC8oXDLkYwMGKW92rmJgYe\""
   ]
 }
