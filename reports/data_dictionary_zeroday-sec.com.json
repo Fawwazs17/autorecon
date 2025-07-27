@@ -1,6 +1,6 @@
 {
   "scan_metadata": {
-    "timestamp": "2025-07-27T14:57:46.069682",
+    "timestamp": "2025-07-27T15:09:38.858114",
     "total_sources": 7,
     "available_sources": [
       "nmap",
@@ -113,7 +113,7 @@
       ],
       "ns_records": [
         {
-          "host": "zen-01.jimatdns.com",
+          "host": "zen-02.jimatdns.com",
           "ips": [
             {
               "asn": "136727",
@@ -127,7 +127,7 @@
           ]
         },
         {
-          "host": "zen-02.jimatdns.com",
+          "host": "zen-01.jimatdns.com",
           "ips": [
             {
               "asn": "136727",
@@ -157,8 +157,8 @@
         "certs.zeroday-sec.com"
       ],
       "discovered_ips": [
-        "110.4.45.109",
-        "103.191.76.131"
+        "103.191.76.131",
+        "110.4.45.109"
       ]
     },
     "dnsdumpster": {
@@ -232,6 +232,6 @@
     }
   },
   "http_headers": {
-    "httpx": "HTTP/1.1 200 OK\nConnection: Keep-Alive\nKeep-Alive: timeout=5, max=100\ncontent-type: text/html\nlast-modified: Wed, 19 Feb 2025 14:31:55 GMT\naccept-ranges: bytes\ncontent-encoding: br\nvary: Accept-Encoding\ncontent-length: 350\ndate: Sun, 27 Jul 2025 06:55:59 GMT\nserver: LiteSpeed\nx-content-type-options: nosniff\nx-frame-options: SAMEORIGIN\nx-xss-protection: 1;  mode=block\nx-download-options: noopen\nx-permitted-cross-domain-policies: master-only\nx-dns-prefetch-control: on\nreferrer-policy: no-referrer-when-downgrade\nstrict-transport-security: max-age=31536000\ncontent-security-policy: block-all-mixed-content\nalt-svc: h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; \nma=2592000; v=\"43,46\"\n\n<!doctype html>\n<title>Site Maintenance</title>\n<style>\n  body { text-align: center; padding: 150px; }\n  h1 { font-size: 50px; }\n  body { font: 20px Helvetica, sans-serif; color: #333; }\n  article { display: block; text-align: left; width: 650px; margin: 0 auto; }\n  a { color: #dc8100; text-decoration: none; }\n  a:hover { color: #333; text-decoration: none; }\n</style>\n\n<article>\n    <h1>We&rsquo;ll be back soon!</h1>\n    <div>\n        <p>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment. If you need to you can always <a \nhref=\"mailto:team@zeroday-sec.com\">contact us</a>, otherwise we&rsquo;ll be back online shortly!</p>\n        <p>&mdash; 0day Team</p>\n    </div>\n</article>\n"
+    "httpx": "HTTP/1.1 200 OK\nConnection: Keep-Alive\nKeep-Alive: timeout=5, max=100\ncontent-type: text/html\nlast-modified: Wed, 19 Feb 2025 14:31:55 GMT\naccept-ranges: bytes\ncontent-encoding: br\nvary: Accept-Encoding\ncontent-length: 350\ndate: Sun, 27 Jul 2025 07:07:57 GMT\nserver: LiteSpeed\nx-content-type-options: nosniff\nx-frame-options: SAMEORIGIN\nx-xss-protection: 1;  mode=block\nx-download-options: noopen\nx-permitted-cross-domain-policies: master-only\nx-dns-prefetch-control: on\nreferrer-policy: no-referrer-when-downgrade\nstrict-transport-security: max-age=31536000\ncontent-security-policy: block-all-mixed-content\nalt-svc: h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; \nma=2592000; v=\"43,46\"\n\n<!doctype html>\n<title>Site Maintenance</title>\n<style>\n  body { text-align: center; padding: 150px; }\n  h1 { font-size: 50px; }\n  body { font: 20px Helvetica, sans-serif; color: #333; }\n  article { display: block; text-align: left; width: 650px; margin: 0 auto; }\n  a { color: #dc8100; text-decoration: none; }\n  a:hover { color: #333; text-decoration: none; }\n</style>\n\n<article>\n    <h1>We&rsquo;ll be back soon!</h1>\n    <div>\n        <p>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment. If you need to you can always <a \nhref=\"mailto:team@zeroday-sec.com\">contact us</a>, otherwise we&rsquo;ll be back online shortly!</p>\n        <p>&mdash; 0day Team</p>\n    </div>\n</article>\n"
   }
 }
