@@ -6,7 +6,7 @@ def dnsenum_scan(domain, log_handle):
     # print(f"Running dnsenum scan on {domain}...")
     os.makedirs("results", exist_ok=True)
     output_file = f"results/dnsenum_{domain}.xml"
-    command = ["/usr/bin/perl", "/usr/bin/dnsenum", domain, "--output", output_file]
+    command = ["/usr/bin/perl", "/usr/bin/dnsenum", domain, "--noreverse", "--output", output_file]
     try:
         subprocess.run(command, check=True, stdout=log_handle, stderr=log_handle)
         return output_file

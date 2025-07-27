@@ -151,7 +151,6 @@ def cleanup_ips_files():
     for f in glob.glob("*_ips.txt"):
         try:
             os.remove(f)
-            print(f"Cleaned up: {f}")
         except OSError as e:
             print(f"Error deleting file {f}: {e}")
 

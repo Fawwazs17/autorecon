@@ -1,6 +1,9 @@
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0Starting Nmap 7.95 ( https://nmap.org ) at 2025-07-27 22:34 +08
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0Starting Nmap 7.95 ( https://nmap.org ) at 2025-07-28 00:22 +08
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0AXFR record query failed: FORMERR
+100    38  100    38    0     0     31      0  0:00:01  0:00:01 --:--:--    31
+AXFR record query failed: FORMERR
 [91m
                  ____        _     _ _     _   _____
                 / ___| _   _| |__ | (_)___| |_|___ / _ __
@@ -22,8 +25,7 @@
 [92m[-] Searching now in ThreatCrowd..[0m
 [92m[-] Searching now in SSL Certificates..[0m
 [92m[-] Searching now in PassiveDNS..[0m
-AXFR record query failed: FORMERR
-AXFR record query failed: FORMERR
+[91m[!] Error: Virustotal probably now is blocking our requests[0m
 Process DNSdumpster-8:
 Traceback (most recent call last):
   File "/usr/lib/python3.13/multiprocessing/process.py", line 313, in _bootstrap
@@ -37,8 +39,18 @@ Traceback (most recent call last):
     token = csrf_regex.findall(resp)[0]
             ~~~~~~~~~~~~~~~~~~~~~~~~^^^
 IndexError: list index out of range
-[91m[!] Error: Virustotal probably now is blocking our requests[0m
-  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0100  8883  100  8883    0     0   5249      0  0:00:01  0:00:01 --:--:--  5253
+[91m[!] Error: Google probably now is blocking our requests[0m
+[91m[~] Finished now the Google Enumeration ...[0m
+Nmap scan report for unimy.edu.my (54.255.89.183)
+Host is up (0.0084s latency).
+rDNS record for 54.255.89.183: ec2-54-255-89-183.ap-southeast-1.compute.amazonaws.com
+Not shown: 998 filtered tcp ports (no-response)
+PORT    STATE SERVICE  VERSION
+80/tcp  open  http     Apache httpd 2.4.59 ((Amazon Linux) OpenSSL/3.0.8)
+443/tcp open  ssl/http Apache httpd 2.4.59 ((Amazon Linux) OpenSSL/3.0.8)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 20.41 seconds
 Read proxies.yaml from /etc/theHarvester/proxies.yaml
 *******************************************************************
 *  _   _                                            _             *
@@ -131,12 +143,12 @@ __________________
 Name Servers:
 ______________
 
-[0mowen.ns.cloudflare.com.                  70746    IN    A        172.64.33.219
-owen.ns.cloudflare.com.                  70746    IN    A        173.245.59.219
-owen.ns.cloudflare.com.                  70746    IN    A        108.162.193.219
-coco.ns.cloudflare.com.                  70746    IN    A        108.162.192.104
-coco.ns.cloudflare.com.                  70746    IN    A        173.245.58.104
-coco.ns.cloudflare.com.                  70746    IN    A        172.64.32.104
+[0mowen.ns.cloudflare.com.                  64233    IN    A        108.162.193.219
+owen.ns.cloudflare.com.                  64233    IN    A        172.64.33.219
+owen.ns.cloudflare.com.                  64233    IN    A        173.245.59.219
+coco.ns.cloudflare.com.                  5801     IN    A        108.162.192.104
+coco.ns.cloudflare.com.                  5801     IN    A        172.64.32.104
+coco.ns.cloudflare.com.                  5801     IN    A        173.245.58.104
 [1;31m
 
 Mail (MX) Servers:
@@ -161,28 +173,28 @@ Brute forcing with /usr/share/dnsenum/dns.txt:
 _______________________________________________
 
 [0mautodiscover.unimy.edu.my.               300      IN    CNAME    autodiscover.outlook.com.
-autodiscover.outlook.com.                57       IN    CNAME    atod-g2.tm-4.office.com.
-atod-g2.tm-4.office.com.                 37       IN    CNAME    autod.ms-acdc-autod.office.com.
-autod.ms-acdc-autod.office.com.          7        IN    A        40.99.111.8
-autod.ms-acdc-autod.office.com.          7        IN    A        40.104.72.24
-autod.ms-acdc-autod.office.com.          7        IN    A        52.97.97.136
-autod.ms-acdc-autod.office.com.          7        IN    A        52.98.94.200
-dev.unimy.edu.my.                        300      IN    A        104.21.64.1
+autodiscover.outlook.com.                15       IN    CNAME    atod-g2.tm-4.office.com.
+atod-g2.tm-4.office.com.                 31       IN    CNAME    autod.ms-acdc-autod.office.com.
+autod.ms-acdc-autod.office.com.          10       IN    A        40.104.72.24
+autod.ms-acdc-autod.office.com.          10       IN    A        40.104.72.152
+autod.ms-acdc-autod.office.com.          10       IN    A        40.104.72.104
+autod.ms-acdc-autod.office.com.          10       IN    A        52.97.97.136
 dev.unimy.edu.my.                        300      IN    A        104.21.112.1
+dev.unimy.edu.my.                        300      IN    A        104.21.48.1
 dev.unimy.edu.my.                        300      IN    A        104.21.96.1
 dev.unimy.edu.my.                        300      IN    A        104.21.80.1
 dev.unimy.edu.my.                        300      IN    A        104.21.32.1
 dev.unimy.edu.my.                        300      IN    A        104.21.16.1
-dev.unimy.edu.my.                        300      IN    A        104.21.48.1
+dev.unimy.edu.my.                        300      IN    A        104.21.64.1
 f.unimy.edu.my.                          300      IN    A        49.124.206.10
 mail.unimy.edu.my.                       300      IN    A        104.21.80.1
 mail.unimy.edu.my.                       300      IN    A        104.21.64.1
-mail.unimy.edu.my.                       300      IN    A        104.21.16.1
-mail.unimy.edu.my.                       300      IN    A        104.21.96.1
-mail.unimy.edu.my.                       300      IN    A        104.21.112.1
 mail.unimy.edu.my.                       300      IN    A        104.21.32.1
 mail.unimy.edu.my.                       300      IN    A        104.21.48.1
-www.unimy.edu.my.                        287      IN    A        54.255.89.183
+mail.unimy.edu.my.                       300      IN    A        104.21.112.1
+mail.unimy.edu.my.                       300      IN    A        104.21.96.1
+mail.unimy.edu.my.                       300      IN    A        104.21.16.1
+www.unimy.edu.my.                        277      IN    A        54.255.89.183
 [1;31m
 
 unimy.edu.my class C netranges:
@@ -199,28 +211,20 @@ ________________________________
  104.21.112.0/24
 [1;31m
 
-Performing reverse lookup on 2304 ip addresses:
-________________________________________________
-
-[0m
-0 results out of 2304 IP addresses.
-[1;31m
-
 unimy.edu.my ip blocks:
 ________________________
 
-[0m
-done.
-Nmap scan report for unimy.edu.my (54.255.89.183)
-Host is up (0.016s latency).
-rDNS record for 54.255.89.183: ec2-54-255-89-183.ap-southeast-1.compute.amazonaws.com
-Not shown: 998 filtered tcp ports (no-response)
-PORT    STATE SERVICE  VERSION
-80/tcp  open  http     Apache httpd 2.4.59 ((Amazon Linux) OpenSSL/3.0.8)
-443/tcp open  ssl/http Apache httpd 2.4.59 ((Amazon Linux) OpenSSL/3.0.8)
+[0m 49.124.206.10/32
+ 54.255.89.183/32
+ 104.21.16.1/32
+ 104.21.32.1/32
+ 104.21.48.1/32
+ 104.21.64.1/32
+ 104.21.80.1/32
+ 104.21.96.1/32
+ 104.21.112.1/32
 
-Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap done: 1 IP address (1 host up) scanned in 197.46 seconds
+done.
 
 --- Starting Scans ---
 HTTPX scan failed for unimy.edu.my with exit code 1: No stderr output

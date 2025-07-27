@@ -1,6 +1,6 @@
 {
   "scan_metadata": {
-    "timestamp": "2025-07-27T22:38:00.186903",
+    "timestamp": "2025-07-28T00:23:11.252708",
     "total_sources": 6,
     "available_sources": [
       "nmap",
@@ -34,408 +34,84 @@
     ],
     "dnsenum": [
       "54.255.89.183",
+      "108.162.193.219",
       "172.64.33.219",
       "173.245.59.219",
-      "108.162.193.219",
       "108.162.192.104",
-      "173.245.58.104",
       "172.64.32.104",
+      "173.245.58.104",
       "52.101.157.80",
       "52.101.137.2",
       "52.101.124.117",
       "52.101.137.0",
-      "52.98.94.200",
       "40.104.72.24",
-      "40.99.111.8",
-      "40.99.111.8",
+      "52.97.97.104",
+      "40.104.72.152",
       "40.104.72.24",
+      "40.104.72.152",
+      "40.104.72.104",
       "52.97.97.136",
-      "52.98.94.200",
-      "104.21.64.1",
       "104.21.112.1",
+      "104.21.48.1",
       "104.21.96.1",
       "104.21.80.1",
       "104.21.32.1",
       "104.21.16.1",
-      "104.21.48.1",
+      "104.21.64.1",
       "49.124.206.10",
       "104.21.80.1",
       "104.21.64.1",
-      "104.21.16.1",
-      "104.21.96.1",
-      "104.21.112.1",
       "104.21.32.1",
       "104.21.48.1",
+      "104.21.112.1",
+      "104.21.96.1",
+      "104.21.16.1",
       "54.255.89.183"
-    ],
-    "dnsdumpster": {
-      "mx_records": [
-        {
-          "host": "0 unimy-edu-my.mail.protection.outlook.com",
-          "ips": [
-            {
-              "asn": "8075",
-              "asn_name": "MICROSOFT-CORP-MSN-AS-BLOCK",
-              "asn_range": "52.96.0.0/12",
-              "country": "Japan",
-              "country_code": "JP",
-              "ip": "52.101.124.117",
-              "ptr": ""
-            }
-          ]
-        }
-      ],
-      "ns_records": [
-        {
-          "host": "coco.ns.cloudflare.com",
-          "ips": [
-            {
-              "asn": "13335",
-              "asn_name": "CLOUDFLARENET",
-              "asn_range": "172.64.32.0/24",
-              "banners": {
-                "http": {
-                  "apps": [
-                    "Cloudflare"
-                  ],
-                  "server": "cloudflare",
-                  "title": "Direct IP access not allowed "
-                },
-                "http8080": {
-                  "alt_n": [],
-                  "apps": [
-                    "Cloudflare"
-                  ],
-                  "server": "cloudflare",
-                  "title": "Direct IP access not allowed "
-                },
-                "ip": "172.64.32.104"
-              },
-              "country": "unknown",
-              "country_code": "??",
-              "ip": "172.64.32.104",
-              "ptr": "coco.ns.cloudflare.com"
-            }
-          ]
-        },
-        {
-          "host": "owen.ns.cloudflare.com",
-          "ips": [
-            {
-              "asn": "13335",
-              "asn_name": "CLOUDFLARENET",
-              "asn_range": "108.162.193.0/24",
-              "banners": {
-                "http": {
-                  "apps": [
-                    "Cloudflare"
-                  ],
-                  "server": "cloudflare",
-                  "title": "Direct IP access not allowed "
-                },
-                "http8080": {
-                  "alt_n": [],
-                  "apps": [
-                    "Cloudflare"
-                  ],
-                  "server": "cloudflare",
-                  "title": "Direct IP access not allowed "
-                },
-                "ip": "108.162.193.219"
-              },
-              "country": "unknown",
-              "country_code": "??",
-              "ip": "108.162.193.219",
-              "ptr": "owen.ns.cloudflare.com"
-            }
-          ]
-        }
-      ],
-      "total_a_records": 8
-    }
+    ]
   },
   "subdomains_hosts": {
     "theharvester": {
       "discovered_hosts": [
-        "unidigit.unimy.edu.my",
-        "diploma.unimy.edu.my",
+        "icifdt.unimy.edu.my",
         "intake.unimy.edu.my",
-        "ocsp.unimy.edu.my",
         "openday.unimy.edu.my",
+        "www2.unimy.edu.my",
+        "postgrads.unimy.edu.my",
+        "2021staging.unimy.edu.my",
+        "unidigit.unimy.edu.my",
+        "code.unimy.edu.my",
+        "ocsp.unimy.edu.my",
+        "foundation.unimy.edu.my",
         "render.unimy.edu.my",
+        "ict.unimy.edu.my",
+        "degree.unimy.edu.my",
+        "event.unimy.edu.my",
+        "thankyou.unimy.edu.my",
         "uptime.unimy.edu.my",
         "lms-stream.unimy.edu.my",
-        "www2.unimy.edu.my",
-        "icifdt.unimy.edu.my",
-        "event.unimy.edu.my",
-        "foundation.unimy.edu.my",
-        "postgrads.unimy.edu.my",
-        "degree.unimy.edu.my",
-        "thankyou.unimy.edu.my",
-        "code.unimy.edu.my",
-        "ict.unimy.edu.my",
-        "2021staging.unimy.edu.my"
+        "diploma.unimy.edu.my"
       ],
       "discovered_ips": [
-        "172.67.199.200",
-        "104.31.95.107",
-        "23.236.62.147",
-        "104.168.139.118",
-        "185.230.61.211",
-        "54.255.89.183",
-        "54.184.58.211",
-        "104.31.94.107",
         "199.15.163.138",
-        "185.230.60.161",
+        "104.31.94.107",
+        "104.168.139.118",
         "172.67.145.110",
-        "185.230.61.195",
-        "104.24.110.107",
-        "67.227.255.236",
-        "104.21.21.181",
-        "185.230.61.96",
+        "185.230.61.211",
         "199.15.163.148",
-        "104.24.111.107",
+        "23.236.62.147",
+        "67.227.255.236",
+        "52.9.130.155",
+        "104.31.95.107",
+        "185.230.61.96",
         "107.178.254.45",
-        "52.9.130.155"
-      ]
-    },
-    "dnsdumpster": {
-      "a_records": [
-        {
-          "host": "2025.unimy.edu.my",
-          "ips": [
-            {
-              "asn": "16509",
-              "asn_name": "AMAZON-02",
-              "asn_range": "54.169.128.0/17",
-              "country": "Singapore",
-              "country_code": "SG",
-              "ip": "54.169.206.26",
-              "ptr": "ec2-54-169-206-26.ap-southeast-1.compute.amazonaws.com"
-            }
-          ]
-        },
-        {
-          "host": "elearning.unimy.edu.my",
-          "ips": [
-            {
-              "asn": "13335",
-              "asn_name": "CLOUDFLARENET",
-              "asn_range": "104.21.32.0/20",
-              "banners": {
-                "http": {
-                  "apps": [
-                    "Cloudflare"
-                  ],
-                  "server": "cloudflare",
-                  "title": "Direct IP access not allowed "
-                },
-                "http8080": {
-                  "alt_n": [],
-                  "apps": [
-                    "Cloudflare"
-                  ],
-                  "server": "cloudflare",
-                  "title": "Direct IP access not allowed "
-                },
-                "ip": "104.21.32.1"
-              },
-              "country": "unknown",
-              "country_code": "??",
-              "ip": "104.21.32.1",
-              "ptr": ""
-            }
-          ]
-        },
-        {
-          "host": "journal.unimy.edu.my",
-          "ips": [
-            {
-              "asn": "13335",
-              "asn_name": "CLOUDFLARENET",
-              "asn_range": "104.21.80.0/20",
-              "banners": {
-                "http8080": {
-                  "alt_n": [],
-                  "apps": [
-                    "Cloudflare"
-                  ],
-                  "server": "cloudflare",
-                  "title": "Direct IP access not allowed "
-                },
-                "ip": "104.21.80.1"
-              },
-              "country": "unknown",
-              "country_code": "??",
-              "ip": "104.21.80.1",
-              "ptr": ""
-            }
-          ]
-        },
-        {
-          "host": "libopac.unimy.edu.my",
-          "ips": [
-            {
-              "asn": "13335",
-              "asn_name": "CLOUDFLARENET",
-              "asn_range": "104.21.80.0/20",
-              "banners": {
-                "http8080": {
-                  "alt_n": [],
-                  "apps": [
-                    "Cloudflare"
-                  ],
-                  "server": "cloudflare",
-                  "title": "Direct IP access not allowed "
-                },
-                "ip": "104.21.80.1"
-              },
-              "country": "unknown",
-              "country_code": "??",
-              "ip": "104.21.80.1",
-              "ptr": ""
-            }
-          ]
-        },
-        {
-          "host": "library.unimy.edu.my",
-          "ips": [
-            {
-              "asn": "13335",
-              "asn_name": "CLOUDFLARENET",
-              "asn_range": "104.21.16.0/20",
-              "banners": {
-                "http": {
-                  "apps": [
-                    "Cloudflare"
-                  ],
-                  "server": "cloudflare",
-                  "title": "Direct IP access not allowed "
-                },
-                "http8080": {
-                  "alt_n": [],
-                  "apps": [
-                    "Cloudflare"
-                  ],
-                  "server": "cloudflare",
-                  "title": "Direct IP access not allowed "
-                },
-                "ip": "104.21.16.1"
-              },
-              "country": "unknown",
-              "country_code": "??",
-              "ip": "104.21.16.1",
-              "ptr": ""
-            }
-          ]
-        },
-        {
-          "host": "ums.unimy.edu.my",
-          "ips": [
-            {
-              "asn": "13335",
-              "asn_name": "CLOUDFLARENET",
-              "asn_range": "104.21.96.0/20",
-              "banners": {
-                "http": {
-                  "apps": [
-                    "Cloudflare"
-                  ],
-                  "server": "cloudflare",
-                  "title": "Direct IP access not allowed "
-                },
-                "http8080": {
-                  "alt_n": [],
-                  "apps": [
-                    "Cloudflare"
-                  ],
-                  "server": "cloudflare",
-                  "title": "Direct IP access not allowed "
-                },
-                "ip": "104.21.96.1"
-              },
-              "country": "unknown",
-              "country_code": "??",
-              "ip": "104.21.96.1",
-              "ptr": ""
-            }
-          ]
-        },
-        {
-          "host": "unidigit.unimy.edu.my",
-          "ips": [
-            {
-              "asn": "13335",
-              "asn_name": "CLOUDFLARENET",
-              "asn_range": "104.21.80.0/20",
-              "banners": {
-                "http8080": {
-                  "alt_n": [],
-                  "apps": [
-                    "Cloudflare"
-                  ],
-                  "server": "cloudflare",
-                  "title": "Direct IP access not allowed "
-                },
-                "ip": "104.21.80.1"
-              },
-              "country": "unknown",
-              "country_code": "??",
-              "ip": "104.21.80.1",
-              "ptr": ""
-            }
-          ]
-        },
-        {
-          "host": "www.unimy.edu.my",
-          "ips": [
-            {
-              "asn": "16509",
-              "asn_name": "AMAZON-02",
-              "asn_range": "54.255.0.0/17",
-              "banners": {
-                "http": {
-                  "apps": [
-                    "Apache HTTP Server:2.4.56",
-                    "WordPress",
-                    "MySQL",
-                    "PHP",
-                    "Yoast SEO:22.7",
-                    "Bootstrap",
-                    "OpenSSL:3.0.8"
-                  ],
-                  "redirect_location": "https://www.unimy.edu.my/403-error/",
-                  "server": "Apache/2.4.56 (Amazon Linux) OpenSSL/3.0.8",
-                  "title": "301 Moved Permanently"
-                },
-                "https": {
-                  "alt_n": [
-                    "unimy.edu.my",
-                    "www.unimy.edu.my"
-                  ],
-                  "apps": [
-                    "WordPress",
-                    "MySQL",
-                    "PHP",
-                    "OpenSSL:3.0.8",
-                    "Apache HTTP Server:2.4.56",
-                    "Yoast SEO:22.7",
-                    "Bootstrap"
-                  ],
-                  "cn": "unimy.edu.my",
-                  "redirect_location": "https://www.unimy.edu.my/403-error/",
-                  "server": "Apache/2.4.56 (Amazon Linux) OpenSSL/3.0.8",
-                  "title": "301 Moved Permanently"
-                },
-                "ip": "54.255.89.183"
-              },
-              "country": "Singapore",
-              "country_code": "SG",
-              "ip": "54.255.89.183",
-              "ptr": ""
-            }
-          ]
-        }
+        "104.24.110.107",
+        "104.21.21.181",
+        "172.67.199.200",
+        "54.255.89.183",
+        "185.230.61.195",
+        "185.230.60.161",
+        "104.24.111.107",
+        "54.184.58.211"
       ]
     }
   },
@@ -481,11 +157,11 @@
     "httpx": {
       "status_line": "HTTP/1.1 301 Moved Permanently",
       "headers": {
-        "Date": "Sun, 27 Jul 2025 14:34:42 GMT",
+        "Date": "Sun, 27 Jul 2025 16:22:41 GMT",
         "Server": "Apache/2.4.59 (Amazon Linux) OpenSSL/3.0.8",
         "Location": "https://www.unimy.edu.my/",
         "Cache-Control": "max-age=1",
-        "Expires": "Sun, 27 Jul 2025 14:34:43 GMT",
+        "Expires": "Sun, 27 Jul 2025 16:22:42 GMT",
         "Content-Length": "233",
         "Keep-Alive": "timeout=5, max=100",
         "Connection": "Keep-Alive",
