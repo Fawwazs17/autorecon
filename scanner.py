@@ -101,8 +101,9 @@ def main():
 
         print("Generating PDF report...")
         from report_generator import generate_report
-        generate_report(domain, aggregated_results, author, scan_duration)
-        print(f"PDF report generated: reports/report_{domain}.pdf")
+        pdf_output_path = os.path.join(reports_dir, f"report_{domain}.pdf")
+        generate_report(domain, data_dict_path, pdf_output_path)
+        print(f"PDF report generated: {pdf_output_path}")
 
     except Exception as e:
         # Ensure stdout and stderr are restored on error
