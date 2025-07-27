@@ -18,8 +18,7 @@ def get_category_data_counts(data_dictionary):
     # Network & DNS Info
     dns_count = 0
     network_dns = data_dictionary.get("network_dns_info", {})
-    if network_dns.get("nmap"):
-        dns_count += len(network_dns["nmap"])
+    
     if network_dns.get("dnsdumpster", {}).get("ns_records"):
         dns_count += len(network_dns["dnsdumpster"]["ns_records"])
     if network_dns.get("dnsdumpster", {}).get("mx_records"):
