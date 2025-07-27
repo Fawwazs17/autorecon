@@ -1,0 +1,153 @@
+{
+  "a": [
+    {
+      "host": "cpanel.certhora.com",
+      "ips": [
+        {
+          "asn": "141995",
+          "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+          "asn_range": "109.123.232.0/21",
+          "country": "Singapore",
+          "country_code": "SG",
+          "ip": "109.123.238.148",
+          "ptr": "gold.mudahhosting.com"
+        }
+      ]
+    },
+    {
+      "host": "cpcalendars.certhora.com",
+      "ips": [
+        {
+          "asn": "141995",
+          "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+          "asn_range": "109.123.232.0/21",
+          "country": "Singapore",
+          "country_code": "SG",
+          "ip": "109.123.238.148",
+          "ptr": "gold.mudahhosting.com"
+        }
+      ]
+    },
+    {
+      "host": "cpcontacts.certhora.com",
+      "ips": [
+        {
+          "asn": "141995",
+          "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+          "asn_range": "109.123.232.0/21",
+          "country": "Singapore",
+          "country_code": "SG",
+          "ip": "109.123.238.148",
+          "ptr": "gold.mudahhosting.com"
+        }
+      ]
+    },
+    {
+      "host": "wazkybol.certhora.com",
+      "ips": [
+        {
+          "asn": "141995",
+          "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+          "asn_range": "109.123.232.0/21",
+          "country": "Singapore",
+          "country_code": "SG",
+          "ip": "109.123.238.148",
+          "ptr": "gold.mudahhosting.com"
+        }
+      ]
+    },
+    {
+      "host": "www.wazkybol.certhora.com",
+      "ips": [
+        {
+          "asn": "141995",
+          "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+          "asn_range": "109.123.232.0/21",
+          "country": "Singapore",
+          "country_code": "SG",
+          "ip": "109.123.238.148",
+          "ptr": "gold.mudahhosting.com"
+        }
+      ]
+    },
+    {
+      "host": "webdisk.certhora.com",
+      "ips": [
+        {
+          "asn": "141995",
+          "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+          "asn_range": "109.123.232.0/21",
+          "country": "Singapore",
+          "country_code": "SG",
+          "ip": "109.123.238.148",
+          "ptr": "gold.mudahhosting.com"
+        }
+      ]
+    },
+    {
+      "host": "webmail.certhora.com",
+      "ips": [
+        {
+          "asn": "141995",
+          "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+          "asn_range": "109.123.232.0/21",
+          "country": "Singapore",
+          "country_code": "SG",
+          "ip": "109.123.238.148",
+          "ptr": "gold.mudahhosting.com"
+        }
+      ]
+    }
+  ],
+  "cname": [],
+  "mx": [
+    {
+      "host": "0 certhora.com",
+      "ips": [
+        {
+          "asn": "141995",
+          "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+          "asn_range": "109.123.232.0/21",
+          "country": "Singapore",
+          "country_code": "SG",
+          "ip": "109.123.238.148",
+          "ptr": "gold.mudahhosting.com"
+        }
+      ]
+    }
+  ],
+  "ns": [
+    {
+      "host": "ns1.mudahhosting.com",
+      "ips": [
+        {
+          "asn": "141995",
+          "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+          "asn_range": "109.123.232.0/21",
+          "country": "Singapore",
+          "country_code": "SG",
+          "ip": "109.123.238.148",
+          "ptr": "gold.mudahhosting.com"
+        }
+      ]
+    },
+    {
+      "host": "ns2.mudahhosting.com",
+      "ips": [
+        {
+          "asn": "141995",
+          "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+          "asn_range": "109.123.232.0/21",
+          "country": "Singapore",
+          "country_code": "SG",
+          "ip": "109.123.238.148",
+          "ptr": "gold.mudahhosting.com"
+        }
+      ]
+    }
+  ],
+  "total_a_recs": 7,
+  "txt": [
+    "\"v=spf1 +a +mx +ip4:109.123.238.148 ~all\""
+  ]
+}

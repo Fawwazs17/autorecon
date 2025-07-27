@@ -74,6 +74,7 @@ def main():
 
         end_time = time.time()
         duration = end_time - start_time
+        scan_duration = time.strftime("%H:%M:%S", time.gmtime(duration))
         print(f"\nAll scans completed in {duration:.2f} seconds.", file=original_stdout)
 
         # Restore stdout and stderr
@@ -100,7 +101,7 @@ def main():
 
         print("Generating PDF report...")
         from report_generator import generate_report
-        generate_report(domain, aggregated_results, author)
+        generate_report(domain, aggregated_results, author, scan_duration)
         print(f"PDF report generated: reports/report_{domain}.pdf")
 
     except Exception as e:
