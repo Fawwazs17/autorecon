@@ -99,6 +99,6 @@ At the beginning of the script execution, you will be prompted to enter your nam
 │   ├── theharvester_scanner.py
 │   └── whatweb_scanner.py
 ├── reports/                 # Generated JSON data dictionaries and PDF reports
-├──results/                  #Raw scanner outputs
+├──results/                  # Raw scanner outputs
 └── logs/                    # Raw scanner logs
 ```
