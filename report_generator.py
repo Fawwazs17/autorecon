@@ -10,6 +10,26 @@ from datetime import datetime
 from reportlab.lib.units import inch
 
 
+def _create_detailed_table(data):
+    table_data = [['Category', 'Details']]
+    table_data.extend(data)
+
+    table = Table(table_data, colWidths=[1.8*inch, 5.2*inch]) # Adjust column widths as needed
+    table.setStyle(TableStyle([
+        ('BACKGROUND', (0, 0), (-1, 0), HexColor('#34495E')),
+        ('TEXTCOLOR', (0, 0), (-1, 0), white),
+        ('ALIGN', (0, 0), (-1, -1), 'LEFT'),
+        ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+        ('FONTSIZE', (0, 0), (-1, 0), 12),
+        ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+        ('GRID', (0, 0), (-1, -1), 1, black),
+        ('FONTSIZE', (0, 1), (-1, -1), 10),
+        ('VALIGN', (0,0), (-1,-1), 'TOP'), # Align content to top for multi-line details
+        ('ROWBACKGROUNDS', (0, 1), (-1, -1), [HexColor('#F8F9FA'), white])
+    ]))
+    return table
+
+
 
 def get_category_data_counts(data_dictionary):
     """Extract actual data counts from the JSON structure"""
@@ -264,10 +284,10 @@ def generate_report(domain, data_dictionary_path, output_path, author, scan_dura
     
     # Apply severity colors
     severity_colors = {
-        'Critical': HexColor('#FFEBEE'),
-        'High': HexColor('#FFF3E0'), 
-        'Medium': HexColor('#FFFDE7'),
-        'Low': HexColor('#E8F5E8')
+        'Critical': HexColor('#d6112f'),
+        'High': HexColor('#d67011'), 
+        'Medium': HexColor('#fff700'),
+        'Low': HexColor('#1ed611')
     }
     
     for i, row in enumerate(summary_data[1:], 1):
@@ -283,36 +303,41 @@ def generate_report(domain, data_dictionary_path, output_path, author, scan_dura
     # === DETAILED SECTIONS ===
     story.append(Paragraph("Detailed Analysis", styles['SectionTitle']))
     
-    # 4.1 Network & DNS Info
+    # 4.1 Network & DNS Information
     story.append(Paragraph("4.1 Network & DNS Information", styles['SubSectionTitle']))
     
     network_dns = data_dictionary.get("network_dns_info", {})
+    detailed_network_dns_data = []
     
     # DNS Records
-    story.append(Paragraph("<b>DNS Records:</b>", styles['Normal']))
     dnsdumpster_data = network_dns.get("dnsdumpster", {})
+    ns_records = dnsdumpster_data.get("ns_records", [])
+    mx_records = dnsdumpster_data.get("mx_records", [])
     
-    if dnsdumpster_data.get("ns_records"):
-        story.append(Paragraph("Nameservers:", styles['Normal']))
-        for ns in dnsdumpster_data["ns_records"]:
-            story.append(Paragraph(f"• Host: {ns.get('host', 'N/A')}", styles['Normal']))
-    
-    if dnsdumpster_data.get("mx_records"):
-        story.append(Paragraph("MX Records:", styles['Normal']))
-        for mx in dnsdumpster_data["mx_records"]:
-            story.append(Paragraph(f"• {mx.get('host', 'N/A')}", styles['Normal']))
+    if ns_records or mx_records:
+        dns_details = ""
+        if ns_records:
+            dns_details += "Nameservers:\n" + "\n".join([f"• Host: {ns.get('host', 'N/A')}" for ns in ns_records]) + "\n"
+        if mx_records:
+            dns_details += "MX Records:\n" + "\n".join([f"• {mx.get('host', 'N/A')}" for mx in mx_records])
+        detailed_network_dns_data.append(["DNS Records", dns_details.strip()])
     
     # Open Ports
-    story.append(Paragraph("<b>Open Ports:</b>", styles['Normal']))
     if network_dns.get("nmap"):
+        ports_details = ""
         for host_data in network_dns["nmap"]:
             ip = host_data.get("ip", "Unknown")
-            story.append(Paragraph(f"Host: {ip}", styles['Normal']))
+            ports_details += f"Host: {ip}\n"
             for port in host_data.get("ports", []):
-                port_info = f"• {port.get('portid')}/{port.get('protocol')} - {port.get('service', 'Unknown')}"
-                story.append(Paragraph(port_info, styles['Normal']))
+                ports_details += f"• {port.get('portid')}/{port.get('protocol')} - {port.get('service', 'Unknown')}\n"
+        detailed_network_dns_data.append(["Open Ports", ports_details.strip()])
     else:
-        story.append(Paragraph("No open ports detected.", styles['Normal']))
+        detailed_network_dns_data.append(["Open Ports", "No open ports detected."])
+
+    if detailed_network_dns_data:
+        story.append(_create_detailed_table(detailed_network_dns_data))
+    else:
+        story.append(Paragraph("No network & DNS information available.", styles['Normal']))
     
     story.append(Spacer(1, 0.2 * inch))
     
@@ -332,15 +357,20 @@ def generate_report(domain, data_dictionary_path, output_path, author, scan_dura
         for record in subdomains_hosts["dnsdumpster"]["a_records"]:
             all_subdomains.add(record.get("host", ""))
     
-    story.append(Paragraph(f"<b>Total found:</b> {len(all_subdomains)}", styles['Normal']))
-    
+    detailed_subdomains_data = []
     if all_subdomains:
-        story.append(Paragraph("Discovered subdomains:", styles['Normal']))
-        for subdomain in sorted(list(all_subdomains))[:15]:  # Show first 15
-            story.append(Paragraph(f"• {subdomain}", styles['Normal']))
-        if len(all_subdomains) > 15:
-            story.append(Paragraph(f"... and {len(all_subdomains) - 15} more", styles['Normal']))
-    
+        subdomain_list = sorted(list(all_subdomains))
+        subdomains_details = f"Total found: {len(subdomain_list)}\n"
+        subdomains_details += "Discovered subdomains:\n"
+        for subdomain in subdomain_list[:15]:  # Show first 15
+            subdomains_details += f"• {subdomain}\n"
+        if len(subdomain_list) > 15:
+            subdomains_details += f"... and {len(subdomain_list) - 15} more"
+        detailed_subdomains_data.append(["Subdomains", subdomains_details.strip()])
+    else:
+        detailed_subdomains_data.append(["Subdomains", "No subdomains or hosts discovered."])
+
+    story.append(_create_detailed_table(detailed_subdomains_data))
     story.append(Spacer(1, 0.2 * inch))
     
     # 4.3 Emails
@@ -355,45 +385,56 @@ def generate_report(domain, data_dictionary_path, output_path, author, scan_dura
     if emails.get("whatweb", {}).get("contact_email"):
         found_emails.append(emails["whatweb"]["contact_email"])
     
+    detailed_emails_data = []
     if found_emails:
-        for email in found_emails:
-            story.append(Paragraph(f"• {email}", styles['Normal']))
+        emails_details = "\n".join([f"• {email}" for email in found_emails])
+        detailed_emails_data.append(["Emails", emails_details.strip()])
     else:
-        story.append(Paragraph("No email addresses discovered.", styles['Normal']))
+        detailed_emails_data.append(["Emails", "No email addresses discovered."])
     
+    story.append(_create_detailed_table(detailed_emails_data))
     story.append(Spacer(1, 0.2 * inch))
     
     # 4.4 Web Technologies
     story.append(Paragraph("4.4 Web Technologies", styles['SubSectionTitle']))
     
     web_tech = data_dictionary.get("web_technologies", {}).get("whatweb", {})
+    detailed_web_tech_data = []
     if web_tech:
-        story.append(Paragraph(f"<b>Server:</b> {web_tech.get('HTTPServer', 'Unknown')}", styles['Normal']))
-        story.append(Paragraph(f"<b>IP Address:</b> {web_tech.get('IP', 'Unknown')}", styles['Normal']))
-        story.append(Paragraph(f"<b>Page Title:</b> {web_tech.get('Title', 'Unknown')}", styles['Normal']))
+        web_tech_details = ""
+        web_tech_details += f"Server: {web_tech.get('HTTPServer', 'Unknown')}\n"
+        web_tech_details += f"IP Address: {web_tech.get('IP', 'Unknown')}\n"
+        web_tech_details += f"Page Title: {web_tech.get('Title', 'Unknown')}\n"
         
         if web_tech.get('HTML5'):
-            story.append(Paragraph("• HTML5 detected", styles['Normal']))
+            web_tech_details += "• HTML5 detected\n"
         if web_tech.get('LiteSpeed'):
-            story.append(Paragraph("• LiteSpeed web server", styles['Normal']))
+            web_tech_details += "• LiteSpeed web server\n"
         if web_tech.get('Strict-Transport-Security'):
-            story.append(Paragraph("• HSTS (HTTP Strict Transport Security) enabled", styles['Normal']))
+            web_tech_details += "• HSTS (HTTP Strict Transport Security) enabled\n"
+        detailed_web_tech_data.append(["Web Technologies", web_tech_details.strip()])
     else:
-        story.append(Paragraph("No web technologies detected.", styles['Normal']))
+        detailed_web_tech_data.append(["Web Technologies", "No web technologies detected."])
     
+    story.append(_create_detailed_table(detailed_web_tech_data))
     story.append(Spacer(1, 0.2 * inch))
     
     # 4.5 Live Hosts
     story.append(Paragraph("4.5 Live Hosts Analysis", styles['SubSectionTitle']))
     
     http_headers = data_dictionary.get("http_headers", {})
+    detailed_live_hosts_data = []
     if http_headers.get("httpx"):
-        story.append(Paragraph(f"<b>Target responds to HTTP/HTTPS requests</b>", styles['Normal']))
-        story.append(Paragraph(f"• Domain: {target_domain}", styles['Normal']))
-        story.append(Paragraph("• Protocol: HTTPS (443)", styles['Normal']))
-        story.append(Paragraph("• Status: Live and responding", styles['Normal']))
+        live_hosts_details = ""
+        live_hosts_details += f"Target responds to HTTP/HTTPS requests\n"
+        live_hosts_details += f"• Domain: {target_domain}\n"
+        live_hosts_details += f"• Protocol: HTTPS (443)\n"
+        live_hosts_details += f"• Status: Live and responding\n"
+        detailed_live_hosts_data.append(["Live Hosts", live_hosts_details.strip()])
     else:
-        story.append(Paragraph("No live hosts detected.", styles['Normal']))
+        detailed_live_hosts_data.append(["Live Hosts", "No live hosts detected."])
+
+    story.append(_create_detailed_table(detailed_live_hosts_data))
 
     # Build the PDF
     doc.build(story, onFirstPage=add_footer, onLaterPages=add_footer)

@@ -1,0 +1,258 @@
+{
+  "scan_metadata": {
+    "timestamp": "2025-07-28T14:59:52.036371",
+    "total_sources": 7,
+    "available_sources": [
+      "nmap",
+      "whatweb",
+      "dnsenum",
+      "theharvester",
+      "httpx",
+      "sublist3r",
+      "dnsdumpster"
+    ],
+    "domain": "zeroday-sec.com"
+  },
+  "network_dns_info": {
+    "nmap": [
+      {
+        "ip": "103.191.76.181",
+        "ports": [
+          {
+            "portid": "21",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "ftp"
+          },
+          {
+            "portid": "53",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "domain"
+          },
+          {
+            "portid": "80",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "http"
+          },
+          {
+            "portid": "110",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "pop3"
+          },
+          {
+            "portid": "143",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "imap"
+          },
+          {
+            "portid": "443",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "https"
+          },
+          {
+            "portid": "465",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "smtp"
+          },
+          {
+            "portid": "587",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "smtp"
+          },
+          {
+            "portid": "993",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "imaps"
+          },
+          {
+            "portid": "995",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "pop3s"
+          }
+        ]
+      }
+    ],
+    "dnsenum": [
+      "103.191.76.181",
+      "103.191.76.181",
+      "103.191.76.181",
+      "103.191.76.181",
+      "103.191.76.181",
+      "103.191.76.181",
+      "103.191.76.181",
+      "103.191.76.181",
+      "103.191.76.181",
+      "103.191.76.181",
+      "103.191.76.181"
+    ],
+    "dnsdumpster": {
+      "mx_records": [
+        {
+          "host": "0 zeroday-sec.com",
+          "ips": [
+            {
+              "asn": "136727",
+              "asn_name": "JTS-AS-AP Jimat Technology Solution, MY",
+              "asn_range": "103.191.76.0/24",
+              "country": "Malaysia",
+              "country_code": "MY",
+              "ip": "103.191.76.181",
+              "ptr": ""
+            }
+          ]
+        }
+      ],
+      "ns_records": [
+        {
+          "host": "zen-01.jimatdns.com",
+          "ips": [
+            {
+              "asn": "136727",
+              "asn_name": "JTS-AS-AP Jimat Technology Solution, MY",
+              "asn_range": "103.191.76.0/24",
+              "country": "Malaysia",
+              "country_code": "MY",
+              "ip": "103.191.76.181",
+              "ptr": ""
+            }
+          ]
+        },
+        {
+          "host": "zen-02.jimatdns.com",
+          "ips": [
+            {
+              "asn": "136727",
+              "asn_name": "JTS-AS-AP Jimat Technology Solution, MY",
+              "asn_range": "103.191.76.0/24",
+              "country": "Malaysia",
+              "country_code": "MY",
+              "ip": "103.191.76.181",
+              "ptr": ""
+            }
+          ]
+        }
+      ],
+      "total_a_records": 3
+    }
+  },
+  "subdomains_hosts": {
+    "sublist3r": [
+      "www.zeroday-sec.com",
+      "academy.zeroday-sec.com",
+      "certs.zeroday-sec.com",
+      "www.certs.zeroday-sec.com",
+      "webmail.zeroday-sec.com"
+    ],
+    "theharvester": {
+      "discovered_ips": [
+        "103.191.76.131",
+        "110.4.45.109"
+      ]
+    },
+    "dnsdumpster": {
+      "a_records": [
+        {
+          "host": "certs.zeroday-sec.com",
+          "ips": [
+            {
+              "asn": "136727",
+              "asn_name": "JTS-AS-AP Jimat Technology Solution, MY",
+              "asn_range": "103.191.76.0/24",
+              "country": "Malaysia",
+              "country_code": "MY",
+              "ip": "103.191.76.181",
+              "ptr": ""
+            }
+          ]
+        },
+        {
+          "host": "www.certs.zeroday-sec.com",
+          "ips": [
+            {
+              "asn": "136727",
+              "asn_name": "JTS-AS-AP Jimat Technology Solution, MY",
+              "asn_range": "103.191.76.0/24",
+              "country": "Malaysia",
+              "country_code": "MY",
+              "ip": "103.191.76.181",
+              "ptr": ""
+            }
+          ]
+        },
+        {
+          "host": "webmail.zeroday-sec.com",
+          "ips": [
+            {
+              "asn": "136727",
+              "asn_name": "JTS-AS-AP Jimat Technology Solution, MY",
+              "asn_range": "103.191.76.0/24",
+              "country": "Malaysia",
+              "country_code": "MY",
+              "ip": "103.191.76.181",
+              "ptr": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "emails": {
+    "theharvester": {
+      "discovered_emails": []
+    },
+    "whatweb": {
+      "contact_email": "team@zeroday-sec.com"
+    }
+  },
+  "web_technologies": {
+    "whatweb": {
+      "url": "https://zeroday-sec.com/",
+      "status": "200 OK",
+      "HTML5": true,
+      "HTTPServer": "LiteSpeed",
+      "IP": "103.191.76.181",
+      "LiteSpeed": true,
+      "Strict-Transport-Security": "max-age=31536000",
+      "Title": "Site Maintenance",
+      "UncommonHeaders": "x-content-type-options,x-download-options,x-permitted-cross-domain-policies,x-dns-prefetch-control,referrer-policy,content-security-policy,alt-svc",
+      "X-Frame-Options": "SAMEORIGIN",
+      "X-XSS-Protection": "1;  mode=block"
+    }
+  },
+  "http_headers": {
+    "httpx": {
+      "status_line": "HTTP/1.1 200 OK",
+      "headers": {
+        "Connection": "Keep-Alive",
+        "Keep-Alive": "timeout=5, max=100",
+        "content-type": "text/html",
+        "last-modified": "Wed, 19 Feb 2025 14:31:55 GMT",
+        "accept-ranges": "bytes",
+        "content-encoding": "br",
+        "vary": "Accept-Encoding",
+        "content-length": "350",
+        "date": "Mon, 28 Jul 2025 06:59:02 GMT",
+        "server": "LiteSpeed",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1;  mode=block",
+        "x-download-options": "noopen",
+        "x-permitted-cross-domain-policies": "master-only",
+        "x-dns-prefetch-control": "on",
+        "referrer-policy": "no-referrer-when-downgrade",
+        "strict-transport-security": "max-age=31536000",
+        "content-security-policy": "block-all-mixed-content",
+        "alt-svc": "h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\";"
+      }
+    }
+  }
+}

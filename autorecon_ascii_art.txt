@@ -23,7 +23,7 @@
             ║   🔧 INTEGRATED TOOLS: NMAP • WHATWEB • DNSENUM • THEHARVESTER                  ║
             ║                            HTTPX • SUBLIST3R • DNSDUMPSTER                      ║
             ║                                                                                 ║
-            ║   💻 Author : A                              Version: 1.0.0                     ║
+            ║   💻 Author :                                Version: 1.0.0                     ║
             ║   📧 Contact:                                Build  : 2025.07                   ║
             ║                                                                                 ║
             ═══════════════════════════════════════════════════════════════════════════════════
@@ -32,7 +32,5 @@
                     [!] OUTPUT: Results saved to ./reports/report_<target>.pdf
 
 ═══════════════════════════════════════════════════════════════════════════════════════════════════════════
-                                       no recon - pure automation            
-
-                                by [Name] (@username)        version 1.0.0                                        
+                                               
                               
