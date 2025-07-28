@@ -65,7 +65,7 @@ Upon execution, the program will interactively prompt you to enter the author's 
 ### Example
 
 ```bash
-┌──(venv)─(abuluqmanng㉿kali)-[~/Desktop/autorecon]
+┌──(venv)─(kali㉿kali)-[~/../autorecon]
 └─$ python scanner.py
 
 
