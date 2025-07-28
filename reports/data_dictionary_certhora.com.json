@@ -1,0 +1,330 @@
+{
+  "scan_metadata": {
+    "timestamp": "2025-07-28T17:56:29.840883",
+    "total_sources": 6,
+    "available_sources": [
+      "nmap",
+      "dnsenum",
+      "theharvester",
+      "httpx",
+      "sublist3r",
+      "dnsdumpster"
+    ],
+    "domain": "certhora.com"
+  },
+  "network_dns_info": {
+    "nmap": [
+      {
+        "ip": "109.123.238.148",
+        "ports": [
+          {
+            "portid": "21",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "ftp"
+          },
+          {
+            "portid": "22",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "ssh"
+          },
+          {
+            "portid": "25",
+            "protocol": "tcp",
+            "state": "filtered",
+            "service": "smtp"
+          },
+          {
+            "portid": "53",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "domain"
+          },
+          {
+            "portid": "80",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "tcpwrapped"
+          },
+          {
+            "portid": "110",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "pop3"
+          },
+          {
+            "portid": "111",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "rpcbind"
+          },
+          {
+            "portid": "143",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "imap"
+          },
+          {
+            "portid": "443",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "https"
+          },
+          {
+            "portid": "465",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "smtp"
+          },
+          {
+            "portid": "587",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "smtp"
+          },
+          {
+            "portid": "646",
+            "protocol": "tcp",
+            "state": "filtered",
+            "service": "ldp"
+          },
+          {
+            "portid": "993",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "imaps"
+          },
+          {
+            "portid": "995",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "pop3s"
+          },
+          {
+            "portid": "3306",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "mysql"
+          },
+          {
+            "portid": "5960",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "grpc"
+          },
+          {
+            "portid": "9900",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "http"
+          }
+        ]
+      }
+    ],
+    "dnsenum": [
+      "109.123.238.148",
+      "109.123.238.148",
+      "109.123.238.148",
+      "109.123.238.148",
+      "109.123.238.148",
+      "109.123.238.148",
+      "109.123.238.148",
+      "109.123.238.148",
+      "109.123.238.148",
+      "109.123.238.148"
+    ],
+    "dnsdumpster": {
+      "mx_records": [
+        {
+          "host": "0 certhora.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        }
+      ],
+      "ns_records": [
+        {
+          "host": "ns1.mudahhosting.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "ns2.mudahhosting.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        }
+      ],
+      "total_a_records": 7
+    }
+  },
+  "subdomains_hosts": {
+    "sublist3r": [
+      "www.certhora.com",
+      "cpanel.certhora.com",
+      "cpcalendars.certhora.com",
+      "cpcontacts.certhora.com",
+      "demo.certhora.com",
+      "www.demo.certhora.com",
+      "mail.certhora.com",
+      "wazkybol.certhora.com",
+      "www.wazkybol.certhora.com",
+      "webdisk.certhora.com",
+      "webmail.certhora.com"
+    ],
+    "theharvester": {
+      "discovered_hosts": [
+        "cpcontacts.certhora.com",
+        "cpanel.certhora.com",
+        "demo.certhora.com",
+        "webdisk.certhora.com",
+        "wazkybol.certhora.com",
+        "mail.certhora.com",
+        "webmail.certhora.com",
+        "cpcalendars.certhora.com"
+      ],
+      "discovered_ips": [
+        "109.123.238.148"
+      ]
+    },
+    "dnsdumpster": {
+      "a_records": [
+        {
+          "host": "cpanel.certhora.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "cpcalendars.certhora.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "cpcontacts.certhora.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "wazkybol.certhora.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "www.wazkybol.certhora.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "webdisk.certhora.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "webmail.certhora.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "emails": {
+    "theharvester": {
+      "discovered_emails": []
+    }
+  },
+  "http_headers": {
+    "httpx": {
+      "status_line": "ConnectError: [Errno 104] Connection reset by peer",
+      "headers": {}
+    }
+  }
+}

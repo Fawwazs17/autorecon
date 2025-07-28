@@ -1,6 +1,6 @@
 {
   "scan_metadata": {
-    "timestamp": "2025-07-28T14:59:52.036371",
+    "timestamp": "2025-07-28T17:54:45.841123",
     "total_sources": 7,
     "available_sources": [
       "nmap",
@@ -113,7 +113,7 @@
       ],
       "ns_records": [
         {
-          "host": "zen-01.jimatdns.com",
+          "host": "zen-02.jimatdns.com",
           "ips": [
             {
               "asn": "136727",
@@ -127,7 +127,7 @@
           ]
         },
         {
-          "host": "zen-02.jimatdns.com",
+          "host": "zen-01.jimatdns.com",
           "ips": [
             {
               "asn": "136727",
@@ -153,6 +153,9 @@
       "webmail.zeroday-sec.com"
     ],
     "theharvester": {
+      "discovered_hosts": [
+        "certs.zeroday-sec.com"
+      ],
       "discovered_ips": [
         "103.191.76.131",
         "110.4.45.109"
@@ -240,7 +243,7 @@
         "content-encoding": "br",
         "vary": "Accept-Encoding",
         "content-length": "350",
-        "date": "Mon, 28 Jul 2025 06:59:02 GMT",
+        "date": "Mon, 28 Jul 2025 09:54:07 GMT",
         "server": "LiteSpeed",
         "x-content-type-options": "nosniff",
         "x-frame-options": "SAMEORIGIN",

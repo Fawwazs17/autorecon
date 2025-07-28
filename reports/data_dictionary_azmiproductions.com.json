@@ -1,0 +1,1203 @@
+{
+  "scan_metadata": {
+    "timestamp": "2025-07-28T17:51:49.134560",
+    "total_sources": 6,
+    "available_sources": [
+      "nmap",
+      "whatweb",
+      "dnsenum",
+      "theharvester",
+      "httpx",
+      "dnsdumpster"
+    ],
+    "domain": "azmiproductions.com"
+  },
+  "network_dns_info": {
+    "nmap": [
+      {
+        "ip": "109.123.238.148",
+        "ports": [
+          {
+            "portid": "21",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "ftp"
+          },
+          {
+            "portid": "22",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "ssh"
+          },
+          {
+            "portid": "25",
+            "protocol": "tcp",
+            "state": "filtered",
+            "service": "smtp"
+          },
+          {
+            "portid": "53",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "domain"
+          },
+          {
+            "portid": "80",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "http"
+          },
+          {
+            "portid": "110",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "pop3"
+          },
+          {
+            "portid": "111",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "rpcbind"
+          },
+          {
+            "portid": "143",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "imap"
+          },
+          {
+            "portid": "443",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "https"
+          },
+          {
+            "portid": "465",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "smtp"
+          },
+          {
+            "portid": "587",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "smtp"
+          },
+          {
+            "portid": "646",
+            "protocol": "tcp",
+            "state": "filtered",
+            "service": "ldp"
+          },
+          {
+            "portid": "993",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "imaps"
+          },
+          {
+            "portid": "995",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "pop3s"
+          },
+          {
+            "portid": "3306",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "mysql"
+          },
+          {
+            "portid": "5960",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "grpc"
+          },
+          {
+            "portid": "9900",
+            "protocol": "tcp",
+            "state": "open",
+            "service": "http"
+          }
+        ]
+      }
+    ],
+    "dnsenum": [
+      "109.123.238.148",
+      "109.123.238.148",
+      "109.123.238.148",
+      "109.123.238.148",
+      "109.123.238.148",
+      "109.123.238.148",
+      "109.123.238.148",
+      "109.123.238.148",
+      "109.123.238.148",
+      "109.123.238.148",
+      "109.123.238.148"
+    ],
+    "dnsdumpster": {
+      "mx_records": [
+        {
+          "host": "0 azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        }
+      ],
+      "ns_records": [
+        {
+          "host": "ns5.mudahhosting.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "ns6.mudahhosting.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        }
+      ],
+      "total_a_records": 77
+    }
+  },
+  "subdomains_hosts": {
+    "theharvester": {
+      "discovered_hosts": [
+        "ecstasy.azmiproductions.com",
+        "agent.azmiproductions.com",
+        "ctf.azmiproductions.com",
+        "demowebsite.azmiproductions.com",
+        "anarchist.azmiproductions.com",
+        "smart-schedules.azmiproductions.com",
+        "download.azmiproductions.com",
+        "loura.azmiproductions.com",
+        "trainers.azmiproductions.com",
+        "geoview.azmiproductions.com",
+        "iiumstudentrepreneur.azmiproductions.com",
+        "lan.azmiproductions.com",
+        "qr.azmiproductions.com",
+        "buboq.azmiproductions.com"
+      ],
+      "discovered_ips": [
+        "185.250.38.21",
+        "72.167.191.69",
+        "76.76.21.21",
+        "172.67.165.87",
+        "194.163.35.63",
+        "104.21.15.247",
+        "109.123.238.148",
+        "62.72.45.197"
+      ]
+    },
+    "dnsdumpster": {
+      "a_records": [
+        {
+          "host": "abah.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "www.abah.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "agent.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "www.agent.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "aivg.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "aivg-scoring.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "16509",
+              "asn_name": "AMAZON-02",
+              "asn_range": "76.76.21.0/24",
+              "banners": {
+                "http": {
+                  "apps": [
+                    "Vercel"
+                  ],
+                  "redirect_location": "https://vercel.com/",
+                  "server": "Vercel",
+                  "title": "Vercel: Build and deploy the best we"
+                },
+                "https": {
+                  "alt_n": [
+                    "*.vercel.com",
+                    "vercel.com"
+                  ],
+                  "apps": [
+                    "Vercel"
+                  ],
+                  "cn": ".vercel.com",
+                  "redirect_location": "https://vercel.com/",
+                  "server": "Vercel",
+                  "title": "Vercel: Build and deploy the best we"
+                },
+                "ip": "76.76.21.21"
+              },
+              "country": "United States",
+              "country_code": "US",
+              "ip": "76.76.21.21",
+              "ptr": ""
+            }
+          ]
+        },
+        {
+          "host": "www.aivg-scoring.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "16509",
+              "asn_name": "AMAZON-02",
+              "asn_range": "76.76.21.0/24",
+              "banners": {
+                "http": {
+                  "apps": [
+                    "Vercel"
+                  ],
+                  "redirect_location": "https://vercel.com/",
+                  "server": "Vercel",
+                  "title": "Vercel: Build and deploy the best we"
+                },
+                "https": {
+                  "alt_n": [
+                    "*.vercel.com",
+                    "vercel.com"
+                  ],
+                  "apps": [
+                    "Vercel"
+                  ],
+                  "cn": ".vercel.com",
+                  "redirect_location": "https://vercel.com/",
+                  "server": "Vercel",
+                  "title": "Vercel: Build and deploy the best we"
+                },
+                "ip": "76.76.21.21"
+              },
+              "country": "United States",
+              "country_code": "US",
+              "ip": "76.76.21.21",
+              "ptr": ""
+            }
+          ]
+        },
+        {
+          "host": "www.aivg.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "andeka.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "www.andeka.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "api-iium.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "www.api-iium.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "buboq.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "www.buboq.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "studentrepreneur.com.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "www.studentrepreneur.com.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "cpanel.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "cpcalendars.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "cpcontacts.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "crew.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "16509",
+              "asn_name": "AMAZON-02",
+              "asn_range": "76.76.21.0/24",
+              "banners": {
+                "http": {
+                  "apps": [
+                    "Vercel"
+                  ],
+                  "redirect_location": "https://vercel.com/",
+                  "server": "Vercel",
+                  "title": "Vercel: Build and deploy the best we"
+                },
+                "https": {
+                  "alt_n": [
+                    "*.vercel.com",
+                    "vercel.com"
+                  ],
+                  "apps": [
+                    "Vercel"
+                  ],
+                  "cn": ".vercel.com",
+                  "redirect_location": "https://vercel.com/",
+                  "server": "Vercel",
+                  "title": "Vercel: Build and deploy the best we"
+                },
+                "ip": "76.76.21.21"
+              },
+              "country": "United States",
+              "country_code": "US",
+              "ip": "76.76.21.21",
+              "ptr": ""
+            }
+          ]
+        },
+        {
+          "host": "www.crew.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "16509",
+              "asn_name": "AMAZON-02",
+              "asn_range": "76.76.21.0/24",
+              "banners": {
+                "http": {
+                  "apps": [
+                    "Vercel"
+                  ],
+                  "redirect_location": "https://vercel.com/",
+                  "server": "Vercel",
+                  "title": "Vercel: Build and deploy the best we"
+                },
+                "https": {
+                  "alt_n": [
+                    "*.vercel.com",
+                    "vercel.com"
+                  ],
+                  "apps": [
+                    "Vercel"
+                  ],
+                  "cn": ".vercel.com",
+                  "redirect_location": "https://vercel.com/",
+                  "server": "Vercel",
+                  "title": "Vercel: Build and deploy the best we"
+                },
+                "ip": "76.76.21.21"
+              },
+              "country": "United States",
+              "country_code": "US",
+              "ip": "76.76.21.21",
+              "ptr": ""
+            }
+          ]
+        },
+        {
+          "host": "www.demo.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "download.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "16509",
+              "asn_name": "AMAZON-02",
+              "asn_range": "76.76.21.0/24",
+              "banners": {
+                "http": {
+                  "apps": [
+                    "Vercel"
+                  ],
+                  "redirect_location": "https://vercel.com/",
+                  "server": "Vercel",
+                  "title": "Vercel: Build and deploy the best we"
+                },
+                "https": {
+                  "alt_n": [
+                    "*.vercel.com",
+                    "vercel.com"
+                  ],
+                  "apps": [
+                    "Vercel"
+                  ],
+                  "cn": ".vercel.com",
+                  "redirect_location": "https://vercel.com/",
+                  "server": "Vercel",
+                  "title": "Vercel: Build and deploy the best we"
+                },
+                "ip": "76.76.21.21"
+              },
+              "country": "United States",
+              "country_code": "US",
+              "ip": "76.76.21.21",
+              "ptr": ""
+            }
+          ]
+        },
+        {
+          "host": "www.download.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "16509",
+              "asn_name": "AMAZON-02",
+              "asn_range": "76.76.21.0/24",
+              "banners": {
+                "http": {
+                  "apps": [
+                    "Vercel"
+                  ],
+                  "redirect_location": "https://vercel.com/",
+                  "server": "Vercel",
+                  "title": "Vercel: Build and deploy the best we"
+                },
+                "https": {
+                  "alt_n": [
+                    "*.vercel.com",
+                    "vercel.com"
+                  ],
+                  "apps": [
+                    "Vercel"
+                  ],
+                  "cn": ".vercel.com",
+                  "redirect_location": "https://vercel.com/",
+                  "server": "Vercel",
+                  "title": "Vercel: Build and deploy the best we"
+                },
+                "ip": "76.76.21.21"
+              },
+              "country": "United States",
+              "country_code": "US",
+              "ip": "76.76.21.21",
+              "ptr": ""
+            }
+          ]
+        },
+        {
+          "host": "engitex24.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "www.engitex24.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "geoview.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "www.geoview.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "hr.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "www.hr.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "iiumstudentrepreneur.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "www.iiumstudentrepreneur.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "ikas.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "16509",
+              "asn_name": "AMAZON-02",
+              "asn_range": "76.76.21.0/24",
+              "banners": {
+                "http": {
+                  "apps": [
+                    "Vercel"
+                  ],
+                  "redirect_location": "https://vercel.com/",
+                  "server": "Vercel",
+                  "title": "Vercel: Build and deploy the best we"
+                },
+                "https": {
+                  "alt_n": [
+                    "*.vercel.com",
+                    "vercel.com"
+                  ],
+                  "apps": [
+                    "Vercel"
+                  ],
+                  "cn": ".vercel.com",
+                  "redirect_location": "https://vercel.com/",
+                  "server": "Vercel",
+                  "title": "Vercel: Build and deploy the best we"
+                },
+                "ip": "76.76.21.21"
+              },
+              "country": "United States",
+              "country_code": "US",
+              "ip": "76.76.21.21",
+              "ptr": ""
+            }
+          ]
+        },
+        {
+          "host": "www.ikas.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "16509",
+              "asn_name": "AMAZON-02",
+              "asn_range": "76.76.21.0/24",
+              "banners": {
+                "http": {
+                  "apps": [
+                    "Vercel"
+                  ],
+                  "redirect_location": "https://vercel.com/",
+                  "server": "Vercel",
+                  "title": "Vercel: Build and deploy the best we"
+                },
+                "https": {
+                  "alt_n": [
+                    "*.vercel.com",
+                    "vercel.com"
+                  ],
+                  "apps": [
+                    "Vercel"
+                  ],
+                  "cn": ".vercel.com",
+                  "redirect_location": "https://vercel.com/",
+                  "server": "Vercel",
+                  "title": "Vercel: Build and deploy the best we"
+                },
+                "ip": "76.76.21.21"
+              },
+              "country": "United States",
+              "country_code": "US",
+              "ip": "76.76.21.21",
+              "ptr": ""
+            }
+          ]
+        },
+        {
+          "host": "inventory.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "www.inventory.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "lan.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "www.lan.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "ligaanaknegeri.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "www.ligaanaknegeri.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "loura.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "16509",
+              "asn_name": "AMAZON-02",
+              "asn_range": "76.76.21.0/24",
+              "banners": {
+                "http": {
+                  "apps": [
+                    "Vercel"
+                  ],
+                  "redirect_location": "https://vercel.com/",
+                  "server": "Vercel",
+                  "title": "Vercel: Build and deploy the best we"
+                },
+                "https": {
+                  "alt_n": [
+                    "*.vercel.com",
+                    "vercel.com"
+                  ],
+                  "apps": [
+                    "Vercel"
+                  ],
+                  "cn": ".vercel.com",
+                  "redirect_location": "https://vercel.com/",
+                  "server": "Vercel",
+                  "title": "Vercel: Build and deploy the best we"
+                },
+                "ip": "76.76.21.21"
+              },
+              "country": "United States",
+              "country_code": "US",
+              "ip": "76.76.21.21",
+              "ptr": ""
+            }
+          ]
+        },
+        {
+          "host": "www.loura.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "16509",
+              "asn_name": "AMAZON-02",
+              "asn_range": "76.76.21.0/24",
+              "banners": {
+                "http": {
+                  "apps": [
+                    "Vercel"
+                  ],
+                  "redirect_location": "https://vercel.com/",
+                  "server": "Vercel",
+                  "title": "Vercel: Build and deploy the best we"
+                },
+                "https": {
+                  "alt_n": [
+                    "*.vercel.com",
+                    "vercel.com"
+                  ],
+                  "apps": [
+                    "Vercel"
+                  ],
+                  "cn": ".vercel.com",
+                  "redirect_location": "https://vercel.com/",
+                  "server": "Vercel",
+                  "title": "Vercel: Build and deploy the best we"
+                },
+                "ip": "76.76.21.21"
+              },
+              "country": "United States",
+              "country_code": "US",
+              "ip": "76.76.21.21",
+              "ptr": ""
+            }
+          ]
+        },
+        {
+          "host": "mymail.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "www.mymail.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "www.new.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "www.pocket.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "qr.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "www.qr.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "www.scoring.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        },
+        {
+          "host": "services.azmiproductions.com",
+          "ips": [
+            {
+              "asn": "141995",
+              "asn_name": "CAPL-AS-AP Contabo Asia Private Limited, SG",
+              "asn_range": "109.123.232.0/21",
+              "country": "Singapore",
+              "country_code": "SG",
+              "ip": "109.123.238.148",
+              "ptr": "gold.mudahhosting.com"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "emails": {
+    "theharvester": {
+      "discovered_emails": []
+    },
+    "whatweb": {
+      "contact_email": "official@azmiproductions.com"
+    }
+  },
+  "web_technologies": {
+    "whatweb": {
+      "url": "https://azmiproductions.com",
+      "status": "200 OK",
+      "Country": "CZECH REPUBLIC][CZ",
+      "HTML5": true,
+      "IP": "109.123.238.148",
+      "JQuery": "2.2.4",
+      "Open-Graph-Protocol": "AZMI PRODUCTIONS",
+      "PHP": "8.2.26",
+      "Script": true,
+      "Title": "AZMI PRODUCTIONS",
+      "UncommonHeaders": "alt-svc",
+      "X-Powered-By": "PHP/8.2.26",
+      "X-UA-Compatible": "IE=edge"
+    }
+  },
+  "http_headers": {
+    "httpx": {
+      "status_line": "HTTP/1.1 200 OK",
+      "headers": {
+        "Connection": "Keep-Alive",
+        "Keep-Alive": "timeout=5, max=100",
+        "x-powered-by": "PHP/8.2.26",
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "19380",
+        "content-encoding": "br",
+        "vary": "Accept-Encoding",
+        "date": "Mon, 28 Jul 2025 09:50:37 GMT",
+        "alt-svc": "h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\";"
+      }
+    }
+  }
+}

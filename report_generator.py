@@ -30,6 +30,108 @@ def _create_detailed_table(data):
     return table
 
 
+def format_web_technologies(web_tech_data):
+    """Format web technologies data consistently, handling both simple and complex structures"""
+    if not web_tech_data:
+        return "No web technologies detected."
+    
+    formatted_details = ""
+    
+    # Handle Server information
+    server_info = web_tech_data.get('HTTPServer', 'Unknown')
+    if isinstance(server_info, list) and server_info:
+        # Take the first item and clean it up
+        server_info = server_info[0]
+    elif isinstance(server_info, list):
+        server_info = 'Unknown'
+    
+    # Clean up server info - remove extra brackets and formatting
+    if isinstance(server_info, str):
+        server_info = server_info.replace('][', ', ').strip('[]')
+    
+    formatted_details += f"Server: {server_info}\n"
+    
+    # Handle IP Address
+    ip_info = web_tech_data.get('IP', 'Unknown')
+    if isinstance(ip_info, list) and ip_info:
+        # Remove duplicates and join
+        unique_ips = list(set(ip_info))
+        ip_info = ', '.join(unique_ips)
+    elif isinstance(ip_info, list):
+        ip_info = 'Unknown'
+    
+    formatted_details += f"IP Address: {ip_info}\n"
+    
+    # Handle Page Title
+    title_info = web_tech_data.get('Title', 'Unknown')
+    if isinstance(title_info, list) and title_info:
+        # For titles, take the most relevant one (usually the last clean one)
+        clean_titles = []
+        for title in title_info:
+            if isinstance(title, str):
+                # Clean up title - remove status codes and URLs
+                clean_title = title
+                if '] ' in clean_title:
+                    clean_title = clean_title.split('] ')[-1]
+                if '[' in clean_title and ']' not in clean_title:
+                    clean_title = clean_title.split('[')[0]
+                if clean_title.strip() and not clean_title.startswith('http'):
+                    clean_titles.append(clean_title.strip())
+        
+        title_info = clean_titles[-1] if clean_titles else title_info[-1]
+    elif isinstance(title_info, list):
+        title_info = 'Unknown'
+    
+    # Clean up title
+    if isinstance(title_info, str):
+        title_info = title_info.replace('\n', ' ').strip()
+        # Remove URL patterns from title
+        if 'http' in title_info.lower():
+            parts = title_info.split()
+            clean_parts = [part for part in parts if not part.startswith('http')]
+            title_info = ' '.join(clean_parts) if clean_parts else title_info
+    
+    formatted_details += f"Page Title: {title_info}\n"
+    
+    # Add technology detection bullets
+    tech_features = []
+    
+    if web_tech_data.get('HTML5'):
+        tech_features.append("HTML5 detected")
+    
+    if web_tech_data.get('LiteSpeed'):
+        tech_features.append("LiteSpeed web server")
+    elif 'litespeed' in server_info.lower():
+        tech_features.append("LiteSpeed web server")
+    elif 'apache' in server_info.lower():
+        tech_features.append("Apache web server")
+    
+    if web_tech_data.get('Strict-Transport-Security'):
+        tech_features.append("HSTS (HTTP Strict Transport Security) enabled")
+    
+    if web_tech_data.get('WordPress'):
+        tech_features.append("WordPress CMS detected")
+    
+    if web_tech_data.get('Bootstrap'):
+        bootstrap_ver = web_tech_data['Bootstrap']
+        tech_features.append(f"Bootstrap framework ({bootstrap_ver})")
+    
+    if web_tech_data.get('JQuery'):
+        jquery_ver = web_tech_data['JQuery']
+        tech_features.append(f"jQuery library ({jquery_ver})")
+    
+    if web_tech_data.get('OpenSSL'):
+        openssl_ver = web_tech_data['OpenSSL']
+        if isinstance(openssl_ver, list):
+            openssl_ver = openssl_ver[0]
+        tech_features.append(f"OpenSSL ({openssl_ver})")
+    
+    # Add bullet points for detected technologies
+    for feature in tech_features:
+        formatted_details += f"• {feature}\n"
+    
+    return formatted_details.strip()
+
 
 def get_category_data_counts(data_dictionary):
     """Extract actual data counts from the JSON structure"""
@@ -351,7 +453,11 @@ def generate_report(domain, data_dictionary_path, output_path, author, scan_dura
             ip = host_data.get("ip", "Unknown")
             ports_details += f"Host: {ip}\n"
             for port in host_data.get("ports", []):
-                ports_details += f"• {port.get('portid')}/{port.get('protocol')} - {port.get('service', 'Unknown')}\n"
+                port_id = port.get('portid', 'Unknown')
+                protocol = port.get('protocol', 'Unknown')
+                state = port.get('state', 'Unknown')
+                service = port.get('service', 'Unknown')
+                ports_details += f"• {port_id}/{protocol} - {service} ({state})\n"
         detailed_network_dns_data.append(["Open Ports", ports_details.strip()])
     else:
         detailed_network_dns_data.append(["Open Ports", "No open ports detected."])
@@ -379,18 +485,48 @@ def generate_report(domain, data_dictionary_path, output_path, author, scan_dura
         for record in subdomains_hosts["dnsdumpster"]["a_records"]:
             all_subdomains.add(record.get("host", ""))
     
-    detailed_subdomains_data = []
     if all_subdomains:
         subdomain_list = sorted(list(all_subdomains))
-        subdomains_details = f"Total found: {len(subdomain_list)}\n"
-        subdomains_details += "Discovered subdomains:\n"
-        for subdomain in subdomain_list:
-            subdomains_details += f"• {subdomain}\n"
-        detailed_subdomains_data.append(["Subdomains", subdomains_details.strip()])
+        total_count = len(subdomain_list)
+        
+        # Display summary first
+        summary_details = f"Total subdomains found: {total_count}\n"
+        summary_details += f"Scan sources: sublist3r, theharvester, dnsdumpster\n"
+        summary_details += "All discovered subdomains are listed below:"
+        
+        summary_table_data = [["Subdomains Summary", summary_details]]
+        story.append(_create_detailed_table(summary_table_data))
+        story.append(Spacer(1, 0.1 * inch))
+        
+        # Split subdomains into chunks that fit on a page
+        # Estimate: ~20-25 subdomains per table to stay within page limits
+        chunk_size = 20
+        
+        for i in range(0, len(subdomain_list), chunk_size):
+            chunk = subdomain_list[i:i + chunk_size]
+            chunk_start = i + 1
+            chunk_end = min(i + chunk_size, total_count)
+            
+            # Create subdomain list for this chunk
+            chunk_details = f"Subdomains {chunk_start}-{chunk_end} of {total_count}:\n"
+            for subdomain in chunk:
+                chunk_details += f"• {subdomain}\n"
+            
+            chunk_table_data = [["Subdomain List", chunk_details.strip()]]
+            story.append(_create_detailed_table(chunk_table_data))
+            
+            # Add small spacer between chunks
+            story.append(Spacer(1, 0.1 * inch))
+            
+            # Add page break if we have more chunks and this isn't the last one
+            if i + chunk_size < len(subdomain_list):
+                # Check if we should add a page break (every 2-3 chunks)
+                chunks_on_page = (i // chunk_size) % 3
+                if chunks_on_page == 2:  # After every 3 chunks, start new page
+                    story.append(PageBreak())
     else:
-        detailed_subdomains_data.append(["Subdomains", "No subdomains or hosts discovered."])
-
-    story.append(_create_detailed_table(detailed_subdomains_data))
+        detailed_subdomains_data = [["Subdomains", "No subdomains or hosts discovered."]]
+        story.append(_create_detailed_table(detailed_subdomains_data))
     story.append(Spacer(1, 0.2 * inch))
     
     # 4.3 Emails
@@ -415,24 +551,15 @@ def generate_report(domain, data_dictionary_path, output_path, author, scan_dura
     story.append(_create_detailed_table(detailed_emails_data))
     story.append(Spacer(1, 0.2 * inch))
     
-    # 4.4 Web Technologies
+    # 4.4 Web Technologies - FIXED FORMATTING
     story.append(Paragraph("4.4 Web Technologies", styles['SubSectionTitle']))
     
     web_tech = data_dictionary.get("web_technologies", {}).get("whatweb", {})
     detailed_web_tech_data = []
+    
     if web_tech:
-        web_tech_details = ""
-        web_tech_details += f"Server: {web_tech.get('HTTPServer', 'Unknown')}\n"
-        web_tech_details += f"IP Address: {web_tech.get('IP', 'Unknown')}\n"
-        web_tech_details += f"Page Title: {web_tech.get('Title', 'Unknown')}\n"
-        
-        if web_tech.get('HTML5'):
-            web_tech_details += "• HTML5 detected\n"
-        if web_tech.get('LiteSpeed'):
-            web_tech_details += "• LiteSpeed web server\n"
-        if web_tech.get('Strict-Transport-Security'):
-            web_tech_details += "• HSTS (HTTP Strict Transport Security) enabled\n"
-        detailed_web_tech_data.append(["Web Technologies", web_tech_details.strip()])
+        formatted_tech_details = format_web_technologies(web_tech)
+        detailed_web_tech_data.append(["Web Technologies", formatted_tech_details])
     else:
         detailed_web_tech_data.append(["Web Technologies", "No web technologies detected."])
     
