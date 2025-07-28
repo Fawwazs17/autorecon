@@ -562,12 +562,11 @@ def generate_report(domain, data_dictionary_path, output_path, author, scan_dura
 
     story.append(_create_detailed_table(detailed_live_hosts_data))
 
-    # Build the PDF
     doc.build(story, onFirstPage=add_footer, onLaterPages=add_footer)
     print(f"Report generated successfully: {output_path}")
 
 if __name__ == '__main__':
-    # Example usage
+    # Example jgn kacau ni utk dev purpouse
     domain = ""
     data_path = f"data_dictionary_{domain}.json"
     output_path = f"reconnaissance_report_{domain}.pdf"
