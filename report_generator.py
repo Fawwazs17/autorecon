@@ -14,7 +14,7 @@ def _create_detailed_table(data):
     table_data = [['Category', 'Details']]
     table_data.extend(data)
 
-    table = Table(table_data, colWidths=[1.8*inch, 5.2*inch]) # Adjust column widths as needed
+    table = Table(table_data, colWidths=[1.8*inch, 5.2*inch]) 
     table.setStyle(TableStyle([
         ('BACKGROUND', (0, 0), (-1, 0), HexColor('#34495E')),
         ('TEXTCOLOR', (0, 0), (-1, 0), white),
@@ -24,7 +24,7 @@ def _create_detailed_table(data):
         ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
         ('GRID', (0, 0), (-1, -1), 1, black),
         ('FONTSIZE', (0, 1), (-1, -1), 10),
-        ('VALIGN', (0,0), (-1,-1), 'TOP'), # Align content to top for multi-line details
+        ('VALIGN', (0,0), (-1,-1), 'TOP'), 
         ('ROWBACKGROUNDS', (0, 1), (-1, -1), [HexColor('#F8F9FA'), white])
     ]))
     return table
@@ -37,10 +37,10 @@ def format_web_technologies(web_tech_data):
     
     formatted_details = ""
     
-    # Handle Server information
+    # Handle Server info
     server_info = web_tech_data.get('HTTPServer', 'Unknown')
     if isinstance(server_info, list) and server_info:
-        # Take the first item and clean it up
+        # first item and clean 
         server_info = server_info[0]
     elif isinstance(server_info, list):
         server_info = 'Unknown'
@@ -51,10 +51,10 @@ def format_web_technologies(web_tech_data):
     
     formatted_details += f"Server: {server_info}\n"
     
-    # Handle IP Address
+    # Handle IP 
     ip_info = web_tech_data.get('IP', 'Unknown')
     if isinstance(ip_info, list) and ip_info:
-        # Remove duplicates and join
+        # Remove duplica tes  join
         unique_ips = list(set(ip_info))
         ip_info = ', '.join(unique_ips)
     elif isinstance(ip_info, list):
@@ -62,14 +62,11 @@ def format_web_technologies(web_tech_data):
     
     formatted_details += f"IP Address: {ip_info}\n"
     
-    # Handle Page Title
     title_info = web_tech_data.get('Title', 'Unknown')
     if isinstance(title_info, list) and title_info:
-        # For titles, take the most relevant one (usually the last clean one)
         clean_titles = []
         for title in title_info:
             if isinstance(title, str):
-                # Clean up title - remove status codes and URLs
                 clean_title = title
                 if '] ' in clean_title:
                     clean_title = clean_title.split('] ')[-1]
@@ -82,10 +79,8 @@ def format_web_technologies(web_tech_data):
     elif isinstance(title_info, list):
         title_info = 'Unknown'
     
-    # Clean up title
     if isinstance(title_info, str):
         title_info = title_info.replace('\n', ' ').strip()
-        # Remove URL patterns from title
         if 'http' in title_info.lower():
             parts = title_info.split()
             clean_parts = [part for part in parts if not part.startswith('http')]
@@ -93,7 +88,6 @@ def format_web_technologies(web_tech_data):
     
     formatted_details += f"Page Title: {title_info}\n"
     
-    # Add technology detection bullets
     tech_features = []
     
     if web_tech_data.get('HTML5'):
@@ -126,7 +120,6 @@ def format_web_technologies(web_tech_data):
             openssl_ver = openssl_ver[0]
         tech_features.append(f"OpenSSL ({openssl_ver})")
     
-    # Add bullet points for detected technologies
     for feature in tech_features:
         formatted_details += f"• {feature}\n"
     
@@ -137,7 +130,6 @@ def get_category_data_counts(data_dictionary):
     """Extract actual data counts from the JSON structure"""
     counts = {}
     
-    # Network & DNS Info
     dns_count = 0
     network_dns = data_dictionary.get("network_dns_info", {})
     
@@ -146,13 +138,11 @@ def get_category_data_counts(data_dictionary):
     if network_dns.get("dnsdumpster", {}).get("mx_records"):
         dns_count += len(network_dns["dnsdumpster"]["mx_records"])
     
-    # Open Ports
     ports_count = 0
     if network_dns.get("nmap"):
         for host in network_dns["nmap"]:
             ports_count += len(host.get("ports", []))
     
-    # Subdomains & Hosts
     subdomains_count = 0
     subdomains_hosts = data_dictionary.get("subdomains_hosts", {})
     if subdomains_hosts.get("sublist3r"):
@@ -162,7 +152,7 @@ def get_category_data_counts(data_dictionary):
     if subdomains_hosts.get("dnsdumpster", {}).get("a_records"):
         subdomains_count += len(subdomains_hosts["dnsdumpster"]["a_records"])
     
-    # Remove duplicates 
+    # Remove duplicate
     unique_subdomains = set()
     if subdomains_hosts.get("sublist3r"):
         unique_subdomains.update(subdomains_hosts["sublist3r"])
@@ -185,15 +175,14 @@ def get_category_data_counts(data_dictionary):
     web_tech_count = 0
     web_tech = data_dictionary.get("web_technologies", {})
     if web_tech.get("whatweb"):
-        # Count meaningful web technologies (excluding basic headers)
+        # Count meaningful web tech
         tech_data = web_tech["whatweb"]
         meaningful_tech = ["HTTPServer", "HTML5", "LiteSpeed", "Title"]
         web_tech_count = sum(1 for key in meaningful_tech if tech_data.get(key))
     
-    # Live Hosts (from HTTP headers)
+    # Live Hosts 
     live_hosts_count = 1 if data_dictionary.get("http_headers", {}).get("httpx") else 0
     
-    # Only include categories with data
     if dns_count > 0:
         counts["DNS Records"] = dns_count
     if ports_count > 0:
@@ -267,7 +256,6 @@ def generate_report(domain, data_dictionary_path, output_path, author, scan_dura
     styles = getSampleStyleSheet()
     story = []
 
-    # Custom styles
     styles.add(ParagraphStyle(
         name='ReportTitle', 
         fontSize=24, 
@@ -336,12 +324,12 @@ def generate_report(domain, data_dictionary_path, output_path, author, scan_dura
         
         # Distinct colors for each slice
         colors = [
-            HexColor('#E74C3C'),  # Red
+            HexColor('#E74C3C'),  # merah
             HexColor('#F39C12'),  # Orange  
-            HexColor('#F1C40F'),  # Yellow
-            HexColor('#27AE60'),  # Green
-            HexColor('#3498DB'),  # Blue
-            HexColor('#9B59B6')   # Purple
+            HexColor('#F1C40F'),  # kuningz
+            HexColor('#27AE60'),  # ijo
+            HexColor('#3498DB'),  # bloo
+            HexColor('#9B59B6')   # anggur
         ]
         
         pie.slices.strokeWidth = 1
@@ -352,11 +340,10 @@ def generate_report(domain, data_dictionary_path, output_path, author, scan_dura
         drawing.add(pie)
         story.append(drawing)
 
-        # Add legend
+        # legend
         legend_data = []
         for i, (category, count) in enumerate(data_counts.items()):
             color = colors[i % len(colors)]
-            # Create a colored square for the legend
             legend_square = Paragraph(f'<font color="{color.hexval()}">■</font> {category}', styles['Normal'])
             legend_data.append([legend_square])
         
@@ -379,7 +366,7 @@ def generate_report(domain, data_dictionary_path, output_path, author, scan_dura
     story.append(Paragraph("Summary Table (Key Findings)", styles['SectionTitle']))
     story.append(Spacer(1, 0.2 * inch))
 
-    # Create summary table
+    # summary table
     summary_data = [['Category', 'Key Findings', 'Count', 'Severity']]
     
     category_order = ["DNS Records", "Open Ports", "Subdomains & Hosts", "Emails", "Web Technologies", "Live Hosts"]
@@ -406,12 +393,11 @@ def generate_report(domain, data_dictionary_path, output_path, author, scan_dura
         ('ROWBACKGROUNDS', (0, 1), (-1, -1), [HexColor('#F8F9FA'), white])
     ]))
     
-    # Apply severity colors
     severity_colors = {
-        'Critical': HexColor('#d6112f'),
-        'High': HexColor('#d67011'), 
-        'Medium': HexColor('#fff700'),
-        'Low': HexColor('#1ed611')
+        'Critical': HexColor('#d6112f'), #warna merah buat abang marah
+        'High': HexColor('#d67011'),  #oren
+        'Medium': HexColor('#fff700'), #kunig
+        'Low': HexColor('#1ed611') #ijo
     }
     
     for i, row in enumerate(summary_data[1:], 1):
@@ -489,7 +475,6 @@ def generate_report(domain, data_dictionary_path, output_path, author, scan_dura
         subdomain_list = sorted(list(all_subdomains))
         total_count = len(subdomain_list)
         
-        # Display summary first
         summary_details = f"Total subdomains found: {total_count}\n"
         summary_details += f"Scan sources: sublist3r, theharvester, dnsdumpster\n"
         summary_details += "All discovered subdomains are listed below:"
@@ -497,9 +482,7 @@ def generate_report(domain, data_dictionary_path, output_path, author, scan_dura
         summary_table_data = [["Subdomains Summary", summary_details]]
         story.append(_create_detailed_table(summary_table_data))
         story.append(Spacer(1, 0.1 * inch))
-        
-        # Split subdomains into chunks that fit on a page
-        # Estimate: ~20-25 subdomains per table to stay within page limits
+
         chunk_size = 20
         
         for i in range(0, len(subdomain_list), chunk_size):
@@ -507,7 +490,6 @@ def generate_report(domain, data_dictionary_path, output_path, author, scan_dura
             chunk_start = i + 1
             chunk_end = min(i + chunk_size, total_count)
             
-            # Create subdomain list for this chunk
             chunk_details = f"Subdomains {chunk_start}-{chunk_end} of {total_count}:\n"
             for subdomain in chunk:
                 chunk_details += f"• {subdomain}\n"
@@ -515,14 +497,11 @@ def generate_report(domain, data_dictionary_path, output_path, author, scan_dura
             chunk_table_data = [["Subdomain List", chunk_details.strip()]]
             story.append(_create_detailed_table(chunk_table_data))
             
-            # Add small spacer between chunks
             story.append(Spacer(1, 0.1 * inch))
             
-            # Add page break if we have more chunks and this isn't the last one
             if i + chunk_size < len(subdomain_list):
-                # Check if we should add a page break (every 2-3 chunks)
                 chunks_on_page = (i // chunk_size) % 3
-                if chunks_on_page == 2:  # After every 3 chunks, start new page
+                if chunks_on_page == 2:  
                     story.append(PageBreak())
     else:
         detailed_subdomains_data = [["Subdomains", "No subdomains or hosts discovered."]]
@@ -589,7 +568,7 @@ def generate_report(domain, data_dictionary_path, output_path, author, scan_dura
 
 if __name__ == '__main__':
     # Example usage
-    domain = "zeroday-sec.com"
+    domain = ""
     data_path = f"data_dictionary_{domain}.json"
     output_path = f"reconnaissance_report_{domain}.pdf"
     author_example = "Test User"

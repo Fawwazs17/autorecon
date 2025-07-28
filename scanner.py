@@ -43,7 +43,7 @@ def main():
     try:
         os.makedirs('log', exist_ok=True)
         log_file_handle = open(log_file, 'a')
-        # Redirect stdout and stderr to the log file
+        #stdout and stderr to log 
         sys.stdout = log_file_handle
         sys.stderr = log_file_handle
 
@@ -86,7 +86,7 @@ def main():
         sys.stderr = original_stderr
         log_file_handle.close()
 
-        # Now print to the actual terminal
+        #print toterminal
         print("\n--- Aggregating Results ---")
         aggregated_results = aggregate_results(domain)
 
@@ -109,11 +109,10 @@ def main():
         generate_report(domain, data_dict_path, pdf_output_path, author, scan_duration)
         print(f"PDF report generated: {pdf_output_path}")
 
-        # Clean up _ips.txt files
         cleanup_ips_files()
 
     except Exception as e:
-        # Ensure stdout and stderr are restored on error
+        #stdout and stderr are restored on error
         if log_file_handle:
             log_file_handle.close()
         sys.stdout = original_stdout
