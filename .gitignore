@@ -77,3 +77,5 @@ venv.bak/
 # Project-specific generated files
 reports/
 logs/
+results/
+scanners/__pycache__/
