@@ -85,7 +85,7 @@ Upon execution, the program will interactively prompt you to enter the author's 
   ║                                                                                 ║
   ║  ┌─────────────────────────────────────────────────────────────────────────┐    ║
   ║  │  🚀 7-IN-1 CONCURRENT SCANNING ENGINE                                   │    ║
-  ║  │  ⚡ AUTOMATED ENUMERATION & DISCOVERY                                    │    ║
+  ║  │  ⚡ AUTOMATED ENUMERATION & DISCOVERY                                   │    ║
   ║  │  📊 COMPREHENSIVE PDF REPORTING                                         │    ║
   ║  └─────────────────────────────────────────────────────────────────────────┘    ║
   ║                                                                                 ║
