@@ -227,7 +227,10 @@ def generate_report(domain, data_dictionary_path, output_path, author, scan_dura
         pie.height = 200
         pie.width = 200
         pie.data = list(data_counts.values())
-        pie.labels = [f"{k}\n({v})" for k, v in data_counts.items()]
+        pie.labels = [str(v) for v in data_counts.values()]
+        pie.slices.labelRadius = 0.7
+        pie.slices.fontName = 'Helvetica-Bold'
+        pie.slices.fontColor = white
         
         # Distinct colors for each slice
         colors = [
@@ -246,6 +249,25 @@ def generate_report(domain, data_dictionary_path, output_path, author, scan_dura
         
         drawing.add(pie)
         story.append(drawing)
+
+        # Add legend
+        legend_data = []
+        for i, (category, count) in enumerate(data_counts.items()):
+            color = colors[i % len(colors)]
+            # Create a colored square for the legend
+            legend_square = Paragraph(f'<font color="{color.hexval()}">■</font> {category}', styles['Normal'])
+            legend_data.append([legend_square])
+        
+        legend_table = Table(legend_data)
+        legend_table.setStyle(TableStyle([
+            ('ALIGN', (0,0), (-1,-1), 'LEFT'),
+            ('LEFTPADDING', (0,0), (-1,-1), 0),
+            ('RIGHTPADDING', (0,0), (-1,-1), 0),
+            ('TOPPADDING', (0,0), (-1,-1), 0),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 0),
+        ]))
+        story.append(legend_table)
+
     else:
         story.append(Paragraph("No data available for visualization.", styles['Normal']))
 
@@ -362,10 +384,8 @@ def generate_report(domain, data_dictionary_path, output_path, author, scan_dura
         subdomain_list = sorted(list(all_subdomains))
         subdomains_details = f"Total found: {len(subdomain_list)}\n"
         subdomains_details += "Discovered subdomains:\n"
-        for subdomain in subdomain_list[:15]:  # Show first 15
+        for subdomain in subdomain_list:
             subdomains_details += f"• {subdomain}\n"
-        if len(subdomain_list) > 15:
-            subdomains_details += f"... and {len(subdomain_list) - 15} more"
         detailed_subdomains_data.append(["Subdomains", subdomains_details.strip()])
     else:
         detailed_subdomains_data.append(["Subdomains", "No subdomains or hosts discovered."])
