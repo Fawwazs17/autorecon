@@ -1,73 +1,104 @@
-# Python Security Scanner
+# Autorecon
 
-This is an automated security scanner designed to gather information about a target domain using various open-source tools and generate a comprehensive PDF report.
+This project is a Python-based security scanner that automates the process of running various reconnaissance tools against a target domain. It collects the results, parses them, and generates a comprehensive security report in PDF format, along with a structured data dictionary in JSON format.
+
+## How It Works
+
+The `scanner.py` script orchestrates the entire process:
+
+1.  **Scanner Execution:** It imports and runs various individual scanner modules (e.g., `dnsdumpster_scanner.py`, `nmap_scanner.py`, `httpx_scanner.py`) against the specified target domain. Each scanner saves its raw output to a file.
+2.  **Data Parsing:** After each scan, the corresponding parser module (e.g., `dnsdumpster_parser.py`, `nmap_parser.py`) reads the raw output and extracts relevant information, transforming it into a structured JSON dictionary.
+3.  **Data Aggregation:** All structured data from different scanners is aggregated into a single, comprehensive dictionary.
+4.  **Data Dictionary Generation:** The aggregated data is then processed by `data_dictionary_generator.py` to create a categorized JSON data dictionary, providing a clear and organized overview of all collected information.
+5.  **Report Generation:** Finally, `report_generator.py` takes the categorized data dictionary and generates a professional, human-readable PDF report, summarizing key findings and providing detailed analysis.
 
 ## Features
 
-*   **Multithreaded Scanning**: Runs multiple reconnaissance tools concurrently for faster results.
-*   **Data Aggregation**: Collects and categorizes output from different tools.
-*   **PDF Report Generation**: Creates a dashboard-style PDF report summarizing the findings.
+*   **Automated Reconnaissance:** Automates the execution of multiple open-source intelligence (OSINT) and network scanning tools.
+*   **Structured Data Output:** Generates a well-organized JSON data dictionary for programmatic access and further analysis.
+*   **Comprehensive PDF Reports:** Produces detailed and professional PDF reports summarizing scan results, including network information, subdomains, emails, web technologies, and live hosts.
 
-## Prerequisites
+### Integrated Scanners
 
-Before running the scanner, you need to have the following installed on your system:
+*   **DNSDumpster:** Gathers DNS information (A, MX, NS, CNAME records).
+*   **DNSEnum:** Enumerates DNS records and subdomains.
+*   **HTTPX:** Probes for running HTTP/HTTPS services and extracts HTTP headers.
+*   **Nmap:** Performs network scanning to identify open ports and services.
+*   **Sublist3r:** Enumerates subdomains using various search engines.
+*   **TheHarvester:** Gathers emails, subdomains, hosts, and other OSINT data.
+*   **WhatWeb:** Identifies web technologies, content management systems (CMS), and other web-related information.
 
-*   **Python 3.x**
-*   **pip** (Python package installer)
+## Requirements
 
-You also need to install the following external security tools and ensure they are in your system's PATH:
+*   Python 3.x
+*   The external tools used by the scanners (e.g., `curl` for DNSDumpster, `nmap`, `httpx`, `sublist3r`, `theharvester`, `whatweb`, `dnsenum`) must be installed on your system and accessible via your system's PATH.
 
-*   **Nmap**: Network scanner (e.g., `sudo apt-get install nmap` on Debian/Ubuntu)
-*   **WhatWeb**: Web technology detector (e.g., `sudo apt-get install whatweb` on Debian/Ubuntu)
-*   **Dnsenum**: DNS enumeration tool (e.g., `sudo apt-get install dnsenum` on Debian/Ubuntu)
-*   **theHarvester**: Email, subdomain, and host OSINT tool (e.g., `sudo apt-get install theharvester` on Debian/Ubuntu)
-*   **httpx**: HTTP toolkit (Install via `go install github.com/projectdiscovery/httpx/cmd/httpx@latest` after installing Go)
+## Installation
 
-## Setup
-
-1.  **Clone the repository (if you haven't already):**
-
+1.  **Clone the repository:**
     ```bash
-    git clone <repository_url>
+    git clone https://github.com/Fawwazs17/python-security-scanner 
     cd python-security-scanner
     ```
 
-2.  **Create and activate a Python virtual environment:**
-
+2.  **Create and activate a virtual environment (recommended):**
     ```bash
     python3 -m venv venv
     source venv/bin/activate
     ```
 
 3.  **Install Python dependencies:**
-
     ```bash
     pip install -r requirements.txt
     ```
 
 ## Usage
 
-To run the scanner, use the `scanner.py` script with the `-d` or `--domain` flag followed by the target domain name:
+To run the scanner, simply execute the `scanner.py` script:
 
 ```bash
-source venv/bin/activate
-python3 scanner.py -d example.com
+python scanner.py
 ```
 
-Replace `example.com` with the domain you want to scan.
+Upon execution, the program will interactively prompt you to enter the author's name and the target domain to scan.
 
-## Output
+### Example
 
-The scanner will create the following directories and files:
+```bash
+python scanner.py
+```
+(Then the user would be prompted for input)
 
-*   `results/`: Contains the raw output files from each scanning tool.
-*   `reports/`: Contains the generated output files:
-    *   `results_example.com.json`: Aggregated JSON results from all tools
-    *   `data_dictionary_example.com.json`: Categorized JSON data organized into 5 main categories
-    *   `report_example.com.pdf`: Comprehensive PDF report
+All raw scanner outputs will be logged to a file in the `logs/` directory, and the generated data dictionary (JSON) and reconnaissance report (PDF) will be saved in the `reports/` directory.
 
-## Troubleshooting
+At the beginning of the script execution, you will be prompted to enter your name, which will be included as the author in the PDF report.
 
-*   **`ModuleNotFoundError: No module named 'reportlab'`**: Ensure you have activated your virtual environment (`source venv/bin/activate`) and installed the Python dependencies (`pip install -r requirements.txt`).
-*   **`[Tool Name] is not installed or not in PATH.`**: Make sure the external security tools (Nmap, WhatWeb, Dnsenum, theHarvester, httpx) are installed on your system and their executables are accessible via your system's PATH.
-*   **Empty PDF Report**: This usually means the external security tools were not found or did not produce any output. Verify their installation and check the `results/` directory for any generated files.
+## Project Structure
+
+```
+.
+├── README.md
+├── requirements.txt
+├── scanner.py
+├── data_dictionary_generator.py
+├── report_generator.py
+├── parsers/
+│   ├── dnsdumpster_parser.py
+│   ├── dnsenum_parser.py
+│   ├── httpx_parser.py
+│   ├── nmap_parser.py
+│   ├── sublist3r_parser.py
+│   ├── theharvester_parser.py
+│   └── whatweb_parser.py
+├── scanners/
+│   ├── dnsdumpster_scanner.py
+│   ├── dnsenum_scanner.py
+│   ├── httpx_scanner.py
+│   ├── nmap_scanner.py
+│   ├── sublist3r_scanner.py
+│   ├── theharvester_scanner.py
+│   └── whatweb_scanner.py
+├── reports/                 # Generated JSON data dictionaries and PDF reports
+├──results/                  Raw scanner outputs
+└── logs/                    # Raw scanner logs
+```
