@@ -65,7 +65,47 @@ Upon execution, the program will interactively prompt you to enter the author's 
 ### Example
 
 ```bash
-python scanner.py
+┌──(venv)─(abuluqmanng㉿kali)-[~/Desktop/autorecon]
+└─$ python scanner.py
+
+
+    ▄▄▄       █    ██ ▄▄▄█████▓ ▒█████   ██▀███  ▓█████  ▄████▄   ▒█████   ███▄    █ 
+  ▒████▄     ██  ▓██▒▓  ██▒ ▓▒▒██▒  ██▒▓██ ▒ ██▒▓█   ▀ ▒██▀ ▀█  ▒██▒  ██▒ ██ ▀█   █ 
+  ▒██  ▀█▄  ▓██  ▒██░▒ ▓██░ ▒░▒██░  ██▒▓██ ░▄█ ▒▒███   ▒▓█    ▄ ▒██░  ██▒▓██  ▀█ ██▒
+  ░██▄▄▄▄██ ▓▓█  ░██░░ ▓██▓ ░ ▒██   ██░▒██▀▀█▄  ▒▓█  ▄ ▒▓▓▄ ▄██▒▒██   ██░▓██▒  ▐▌██▒
+   ▓█   ▓██▒▒▒█████▓   ▒██▒ ░ ░ ████▓▒░░██▓ ▒██▒░▒████▒▒ ▓███▀ ░░ ████▓▒░▒██░   ▓██░
+   ▒▒   ▓▒█░░▒▓▒ ▒ ▒   ▒ ░░   ░ ▒░▒░▒░ ░ ▒▓ ░▒▓░░░ ▒░ ░░ ░▒ ▒  ░░ ▒░▒░▒░ ░ ▒░   ▒ ▒ 
+    ▒   ▒▒ ░░░▒░ ░ ░     ░      ░ ▒ ▒░   ░▒ ░ ▒░ ░ ░  ░  ░  ▒     ░ ▒ ▒░ ░ ░░   ░ ▒░
+    ░   ▒    ░░░ ░ ░   ░      ░ ░ ░ ▒    ░░   ░    ░   ░        ░ ░ ░ ▒     ░   ░ ░ 
+        ░  ░   ░                  ░ ░     ░        ░  ░░ ░          ░ ░           ░ 
+                                                       ░                 
+  ═══════════════════════════════════════════════════════════════════════════════════                  
+  ║                      🔍 AUTOMATED RECONNAISSANCE SUITE 🔍                       ║
+  ═══════════════════════════════════════════════════════════════════════════════════
+  ║                                                                                 ║
+  ║  ┌─────────────────────────────────────────────────────────────────────────┐    ║
+  ║  │  🚀 7-IN-1 CONCURRENT SCANNING ENGINE                                   │    ║
+  ║  │  ⚡ AUTOMATED ENUMERATION & DISCOVERY                                    │    ║
+  ║  │  📊 COMPREHENSIVE PDF REPORTING                                         │    ║
+  ║  └─────────────────────────────────────────────────────────────────────────┘    ║
+  ║                                                                                 ║
+  ║   🔧 INTEGRATED TOOLS: NMAP • WHATWEB • DNSENUM • THEHARVESTER                  ║
+  ║                            HTTPX • SUBLIST3R • DNSDUMPSTER                      ║
+  ║                                                                                 ║
+  ║   💻 Author :                                Version: 1.0.0                     ║
+  ║   📧 Contact:                                Build  : 2025.07                   ║
+  ║                                                                                 ║
+  ═══════════════════════════════════════════════════════════════════════════════════
+
+           [!] LEGAL: For authorized penetration testing only
+           [!] OUTPUT: Results saved to ./reports/report_<target>.pdf
+
+═══════════════════════════════════════════════════════════════════════════════════════
+                                               
+                              
+Enter the author of the scan:
+Enter the domain name to scan: 
+
 ```
 (Then the user would be prompted for input)
 
