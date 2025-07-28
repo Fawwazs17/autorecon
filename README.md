@@ -37,8 +37,8 @@ The `scanner.py` script orchestrates the entire process:
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/Fawwazs17/python-security-scanner 
-    cd python-security-scanner
+    git clone https://github.com/Fawwazs17/autorecon 
+    cd autorecon
     ```
 
 2.  **Create and activate a virtual environment (recommended):**
