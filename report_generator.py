@@ -40,7 +40,7 @@ def get_category_data_counts(data_dictionary):
     if subdomains_hosts.get("dnsdumpster", {}).get("a_records"):
         subdomains_count += len(subdomains_hosts["dnsdumpster"]["a_records"])
     
-    # Remove duplicates by converting to set (simplified)
+    # Remove duplicates 
     unique_subdomains = set()
     if subdomains_hosts.get("sublist3r"):
         unique_subdomains.update(subdomains_hosts["sublist3r"])
@@ -185,12 +185,9 @@ def generate_report(domain, data_dictionary_path, output_path, author, scan_dura
     # Extract scan metadata
     scan_metadata = data_dictionary.get("scan_metadata", {})
     target_domain = scan_metadata.get("domain", domain)
-    # Use the passed scan_duration_str directly
-    # timestamp = scan_metadata.get("timestamp", "")
-    # scan_duration = calculate_scan_duration(timestamp)
 
     # === FIRST PAGE: Header and Pie Chart ===
-    story.append(Paragraph(f"🔍 Reconnaissance Report", styles['ReportTitle']))
+    story.append(Paragraph(f"Reconnaissance Report", styles['ReportTitle']))
     story.append(Paragraph(f"Target Domain: {target_domain}", styles['ReportTitle']))
     story.append(Spacer(1, 0.3 * inch))
     
@@ -235,7 +232,7 @@ def generate_report(domain, data_dictionary_path, output_path, author, scan_dura
     story.append(PageBreak())
 
     # === PAGE 2: Summary Table ===
-    story.append(Paragraph("📊 Summary Table (Key Findings)", styles['SectionTitle']))
+    story.append(Paragraph("Summary Table (Key Findings)", styles['SectionTitle']))
     story.append(Spacer(1, 0.2 * inch))
 
     # Create summary table
@@ -284,10 +281,10 @@ def generate_report(domain, data_dictionary_path, output_path, author, scan_dura
     story.append(PageBreak())
 
     # === DETAILED SECTIONS ===
-    story.append(Paragraph("📋 Detailed Analysis", styles['SectionTitle']))
+    story.append(Paragraph("Detailed Analysis", styles['SectionTitle']))
     
     # 4.1 Network & DNS Info
-    story.append(Paragraph("🔶 4.1 Network & DNS Information", styles['SubSectionTitle']))
+    story.append(Paragraph("4.1 Network & DNS Information", styles['SubSectionTitle']))
     
     network_dns = data_dictionary.get("network_dns_info", {})
     
@@ -320,7 +317,7 @@ def generate_report(domain, data_dictionary_path, output_path, author, scan_dura
     story.append(Spacer(1, 0.2 * inch))
     
     # 4.2 Subdomains & Hosts  
-    story.append(Paragraph("🌐 4.2 Subdomains & Hosts", styles['SubSectionTitle']))
+    story.append(Paragraph("4.2 Subdomains & Hosts", styles['SubSectionTitle']))
     
     subdomains_hosts = data_dictionary.get("subdomains_hosts", {})
     all_subdomains = set()
@@ -347,7 +344,7 @@ def generate_report(domain, data_dictionary_path, output_path, author, scan_dura
     story.append(Spacer(1, 0.2 * inch))
     
     # 4.3 Emails
-    story.append(Paragraph("📧 4.3 Email Addresses", styles['SubSectionTitle']))
+    story.append(Paragraph("4.3 Email Addresses", styles['SubSectionTitle']))
     
     emails = data_dictionary.get("emails", {})
     found_emails = []
@@ -367,7 +364,7 @@ def generate_report(domain, data_dictionary_path, output_path, author, scan_dura
     story.append(Spacer(1, 0.2 * inch))
     
     # 4.4 Web Technologies
-    story.append(Paragraph("🧠 4.4 Web Technologies", styles['SubSectionTitle']))
+    story.append(Paragraph("4.4 Web Technologies", styles['SubSectionTitle']))
     
     web_tech = data_dictionary.get("web_technologies", {}).get("whatweb", {})
     if web_tech:
@@ -387,7 +384,7 @@ def generate_report(domain, data_dictionary_path, output_path, author, scan_dura
     story.append(Spacer(1, 0.2 * inch))
     
     # 4.5 Live Hosts
-    story.append(Paragraph("🔍 4.5 Live Hosts Analysis", styles['SubSectionTitle']))
+    story.append(Paragraph("4.5 Live Hosts Analysis", styles['SubSectionTitle']))
     
     http_headers = data_dictionary.get("http_headers", {})
     if http_headers.get("httpx"):
