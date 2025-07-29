@@ -324,12 +324,12 @@ def generate_report(domain, data_dictionary_path, output_path, author, scan_dura
         
         # Distinct colors for each slice
         colors = [
-            HexColor('#E74C3C'),  # merah
-            HexColor('#F39C12'),  # Orange  
-            HexColor('#F1C40F'),  # kuningz
-            HexColor('#27AE60'),  # ijo
-            HexColor('#3498DB'),  # bloo
-            HexColor('#9B59B6')   # anggur
+            HexColor('#007bff'),  # bloo
+            HexColor('#6c757d'),  # kelabu
+            HexColor('#20c997'),  # ijo cair
+            HexColor('#6f42c1'),  # anggur
+            HexColor('#e83e8c'),  # ping
+            HexColor('#964B00')   # cekelat
         ]
         
         pie.slices.strokeWidth = 1
@@ -373,9 +373,10 @@ def generate_report(domain, data_dictionary_path, output_path, author, scan_dura
     
     for category in category_order:
         data_count = data_counts.get(category, 0)
-        severity = get_category_severity(category, data_count)
-        summary = get_category_summary(category, data_dictionary, data_count)
-        summary_data.append([category, summary, str(data_count), severity])
+        if data_count > 0:
+            severity = get_category_severity(category, data_count)
+            summary = get_category_summary(category, data_dictionary, data_count)
+            summary_data.append([category, summary, str(data_count), severity])
 
     # Create table
     table = Table(summary_data, colWidths=[1.5*inch, 3*inch, 0.8*inch, 0.8*inch])
@@ -395,7 +396,7 @@ def generate_report(domain, data_dictionary_path, output_path, author, scan_dura
     
     severity_colors = {
         'Critical': HexColor('#d6112f'), #warna merah buat abang marah
-        'High': HexColor('#d67011'),  #oren
+        'High': HexColor('#FF5F15'),  #oren
         'Medium': HexColor('#fff700'), #kunig
         'Low': HexColor('#1ed611') #ijo
     }
