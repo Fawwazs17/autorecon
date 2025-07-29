@@ -1,0 +1,38 @@
+graph TD
+    A[Start] --> B{scanner.py};
+    B --> C[User Input: Author & Domain];
+    C --> D{Run Scanners};
+
+    subgraph Scanners
+        D --> E[dnsdumpster_scanner.py];
+        D --> F[dnsenum_scanner.py];
+        D --> G[httpx_scanner.py];
+        D --> H[nmap_scanner.py];
+        D --> I[sublist3r_scanner.py];
+        D --> J[theharvester_scanner.py];
+        D --> K[whatweb_scanner.py];
+    end
+
+    subgraph Parsers
+        E --> L[dnsdumpster_parser.py];
+        F --> M[dnsenum_parser.py];
+        G --> N[httpx_parser.py];
+        H --> O[nmap_parser.py];
+        I --> P[sublist3r_parser.py];
+        J --> Q[theharvester_parser.py];
+        K --> R[whatweb_parser.py];
+    end
+
+    L --> S{Aggregated JSON};
+    M --> S;
+    N --> S;
+    O --> S;
+    P --> S;
+    Q --> S;
+    R --> S;
+
+    S --> T[data_dictionary_generator.py];
+    T --> U[Categorized JSON Data Dictionary];
+    U --> V[report_generator.py];
+    V --> W[PDF Report];
+    W --> X[End];

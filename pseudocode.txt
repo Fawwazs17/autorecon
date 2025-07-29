@@ -1,0 +1,75 @@
+BEGIN SecurityScannerWorkflow
+
+    // Initialize the scanning process
+    START
+    
+    // Get user input for scanning parameters
+    CALL scanner.py
+    PROMPT user for "Enter Author Name"
+    PROMPT user for "Enter Target Domain"
+    STORE author_name, target_domain
+    
+    // Execute all security scanners in parallel
+    BEGIN RunScanners
+        
+        // Launch all scanners concurently in parallel
+        PARALLEL_EXECUTE:
+            CALL dnsdumpster_scanner.py WITH target_domain
+            CALL dnsenum_scanner.py WITH target_domain  
+            CALL httpx_scanner.py WITH target_domain
+            CALL nmap_scanner.py WITH target_domain
+            CALL sublist3r_scanner.py WITH target_domain
+            CALL theharvester_scanner.py WITH target_domain
+            CALL whatweb_scanner.py WITH target_domain
+        
+        // Wait for all scanners to complete
+        WAIT_FOR_ALL_SCANNERS_TO_COMPLETE
+        
+    END RunScanners
+    
+    // Parse results from each scanner
+    BEGIN ParseResults
+        
+        // Parse each scanner's output in parallel
+        PARALLEL_EXECUTE:
+            raw_dnsdumpster_data = CALL dnsdumpster_parser.py
+            raw_dnsenum_data = CALL dnsenum_parser.py
+            raw_httpx_data = CALL httpx_parser.py
+            raw_nmap_data = CALL nmap_parser.py
+            raw_sublist3r_data = CALL sublist3r_parser.py
+            raw_theharvester_data = CALL theharvester_parser.py
+            raw_whatweb_data = CALL whatweb_parser.py
+            
+        // Wait for all parsers to complete
+        WAIT_FOR_ALL_PARSERS_TO_COMPLETE
+        
+    END ParseResults
+    
+    // Aggregate all parsed data into unified JSON structure
+    BEGIN DataAggregation
+        
+        aggregated_json = MERGE_DATA(
+            raw_dnsdumpster_data,
+            raw_dnsenum_data,
+            raw_httpx_data,
+            raw_nmap_data,
+            raw_sublist3r_data,
+            raw_theharvester_data,
+            raw_whatweb_data
+        )
+        
+    END DataAggregation
+    
+    // Generate categorized data dictionary
+    CALL data_dictionary_generator.py WITH aggregated_json
+    categorized_data_dictionary = GET_CATEGORIZED_JSON_OUTPUT()
+    
+    // Generate final PDF report
+    CALL report_generator.py WITH (categorized_data_dictionary, author_name, target_domain)
+    pdf_report = GENERATE_PDF_REPORT()
+    
+    // Complete the workflow
+    OUTPUT "PDF Report generated successfully: " + pdf_report_filename
+    END
+
+END SecurityScannerWorkflow
