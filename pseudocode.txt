@@ -45,7 +45,7 @@ BEGIN SecurityScannerWorkflow
         
     END ParseResults
     
-    // Aggregate all parsed data into unified JSON structure
+    // Aggregate all parsed data into JSON 
     BEGIN DataAggregation
         
         aggregated_json = MERGE_DATA(
@@ -68,7 +68,6 @@ BEGIN SecurityScannerWorkflow
     CALL report_generator.py WITH (categorized_data_dictionary, author_name, target_domain)
     pdf_report = GENERATE_PDF_REPORT()
     
-    // Complete the workflow
     OUTPUT "PDF Report generated successfully: " + pdf_report_filename
     END
 
