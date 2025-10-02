@@ -32,8 +32,9 @@ The `scanner.py` script orchestrates the entire process:
 
 *   Python 3.x
 *   The external tools used by the scanners (e.g., `curl` for DNSDumpster, `nmap`, `httpx`, `sublist3r`, `theharvester`, `whatweb`, `dnsenum`) must be installed on your system and accessible via your system's PATH.
+*   **Alternative:** Docker and Docker Compose (see Docker section below)
 
-## Installation
+## Installation (Traditional Method)
 
 1.  **Clone the repository:**
     ```bash
@@ -51,6 +52,60 @@ The `scanner.py` script orchestrates the entire process:
     ```bash
     pip install -r requirements.txt
     ```
+
+## Docker Installation (Recommended)
+
+Alternatively, you can run AutoRecon using Docker, which eliminates the need to install dependencies directly on your system:
+
+### Prerequisites
+*   Docker Engine
+*   Docker Compose (optional, for docker-compose method)
+
+### Quick Start with Helper Script
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/Fawwazs17/autorecon 
+    cd autorecon
+    ```
+
+2.  **Build the Docker image:**
+    ```bash
+    docker build -t autorecon .
+    ```
+
+3.  **Run the container using the helper script:**
+    ```bash
+    ./run_docker.sh
+    ```
+    
+    This will run the Docker container and you will be prompted for the author name and domain as usual. The script automatically mounts the reports, results, and logs directories so you can access the scan results on your host system.
+
+### Alternative: Using Docker Compose
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/Fawwazs17/autorecon 
+    cd autorecon
+    ```
+
+2.  **Build and run with Docker Compose:**
+    ```bash
+    docker-compose up --build
+    ```
+    
+    This will build the Docker image and start the application. You will be prompted for the author name and domain as usual.
+
+### Manual Docker Run
+1.  **Build the Docker image:**
+    ```bash
+    docker build -t autorecon .
+    ```
+
+2.  **Run the container:**
+    ```bash
+    docker run -it -v $(pwd)/reports:/app/reports -v $(pwd)/results:/app/results -v $(pwd)/logs:/app/logs autorecon
+    ```
+    
+    This command maps the reports, results, and logs directories from the container to your local system so you can access the scan results.
 
 ## Usage
 

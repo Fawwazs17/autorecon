@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  autorecon:
+    build: .
+    image: autorecon
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./reports:/app/reports
+      - ./results:/app/results
+      - ./logs:/app/logs
